@@ -12,7 +12,7 @@ struct ContentView: View {
     
     var body: some View {
         VStack{
-            Image("")
+            Image("LogoOBEME")
                 .frame(width: 216, height: 98)
             Text("Iniciar Sesión")
                 .foregroundColor(.green)

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		54C605BF255C407B00003D70 /* VemeObemeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C605BE255C407B00003D70 /* VemeObemeApp.swift */; };
-		54C605C1255C407B00003D70 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C605C0255C407B00003D70 /* ContentView.swift */; };
+		54C605C1255C407B00003D70 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C605C0255C407B00003D70 /* LoginView.swift */; };
 		54C605C3255C407D00003D70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54C605C2255C407D00003D70 /* Assets.xcassets */; };
 		54C605C6255C407D00003D70 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54C605C5255C407D00003D70 /* Preview Assets.xcassets */; };
 		54C605D1255C407D00003D70 /* VemeObemeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C605D0255C407D00003D70 /* VemeObemeTests.swift */; };
@@ -35,7 +35,7 @@
 /* Begin PBXFileReference section */
 		54C605BB255C407B00003D70 /* VemeObeme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VemeObeme.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54C605BE255C407B00003D70 /* VemeObemeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VemeObemeApp.swift; sourceTree = "<group>"; };
-		54C605C0255C407B00003D70 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		54C605C0255C407B00003D70 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		54C605C2255C407D00003D70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		54C605C5255C407D00003D70 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		54C605C7255C407D00003D70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -96,7 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				54C605BE255C407B00003D70 /* VemeObemeApp.swift */,
-				54C605C0255C407B00003D70 /* ContentView.swift */,
+				54C605C0255C407B00003D70 /* LoginView.swift */,
 				54C605C2255C407D00003D70 /* Assets.xcassets */,
 				54C605C7255C407D00003D70 /* Info.plist */,
 				54C605C4255C407D00003D70 /* Preview Content */,
@@ -259,7 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54C605C1255C407B00003D70 /* ContentView.swift in Sources */,
+				54C605C1255C407B00003D70 /* LoginView.swift in Sources */,
 				54C605BF255C407B00003D70 /* VemeObemeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
