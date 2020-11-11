@@ -7,7 +7,9 @@
 
 import Foundation
 
+
 struct User: Codable, Hashable {
-    var username: String?
-    var token: String?
+    var correo: String?
+    var jwt: String?
+    
 }

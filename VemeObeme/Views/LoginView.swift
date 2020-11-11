@@ -9,6 +9,7 @@ import SwiftUI
 
 struct LoginView: View {
     @StateObject var viewModel = LoginViewModel()
+    @State private var username: String = ""
     @State private var password: String = ""
     
     var body: some View {
@@ -19,17 +20,16 @@ struct LoginView: View {
                 .foregroundColor(.green)
                 .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: 168, maxWidth: 200, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: 41, maxHeight: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 .font(.custom("Avenir Heavy", size: 30))
+            TextField("Correo", text:$username)
+                .foregroundColor(.green)
+                .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: 344, maxWidth: 370, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: 53, maxHeight: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .font(.custom("Avenir Book", size: 15)).padding()
             SecureField("Contraseña", text:$password)
                 .foregroundColor(.green)
                 .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: 344, maxWidth: 370, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: 53, maxHeight: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 .font(.custom("Avenir Book", size: 15)).padding()
-            TextField("Contraseña", text:$password)
-                .foregroundColor(.green)
-                .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: 344, maxWidth: 370, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: 53, maxHeight: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                .font(.custom("Avenir Book", size: 15)).padding()
             Button(action: {
-                    viewModel.tryLogin(username: "", password: "")
-                
+                viewModel.tryLogin(username: username, password: password)
             }, label: {
                 Text("Iniciar Sesion")
                     .foregroundColor(.white)

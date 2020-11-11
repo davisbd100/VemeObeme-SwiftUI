@@ -8,11 +8,11 @@
 import Foundation
 
 class LoginViewModel: ObservableObject {
-    @Published private var currentUser = User()
+    private var currentUser = User()
     
     func tryLogin(username: String, password: String) {
-        PetititonManager().tryLogin { (user) in
-            self.currentUser = user
+        PetititonManager().tryLogin(username: username, password: password) {
+            self.currentUser = $0
         }
     }
 }
