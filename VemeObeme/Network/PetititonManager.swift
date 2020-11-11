@@ -24,9 +24,9 @@ class PetititonManager {
         guard let encodedParameters = try? JSONSerialization.data(withJSONObject: parameters, options: []) else {
             return
         }
-        
         request.httpBody = encodedParameters
-        URLSession.shared.dataTask(with: request) { data, response, error in
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
             
             guard let sentData = data, error == nil, let responseData = response as? HTTPURLResponse else {
                 return
@@ -34,11 +34,13 @@ class PetititonManager {
             if (responseData.statusCode == 200){
                 do {
                     let user = try JSONDecoder().decode(User.self, from: sentData)
+                    debugPrint(user)
                     completion(user)
                 } catch let error {
-                    debugPrint(error.localizedDescription)
+                    debugPrint("Error: \(error.localizedDescription)")
                 }
             }
-        }.resume()
+        }
+        task.resume()
     }
 }

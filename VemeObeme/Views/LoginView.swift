@@ -13,7 +13,7 @@ struct LoginView: View {
     @State private var password: String = ""
     
     var body: some View {
-        VStack{
+        VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 10, content: {
             Image("LogoOBEME")
                 .frame(width: 216, height: 98)
             Text("Iniciar Sesión")
@@ -35,7 +35,7 @@ struct LoginView: View {
                     .foregroundColor(.white)
                     .font(.custom("Avenir Heavy", size: 15))
                     .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: 344, maxWidth: 370, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: 53, maxHeight: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-            }).padding()
+            })
             .background(Color.blue)
             .cornerRadius(10.0)
             Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
@@ -55,7 +55,7 @@ struct LoginView: View {
             })
             .background(Color.yellow)
             .cornerRadius(10.0)
-        }
+        })
         .padding(.trailing)
         .padding(.leading)
         .padding(.bottom)
@@ -65,5 +65,6 @@ struct LoginView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         LoginView()
+            .previewDevice("iPhone 11")
     }
 }

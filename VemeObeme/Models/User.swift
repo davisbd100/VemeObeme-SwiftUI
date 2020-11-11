@@ -9,7 +9,7 @@ import Foundation
 
 
 struct User: Codable, Hashable {
-    var correo: String?
-    var jwt: String?
+    public var correo: String?
+    public var jwt: String?
     
 }
