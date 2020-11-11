@@ -10,7 +10,9 @@ import Foundation
 class LoginViewModel: ObservableObject {
     @Published private var currentUser = User()
     
-    func tryLogin(email: String, password: String) {
-        
+    func tryLogin(username: String, password: String) {
+        PetititonManager().tryLogin { (user) in
+            self.currentUser = user
+        }
     }
 }

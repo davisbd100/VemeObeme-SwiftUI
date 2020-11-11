@@ -27,7 +27,10 @@ struct LoginView: View {
                 .foregroundColor(.green)
                 .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: 344, maxWidth: 370, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: 53, maxHeight: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 .font(.custom("Avenir Book", size: 15)).padding()
-            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+            Button(action: {
+                    viewModel.tryLogin(username: "", password: "")
+                
+            }, label: {
                 Text("Iniciar Sesion")
                     .foregroundColor(.white)
                     .font(.custom("Avenir Heavy", size: 15))
@@ -61,6 +64,6 @@ struct LoginView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        LoginView()
     }
 }

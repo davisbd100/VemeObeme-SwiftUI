@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct User {
-    var name: String?
+struct User: Codable, Hashable {
+    var username: String?
     var token: String?
 }
