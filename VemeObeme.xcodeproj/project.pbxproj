@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		54B50C08255C5870008DD49C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B50C07255C5870008DD49C /* User.swift */; };
+		54B50C10255C5964008DD49C /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B50C0F255C5964008DD49C /* LoginViewModel.swift */; };
+		54B50C15255C5C73008DD49C /* PetititonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B50C14255C5C73008DD49C /* PetititonManager.swift */; };
 		54C605BF255C407B00003D70 /* VemeObemeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C605BE255C407B00003D70 /* VemeObemeApp.swift */; };
 		54C605C1255C407B00003D70 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C605C0255C407B00003D70 /* LoginView.swift */; };
 		54C605C3255C407D00003D70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54C605C2255C407D00003D70 /* Assets.xcassets */; };
@@ -33,6 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		54B50C07255C5870008DD49C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		54B50C0F255C5964008DD49C /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		54B50C14255C5C73008DD49C /* PetititonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetititonManager.swift; sourceTree = "<group>"; };
 		54C605BB255C407B00003D70 /* VemeObeme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VemeObeme.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54C605BE255C407B00003D70 /* VemeObemeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VemeObemeApp.swift; sourceTree = "<group>"; };
 		54C605C0255C407B00003D70 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -72,6 +78,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		54B50C04255C581F008DD49C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				54C605C0255C407B00003D70 /* LoginView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		54B50C05255C5840008DD49C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				54B50C07255C5870008DD49C /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		54B50C06255C5845008DD49C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				54B50C0F255C5964008DD49C /* LoginViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		54B50C19255C5C7A008DD49C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				54B50C14255C5C73008DD49C /* PetititonManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		54C605B2255C407B00003D70 = {
 			isa = PBXGroup;
 			children = (
@@ -95,8 +133,11 @@
 		54C605BD255C407B00003D70 /* VemeObeme */ = {
 			isa = PBXGroup;
 			children = (
+				54B50C19255C5C7A008DD49C /* Network */,
+				54B50C04255C581F008DD49C /* Views */,
+				54B50C06255C5845008DD49C /* ViewModels */,
+				54B50C05255C5840008DD49C /* Models */,
 				54C605BE255C407B00003D70 /* VemeObemeApp.swift */,
-				54C605C0255C407B00003D70 /* LoginView.swift */,
 				54C605C2255C407D00003D70 /* Assets.xcassets */,
 				54C605C7255C407D00003D70 /* Info.plist */,
 				54C605C4255C407D00003D70 /* Preview Content */,
@@ -259,8 +300,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54B50C15255C5C73008DD49C /* PetititonManager.swift in Sources */,
+				54B50C10255C5964008DD49C /* LoginViewModel.swift in Sources */,
 				54C605C1255C407B00003D70 /* LoginView.swift in Sources */,
 				54C605BF255C407B00003D70 /* VemeObemeApp.swift in Sources */,
+				54B50C08255C5870008DD49C /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

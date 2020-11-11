@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  LoginView.swift
 //  VemeObeme
 //
 //  Created by David Bárcenas Duran on 11/11/20.
@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct LoginView: View {
+    @StateObject var viewModel = LoginViewModel()
     @State private var password: String = ""
     
     var body: some View {
