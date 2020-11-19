@@ -13,6 +13,7 @@ struct LoginView: View {
     @State private var password: String = ""
     @State private var isEmailValid: Bool = false
     
+    
     var body: some View {
         VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 10, content: {
                 
@@ -24,10 +25,18 @@ struct LoginView: View {
                 .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: 168, maxWidth: 200, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: 41, maxHeight: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 .font(.custom("Avenir Heavy", size: 30))
             
-            TextField("Correo", text:$username)
+            TextField("Correo", text:$username, onEditingChanged: {_ in
+                isEmailValid = isValidEmail(email: username)
+                if (!isEmailValid){
+                }
+            })
                 .foregroundColor(.green)
                 .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: 344, maxWidth: 370, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: 53, maxHeight: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 .font(.custom("Avenir Book", size: 15)).padding()
+                .overlay(
+                    RoundedRectangle(cornerRadius: 20)
+                        .stroke(Color.black, lineWidth: 2)
+                )
                 .keyboardType(.emailAddress)
                 .autocapitalization(.none)
             
@@ -35,14 +44,14 @@ struct LoginView: View {
                 .foregroundColor(.green)
                 .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: 344, maxWidth: 370, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: 53, maxHeight: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 .font(.custom("Avenir Book", size: 15)).padding()
+                .overlay(
+                    RoundedRectangle(cornerRadius: 20)
+                        .stroke(Color.black, lineWidth: 2)
+                )
             
             Button(action: {
                 if (checkFields()){
                     viewModel.tryLogin(username: username, password: password)
-                }else if(!isEmailValid){
-                    //Mensaje de email invalido
-                }else{
-                    //mensaje de campos vacios
                 }
             }, label: {
                 Text("Iniciar Sesion")
@@ -52,9 +61,6 @@ struct LoginView: View {
             })
             .background(Color.blue)
             .cornerRadius(10.0)
-            .alert(isPresented: self.$isEmailValid) {
-                Alert(title: Text("Hello"))
-            }
             
             Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
                 Text("Registrate")
@@ -85,9 +91,9 @@ struct LoginView: View {
         var validation = false
         if (username.isEmpty || password.isEmpty) {
             validation = false
+            
         }else{
-            isEmailValid = isValidEmail(email: username)
-            validation = isEmailValid
+            validation = isValidEmail(email: username)
         }
         return validation
     }

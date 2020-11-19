@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		544C0F5C255FE2E1001D0CA3 /* OnboardStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544C0F5B255FE2E1001D0CA3 /* OnboardStep.swift */; };
+		544C0F61255FE86F001D0CA3 /* OnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544C0F60255FE86F001D0CA3 /* OnboardView.swift */; };
+		544C0F66255FEAB0001D0CA3 /* AboutObeme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544C0F65255FEAB0001D0CA3 /* AboutObeme.swift */; };
 		54B50C08255C5870008DD49C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B50C07255C5870008DD49C /* User.swift */; };
 		54B50C10255C5964008DD49C /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B50C0F255C5964008DD49C /* LoginViewModel.swift */; };
 		54B50C15255C5C73008DD49C /* PetititonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B50C14255C5C73008DD49C /* PetititonManager.swift */; };
@@ -17,6 +20,7 @@
 		54C605D1255C407D00003D70 /* VemeObemeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C605D0255C407D00003D70 /* VemeObemeTests.swift */; };
 		54C605DC255C407D00003D70 /* VemeObemeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C605DB255C407D00003D70 /* VemeObemeUITests.swift */; };
 		54D3C4BF255D90960087B2BF /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D3C4BE255D90960087B2BF /* Utils.swift */; };
+		54E958102566D70F00DF58A1 /* RegisterViewRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E9580F2566D70F00DF58A1 /* RegisterViewRoot.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		544C0F5B255FE2E1001D0CA3 /* OnboardStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardStep.swift; sourceTree = "<group>"; };
+		544C0F60255FE86F001D0CA3 /* OnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardView.swift; sourceTree = "<group>"; };
+		544C0F65255FEAB0001D0CA3 /* AboutObeme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutObeme.swift; sourceTree = "<group>"; };
 		54B50C07255C5870008DD49C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		54B50C0F255C5964008DD49C /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		54B50C14255C5C73008DD49C /* PetititonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetititonManager.swift; sourceTree = "<group>"; };
@@ -53,6 +60,7 @@
 		54C605DB255C407D00003D70 /* VemeObemeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VemeObemeUITests.swift; sourceTree = "<group>"; };
 		54C605DD255C407D00003D70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54D3C4BE255D90960087B2BF /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		54E9580F2566D70F00DF58A1 /* RegisterViewRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewRoot.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +92,10 @@
 			isa = PBXGroup;
 			children = (
 				54C605C0255C407B00003D70 /* LoginView.swift */,
+				544C0F5B255FE2E1001D0CA3 /* OnboardStep.swift */,
+				544C0F60255FE86F001D0CA3 /* OnboardView.swift */,
+				544C0F65255FEAB0001D0CA3 /* AboutObeme.swift */,
+				54E9580F2566D70F00DF58A1 /* RegisterViewRoot.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -303,9 +315,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				544C0F5C255FE2E1001D0CA3 /* OnboardStep.swift in Sources */,
+				54E958102566D70F00DF58A1 /* RegisterViewRoot.swift in Sources */,
 				54B50C15255C5C73008DD49C /* PetititonManager.swift in Sources */,
+				544C0F66255FEAB0001D0CA3 /* AboutObeme.swift in Sources */,
 				54B50C10255C5964008DD49C /* LoginViewModel.swift in Sources */,
 				54C605C1255C407B00003D70 /* LoginView.swift in Sources */,
+				544C0F61255FE86F001D0CA3 /* OnboardView.swift in Sources */,
 				54C605BF255C407B00003D70 /* VemeObemeApp.swift in Sources */,
 				54B50C08255C5870008DD49C /* User.swift in Sources */,
 				54D3C4BF255D90960087B2BF /* Utils.swift in Sources */,
