@@ -15,7 +15,7 @@ struct OnboardStep: View {
     let animation = AnimationView()
     var body: some View {
         VStack (alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, content: {
-            LottieView(filename: animationLocation)
+            LottieView(filename: animationLocation, loopMode: .loop)
                 .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: 212, maxWidth: 250, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: 212, maxHeight: 250, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 .padding()
             Text(titleStep)
