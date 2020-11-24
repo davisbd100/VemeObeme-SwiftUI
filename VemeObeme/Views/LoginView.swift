@@ -50,11 +50,9 @@ struct LoginView: View {
                 )
             
             Button(action: {
-                self.disabled(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
                 if (checkFields()){
                     viewModel.tryLogin(username: username, password: password)
                 }
-                self.disabled(false)
             }, label: {
                 Text("Iniciar Sesion")
                     .foregroundColor(.white)
