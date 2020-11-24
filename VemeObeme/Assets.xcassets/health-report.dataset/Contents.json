@@ -1,0 +1,12 @@
+{
+  "data" : [
+    {
+      "filename" : "health-report.json",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
