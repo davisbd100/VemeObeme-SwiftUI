@@ -8,9 +8,24 @@
 import SwiftUI
 
 struct OnboardView: View {
+    @State private var currentTab = 1
     var body: some View {
-        VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: /*@START_MENU_TOKEN@*/nil/*@END_MENU_TOKEN@*/, content: {
-            OnboardStep(imageLocation: "animation_500_kbtxjxmo", titleStep: "¡Hola!", descriptionStep: "Si eres interno, pasante o residente de medicina esta aplicación es para ti.")
+        VStack(alignment: .center, spacing: /*@START_MENU_TOKEN@*/nil/*@END_MENU_TOKEN@*/, content: {
+            TabView(selection: $currentTab,
+                    content:  {
+                        OnboardStep(imageLocation: "animation_500_kbtxjxmo", titleStep: "¡Hola!", descriptionStep: "Si eres interno, pasante o residente de medicina esta aplicación es para ti.")
+                            .tag(1)
+                        OnboardStep(imageLocation: "animation_500_kbtxjxmo", titleStep: "¡Hola!", descriptionStep: "Si eres interno, pasante o residente de medicina esta aplicación es para ti.")
+                            .tag(2)
+                        OnboardStep(imageLocation: "animation_500_kbtxjxmo", titleStep: "¡Hola!", descriptionStep: "Si eres interno, pasante o residente de medicina esta aplicación es para ti.")
+                            .tag(3)
+                        OnboardStep(imageLocation: "animation_500_kbtxjxmo", titleStep: "¡Hola!", descriptionStep: "Si eres interno, pasante o residente de medicina esta aplicación es para ti.")
+                            .tag(4)
+                        OnboardStep(imageLocation: "animation_500_kbtxjxmo", titleStep: "¡Hola!", descriptionStep: "Si eres interno, pasante o residente de medicina esta aplicación es para ti.")
+                            .tag(5)
+                    })
+            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
+            .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
         })
     }
 }

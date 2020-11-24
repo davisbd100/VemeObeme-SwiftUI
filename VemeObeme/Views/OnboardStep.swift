@@ -24,6 +24,7 @@ struct OnboardStep: View {
             Text(descriptionStep)
                 .font(.custom("Avenir Book", size: 16))
                 .multilineTextAlignment(.center)
+            Spacer()
         })
     }
 }
