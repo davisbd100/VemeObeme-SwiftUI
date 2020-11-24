@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5446C7EA256CC3E9003B93CA /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 5446C7E9256CC3E9003B93CA /* Lottie */; };
+		5446C7F2256CC63D003B93CA /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5446C7F1256CC63D003B93CA /* LottieView.swift */; };
 		544C0F5C255FE2E1001D0CA3 /* OnboardStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544C0F5B255FE2E1001D0CA3 /* OnboardStep.swift */; };
 		544C0F61255FE86F001D0CA3 /* OnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544C0F60255FE86F001D0CA3 /* OnboardView.swift */; };
 		544C0F66255FEAB0001D0CA3 /* AboutObeme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544C0F65255FEAB0001D0CA3 /* AboutObeme.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5446C7F1256CC63D003B93CA /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		544C0F5B255FE2E1001D0CA3 /* OnboardStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardStep.swift; sourceTree = "<group>"; };
 		544C0F60255FE86F001D0CA3 /* OnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardView.swift; sourceTree = "<group>"; };
 		544C0F65255FEAB0001D0CA3 /* AboutObeme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutObeme.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				54C605C2255C407D00003D70 /* Assets.xcassets */,
 				54C605C7255C407D00003D70 /* Info.plist */,
 				54C605C4255C407D00003D70 /* Preview Content */,
+				5446C7F1256CC63D003B93CA /* LottieView.swift */,
 			);
 			path = VemeObeme;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 				544C0F61255FE86F001D0CA3 /* OnboardView.swift in Sources */,
 				54C605BF255C407B00003D70 /* VemeObemeApp.swift in Sources */,
 				54B50C08255C5870008DD49C /* User.swift in Sources */,
+				5446C7F2256CC63D003B93CA /* LottieView.swift in Sources */,
 				54D3C4BF255D90960087B2BF /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
