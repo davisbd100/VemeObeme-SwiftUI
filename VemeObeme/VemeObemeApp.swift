@@ -11,7 +11,7 @@ import SwiftUI
 struct VemeObemeApp: App {
     var body: some Scene {
         WindowGroup {
-            OnboardView()
+            RootView()
         }
     }
 }

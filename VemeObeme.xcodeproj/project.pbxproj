@@ -9,10 +9,20 @@
 /* Begin PBXBuildFile section */
 		5446C7EA256CC3E9003B93CA /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 5446C7E9256CC3E9003B93CA /* Lottie */; };
 		5446C7F2256CC63D003B93CA /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5446C7F1256CC63D003B93CA /* LottieView.swift */; };
-		5446C7F8256CC98E003B93CA /* health-report.json in Resources */ = {isa = PBXBuildFile; fileRef = 5446C7F7256CC98E003B93CA /* health-report.json */; };
+		5446C7FD256CD5DE003B93CA /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5446C7FC256CD5DE003B93CA /* RootView.swift */; };
 		544C0F5C255FE2E1001D0CA3 /* OnboardStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544C0F5B255FE2E1001D0CA3 /* OnboardStep.swift */; };
 		544C0F61255FE86F001D0CA3 /* OnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544C0F60255FE86F001D0CA3 /* OnboardView.swift */; };
 		544C0F66255FEAB0001D0CA3 /* AboutObeme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544C0F65255FEAB0001D0CA3 /* AboutObeme.swift */; };
+		544D0085256EC02500BE743E /* eye.json in Resources */ = {isa = PBXBuildFile; fileRef = 544D007B256EC02300BE743E /* eye.json */; };
+		544D0086256EC02500BE743E /* health-email-red.json in Resources */ = {isa = PBXBuildFile; fileRef = 544D007C256EC02400BE743E /* health-email-red.json */; };
+		544D0087256EC02500BE743E /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 544D007D256EC02400BE743E /* data.json */; };
+		544D0088256EC02500BE743E /* health-email-green.json in Resources */ = {isa = PBXBuildFile; fileRef = 544D007E256EC02400BE743E /* health-email-green.json */; };
+		544D0089256EC02500BE743E /* electro.json in Resources */ = {isa = PBXBuildFile; fileRef = 544D007F256EC02400BE743E /* electro.json */; };
+		544D008A256EC02500BE743E /* health-app.json in Resources */ = {isa = PBXBuildFile; fileRef = 544D0080256EC02400BE743E /* health-app.json */; };
+		544D008B256EC02500BE743E /* health-report.json in Resources */ = {isa = PBXBuildFile; fileRef = 544D0081256EC02500BE743E /* health-report.json */; };
+		544D008C256EC02500BE743E /* pills-bottle.json in Resources */ = {isa = PBXBuildFile; fileRef = 544D0082256EC02500BE743E /* pills-bottle.json */; };
+		544D008D256EC02500BE743E /* safe.json in Resources */ = {isa = PBXBuildFile; fileRef = 544D0083256EC02500BE743E /* safe.json */; };
+		544D008E256EC02500BE743E /* telescope.json in Resources */ = {isa = PBXBuildFile; fileRef = 544D0084256EC02500BE743E /* telescope.json */; };
 		54B50C08255C5870008DD49C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B50C07255C5870008DD49C /* User.swift */; };
 		54B50C10255C5964008DD49C /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B50C0F255C5964008DD49C /* LoginViewModel.swift */; };
 		54B50C15255C5C73008DD49C /* PetititonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B50C14255C5C73008DD49C /* PetititonManager.swift */; };
@@ -45,10 +55,20 @@
 
 /* Begin PBXFileReference section */
 		5446C7F1256CC63D003B93CA /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
-		5446C7F7256CC98E003B93CA /* health-report.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "health-report.json"; sourceTree = "<group>"; };
+		5446C7FC256CD5DE003B93CA /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		544C0F5B255FE2E1001D0CA3 /* OnboardStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardStep.swift; sourceTree = "<group>"; };
 		544C0F60255FE86F001D0CA3 /* OnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardView.swift; sourceTree = "<group>"; };
 		544C0F65255FEAB0001D0CA3 /* AboutObeme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutObeme.swift; sourceTree = "<group>"; };
+		544D007B256EC02300BE743E /* eye.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = eye.json; sourceTree = "<group>"; };
+		544D007C256EC02400BE743E /* health-email-red.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "health-email-red.json"; sourceTree = "<group>"; };
+		544D007D256EC02400BE743E /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		544D007E256EC02400BE743E /* health-email-green.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "health-email-green.json"; sourceTree = "<group>"; };
+		544D007F256EC02400BE743E /* electro.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = electro.json; sourceTree = "<group>"; };
+		544D0080256EC02400BE743E /* health-app.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "health-app.json"; sourceTree = "<group>"; };
+		544D0081256EC02500BE743E /* health-report.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "health-report.json"; sourceTree = "<group>"; };
+		544D0082256EC02500BE743E /* pills-bottle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "pills-bottle.json"; sourceTree = "<group>"; };
+		544D0083256EC02500BE743E /* safe.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = safe.json; sourceTree = "<group>"; };
+		544D0084256EC02500BE743E /* telescope.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = telescope.json; sourceTree = "<group>"; };
 		54B50C07255C5870008DD49C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		54B50C0F255C5964008DD49C /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		54B50C14255C5C73008DD49C /* PetititonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetititonManager.swift; sourceTree = "<group>"; };
@@ -97,7 +117,16 @@
 		5446C7F6256CC959003B93CA /* Lottie */ = {
 			isa = PBXGroup;
 			children = (
-				5446C7F7256CC98E003B93CA /* health-report.json */,
+				544D007D256EC02400BE743E /* data.json */,
+				544D007F256EC02400BE743E /* electro.json */,
+				544D007B256EC02300BE743E /* eye.json */,
+				544D0080256EC02400BE743E /* health-app.json */,
+				544D007E256EC02400BE743E /* health-email-green.json */,
+				544D007C256EC02400BE743E /* health-email-red.json */,
+				544D0081256EC02500BE743E /* health-report.json */,
+				544D0082256EC02500BE743E /* pills-bottle.json */,
+				544D0083256EC02500BE743E /* safe.json */,
+				544D0084256EC02500BE743E /* telescope.json */,
 			);
 			path = Lottie;
 			sourceTree = "<group>";
@@ -110,6 +139,7 @@
 				544C0F60255FE86F001D0CA3 /* OnboardView.swift */,
 				544C0F65255FEAB0001D0CA3 /* AboutObeme.swift */,
 				54E9580F2566D70F00DF58A1 /* RegisterViewRoot.swift */,
+				5446C7FC256CD5DE003B93CA /* RootView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -311,9 +341,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				544D0086256EC02500BE743E /* health-email-red.json in Resources */,
 				54C605C6255C407D00003D70 /* Preview Assets.xcassets in Resources */,
-				5446C7F8256CC98E003B93CA /* health-report.json in Resources */,
+				544D008C256EC02500BE743E /* pills-bottle.json in Resources */,
+				544D008D256EC02500BE743E /* safe.json in Resources */,
+				544D0088256EC02500BE743E /* health-email-green.json in Resources */,
+				544D008A256EC02500BE743E /* health-app.json in Resources */,
+				544D008E256EC02500BE743E /* telescope.json in Resources */,
 				54C605C3255C407D00003D70 /* Assets.xcassets in Resources */,
+				544D0089256EC02500BE743E /* electro.json in Resources */,
+				544D0087256EC02500BE743E /* data.json in Resources */,
+				544D008B256EC02500BE743E /* health-report.json in Resources */,
+				544D0085256EC02500BE743E /* eye.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,6 +385,7 @@
 				54C605C1255C407B00003D70 /* LoginView.swift in Sources */,
 				544C0F61255FE86F001D0CA3 /* OnboardView.swift in Sources */,
 				54C605BF255C407B00003D70 /* VemeObemeApp.swift in Sources */,
+				5446C7FD256CD5DE003B93CA /* RootView.swift in Sources */,
 				54B50C08255C5870008DD49C /* User.swift in Sources */,
 				5446C7F2256CC63D003B93CA /* LottieView.swift in Sources */,
 				54D3C4BF255D90960087B2BF /* Utils.swift in Sources */,
