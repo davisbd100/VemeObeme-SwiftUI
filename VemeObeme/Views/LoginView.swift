@@ -12,6 +12,7 @@ struct LoginView: View {
     @State private var username: String = ""
     @State private var password: String = ""
     @State private var isEmailValid: Bool = false
+    @State private var isLogin: Bool = false
     
     
     var body: some View {
@@ -27,8 +28,6 @@ struct LoginView: View {
             
             TextField("Correo", text:$username, onEditingChanged: {_ in
                 isEmailValid = isValidEmail(email: username)
-                if (!isEmailValid){
-                }
             })
                 .foregroundColor(.green)
                 .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: 344, maxWidth: 370, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: 53, maxHeight: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
@@ -51,7 +50,17 @@ struct LoginView: View {
             
             Button(action: {
                 if (checkFields()){
-                    viewModel.tryLogin(username: username, password: password)
+                    let dispatch = DispatchGroup()
+                    isLogin.toggle()
+                    
+                    dispatch.enter()
+                    viewModel.tryLogin(username: username, password: password){_ in
+                        dispatch.leave()
+                    }
+                    dispatch.notify(queue: .main){
+                        isLogin.toggle()
+                    }
+                    
                 }
             }, label: {
                 Text("Iniciar Sesion")
@@ -61,6 +70,9 @@ struct LoginView: View {
             })
             .background(Color.blue)
             .cornerRadius(10.0)
+            .alert(isPresented: $isLogin, content: {
+                Alert(title: Text("jshdajsdhas"))
+            })
             
             Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
                 Text("Registrate")

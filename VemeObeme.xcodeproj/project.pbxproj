@@ -131,6 +131,13 @@
 			path = Lottie;
 			sourceTree = "<group>";
 		};
+		544D0092256EC91100BE743E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		54B50C04255C581F008DD49C /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -192,6 +199,7 @@
 		54C605BD255C407B00003D70 /* VemeObeme */ = {
 			isa = PBXGroup;
 			children = (
+				544D0092256EC91100BE743E /* Utils */,
 				54B50C19255C5C7A008DD49C /* Network */,
 				54B50C04255C581F008DD49C /* Views */,
 				54B50C06255C5845008DD49C /* ViewModels */,
