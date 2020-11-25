@@ -13,7 +13,7 @@ struct LoginView: View {
     @State private var password: String = ""
     @State private var isEmailValid: Bool = false
     @State private var isLogin: Bool = false
-    
+    @State private var errorMessages: String = "Login"
     
     var body: some View {
         VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 10, content: {
@@ -54,7 +54,7 @@ struct LoginView: View {
                     isLogin.toggle()
                     
                     dispatch.enter()
-                    viewModel.tryLogin(username: username, password: password){_ in
+                    viewModel.tryLogin(username: username, password: password){errorcode in
                         dispatch.leave()
                     }
                     dispatch.notify(queue: .main){
@@ -71,7 +71,7 @@ struct LoginView: View {
             .background(Color.blue)
             .cornerRadius(10.0)
             .alert(isPresented: $isLogin, content: {
-                Alert(title: Text("jshdajsdhas"))
+                Alert(title: Text(errorMessages), message: Text(errorMessages))
             })
             
             Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
