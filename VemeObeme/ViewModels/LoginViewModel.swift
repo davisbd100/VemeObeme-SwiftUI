@@ -30,6 +30,13 @@ class LoginViewModel: ObservableObject {
                 return isValidEmail(email: username)
             }.assign(to: \.isMailValid, on: self)
             .store(in: &cancellableSet)
+        $password
+            .receive(on: RunLoop.main)
+            .map{
+                password in
+                return true
+            }.assign(to: \.isPasswordValid, on: self)
+            .store(in: &cancellableSet)
     }
     
     func tryLogin(completion: @escaping(String) -> ()){
@@ -38,21 +45,26 @@ class LoginViewModel: ObservableObject {
         dispatch.enter()
         PetititonManager().tryLogin(username: username, password: password) {
             self.currentUser = $0
-            print(self.currentUser)
             if (self.currentUser.correo == nil){
-                self.isError = true
-                completion("No existe el usuario")
+                DispatchQueue.main.async {
+                    self.isError = true
+                }
+                completion("No existe el usuario: " + self.username)
             }else if(self.currentUser.jwt != ""){
-                self.isError = false
+                DispatchQueue.main.async {
+                    self.isError = false
+                }
                 completion("Ok")
             }else{
-                self.isError = true
+                DispatchQueue.main.async {
+                    self.isError = true
+                }
                 completion("Error no identificado")
             }
             dispatch.leave()
         }
         dispatch.notify(queue: .main){
-            print("Finished task")
+            print("Finished Task")
         }
     }
     

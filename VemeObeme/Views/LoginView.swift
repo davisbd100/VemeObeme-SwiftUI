@@ -10,7 +10,8 @@ import SwiftUI
 struct LoginView: View {
     @StateObject var viewModel = LoginViewModel()
     @State private var isLogin: Bool = false
-    @State private var errorMessages: String = "Login"
+    @State private var codeMessages: String = "Login"
+    @State var isErrorPresented: Bool = false
     
     
     var body: some View {
@@ -32,10 +33,12 @@ struct LoginView: View {
                     isLogin.toggle()
                     
                     dispatch.enter()
-                    viewModel.tryLogin(){errorcode in
+                    viewModel.tryLogin(){code in
+                        codeMessages = code
                         dispatch.leave()
                     }
                     dispatch.notify(queue: .main){
+                        self.isErrorPresented = viewModel.isError
                         isLogin.toggle()
                     }
                 }, label: {
@@ -46,9 +49,9 @@ struct LoginView: View {
                 })
                 .background(Color.blue)
                 .cornerRadius(10.0)
-                .alert(isPresented: $viewModel.isError, content: {
-                    Alert(title: Text("Error"), message: Text(errorMessages), dismissButton: .default(Text("Cerrar"), action: {
-                        viewModel.isError.toggle()
+                .alert(isPresented: $isErrorPresented, content: {
+                    Alert(title: Text("Error"), message: Text(codeMessages), dismissButton: .default(Text("Cerrar"), action: {
+                        isErrorPresented = false
                     }))
                 })
                 
