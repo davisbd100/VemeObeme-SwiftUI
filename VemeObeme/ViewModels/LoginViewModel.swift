@@ -6,12 +6,32 @@
 //
 
 import Foundation
-import SwiftUI
+import Combine
 
 class LoginViewModel: ObservableObject {
+    
+    @Published var username = ""
+    @Published var password = ""
+
+    @Published var isMailValid = false
+    @Published var isPasswordValid = false
+    
+    private var cancellableSet: Set<AnyCancellable> = []
+    
     private var currentUser = User()
     
-    func tryLogin(username: String, password: String, completion: @escaping(String) -> ()){
+    
+    init() {
+        $username
+            .receive(on: RunLoop.main)
+            .map{
+                username in
+                return isValidEmail(email: username)
+            }.assign(to: \.isMailValid, on: self)
+            .store(in: &cancellableSet)
+    }
+    
+    func tryLogin(completion: @escaping(String) -> ()){
         let dispatch = DispatchGroup()
         
         dispatch.enter()
@@ -19,16 +39,26 @@ class LoginViewModel: ObservableObject {
             self.currentUser = $0
             print(self.currentUser)
             if (self.currentUser.jwt == nil){
-                completion("Errores varios")
-            }else if(self.currentUser.jwt == ""){
-                completion("Errores varios.null")
+                completion("No existe el usuario")
+            }else if(self.currentUser.jwt != ""){
+                completion("Ok")
             }else{
-                completion(self.currentUser.correo!)
+                completion("Error no identificado")
             }
             dispatch.leave()
         }
         dispatch.notify(queue: .main){
             print("Finished task")
         }
+    }
+    
+    func checkFields() -> Bool {
+        var validation = false
+        if (username.isEmpty || password.isEmpty) {
+            validation = false
+        }else{
+            validation = !isValidEmail(email: username)
+        }
+        return validation
     }
 }
