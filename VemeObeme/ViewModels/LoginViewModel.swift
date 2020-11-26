@@ -15,6 +15,7 @@ class LoginViewModel: ObservableObject {
 
     @Published var isMailValid = false
     @Published var isPasswordValid = false
+    @Published var isError = false
     
     private var cancellableSet: Set<AnyCancellable> = []
     
@@ -38,11 +39,14 @@ class LoginViewModel: ObservableObject {
         PetititonManager().tryLogin(username: username, password: password) {
             self.currentUser = $0
             print(self.currentUser)
-            if (self.currentUser.jwt == nil){
+            if (self.currentUser.correo == nil){
+                self.isError = true
                 completion("No existe el usuario")
             }else if(self.currentUser.jwt != ""){
+                self.isError = false
                 completion("Ok")
             }else{
+                self.isError = true
                 completion("Error no identificado")
             }
             dispatch.leave()

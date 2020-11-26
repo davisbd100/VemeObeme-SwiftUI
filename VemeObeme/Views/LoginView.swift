@@ -46,7 +46,11 @@ struct LoginView: View {
                 })
                 .background(Color.blue)
                 .cornerRadius(10.0)
-                
+                .alert(isPresented: $viewModel.isError, content: {
+                    Alert(title: Text("Error"), message: Text(errorMessages), dismissButton: .default(Text("Cerrar"), action: {
+                        viewModel.isError.toggle()
+                    }))
+                })
                 
                 
                 Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
