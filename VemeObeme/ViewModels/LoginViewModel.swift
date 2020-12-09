@@ -34,7 +34,7 @@ class LoginViewModel: ObservableObject {
             .receive(on: RunLoop.main)
             .map{
                 password in
-                return true
+                return isValidPasword(pass: password)
             }.assign(to: \.isPasswordValid, on: self)
             .store(in: &cancellableSet)
     }

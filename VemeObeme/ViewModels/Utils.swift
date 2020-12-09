@@ -16,8 +16,12 @@ func isValidEmail(email: String) -> Bool {
     return emailPredicate.evaluate(with: email)
 }
 
-func isvalidPasword(password: String) -> Bool {
-    if (true){
-        return true
+func isValidPasword(pass: String) -> Bool {
+    var result = false
+    if (pass.isEmpty){
+        result = false
+    }else{
+        result = true
     }
+    return result
 }

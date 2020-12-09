@@ -18,7 +18,10 @@ struct LoginView: View {
         ZStack(alignment: Alignment(horizontal: .center, vertical: .center), content: {
             VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 10, content: {
                 Image("LogoOBEME")
-                    .frame(width: 216, height: 98)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 250, height: 130)
+                    
                 
                 Text("Iniciar Sesión")
                     .foregroundColor(.green)
@@ -47,13 +50,13 @@ struct LoginView: View {
                         .font(.custom("Avenir Heavy", size: 15))
                         .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: 344, maxWidth: 370, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: 53, maxHeight: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 })
-                .background(Color.blue)
+                .background((!viewModel.isMailValid || !viewModel.isPasswordValid) ? Color.gray: Color.blue)
                 .cornerRadius(10.0)
                 .alert(isPresented: $isErrorPresented, content: {
                     Alert(title: Text("Error"), message: Text(codeMessages), dismissButton: .default(Text("Cerrar"), action: {
                         isErrorPresented = false
                     }))
-                })
+                }).disabled(!viewModel.isMailValid || !viewModel.isPasswordValid)
                 
                 
                 Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
