@@ -15,9 +15,23 @@ struct RegisterView: View {
     
     var body: some View {
         VStack(alignment: .center, spacing: /*@START_MENU_TOKEN@*/nil/*@END_MENU_TOKEN@*/, content: {
+            HStack{
+                Button(action: {
+                    if (currentTab < 1){
+                        
+                    }else{
+                        currentTab -= 1
+                    }
+                }, label: {
+                    Image(systemName: "arrow.left.circle")
+                        .foregroundColor(.white)
+                })
+                Text("Registro")
+                    .font(.custom("Avenir Heavy", size: 24))
+                    .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
+                    .foregroundColor(.white)
+            }.background(Color.blue)
             if (currentTab == 5){
-                Text("Current Tab \(currentTab)")
-                Text("-----------------------")
                 ScrollView {
                     Text("Aviso de privacidad")
                     customParagraph(title: "", content: "La Universidad Veracruzana,  con  domicilio  en  Circuito  Universitario  Gonzalo  Aguirre Beltrán S/Universitaria,  Xalapa  Enríquez,  Veracruz  con  código  Postal  91090,  es  el  responsable  del tratamiento  de  los  datos  personales  que  nos  proporcione,  los  cuales  serán  protegidos  conforme  a  lo dispuesto  por  la  Ley  316  de  Protección  de  Datos  Personales  en  Posesión  de  Sujetos  Obligados  para  el Estado de Veracruz, y demás normatividad que resulte aplicable. ")
@@ -43,8 +57,6 @@ struct RegisterView: View {
                 .background(!isTermsAndConditionsAccepted ? Color.gray: .yellow)
                 .cornerRadius(10.0)
             }else{
-                Text("Current Tab \(currentTab)")
-                Text("-----------------------")
                 TabView(selection: $currentTab,
                         content:  {
                             FirstRegisterView(viewModel: viewModel)
@@ -58,9 +70,6 @@ struct RegisterView: View {
                                 .gesture(isSwipeDisabled ? DragGesture() : nil)
                             FourthRegisterView(viewModel: viewModel)
                                 .tag(4)
-                                .gesture(isSwipeDisabled ? DragGesture() : nil)
-                            FifthRegisterView(viewModel: viewModel)
-                                .tag(5)
                                 .gesture(isSwipeDisabled ? DragGesture() : nil)
                         })
                     .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
@@ -91,10 +100,9 @@ struct FirstRegisterView: View {
                     .padding(.leading)
                 customDropDown(selectedValue: $viewModel.gender, values: ["Masculino", "Femenino", "Otro"])
                     .zIndex(/*@START_MENU_TOKEN@*/1.0/*@END_MENU_TOKEN@*/)
-                customDatePicker(value: $viewModel.birthDate, title: "Fecha de nacimiento")
+                customDatePicker(value: $viewModel.birthDate, title: "Fecha de nacimiento", maxDate: Calendar.current.date(byAdding: .year, value: -19, to: Date())!, minDate: Calendar.current.date(byAdding: .year, value: -100, to: Date())!)
                 Spacer()
             }
-            .padding(.top)
         }
     }
 }
@@ -121,9 +129,8 @@ struct ThirdRegisterView: View {
             customDropDown(selectedValue: $viewModel.healthInstitution, values: ["UV1", "UV2", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3"])
             customDropDown(selectedValue: $viewModel.stayType, values: ["UV1", "UV2", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3"])
             customDropDown(selectedValue: $viewModel.especiality, values: ["UV1", "UV2", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3"])
-            customDatePicker(value: $viewModel.startDate, title: "Fecha de inicio")
-            customDatePicker(value: $viewModel.startDate, title: "Fecha de fin")
-            
+            customDatePicker(value: $viewModel.startDate, title: "Fecha de inicio", maxDate: Calendar.current.date(byAdding: .month, value:1, to: Date())!, minDate: Calendar.current.date(byAdding: .month, value: -6, to: Date())!)
+            customDatePicker(value: $viewModel.endDate, title: "Fecha de fin", maxDate: Calendar.current.date(byAdding: .year, value: 100, to: Date())!, minDate: Calendar.current.date(byAdding: .month, value: 1, to: Date())!)
             Spacer()
         }
     }
@@ -136,23 +143,6 @@ struct FourthRegisterView: View {
             ValidatorField(value: $viewModel.username, placeholder: "Correo", keyType: .emailAddress, borderlineColor: .black)
             ValidatorSecureField(value: $viewModel.password, placeholder: "Contraseña")
             ValidatorSecureField(value: $viewModel.confirmPassword, placeholder: "Confirmar Contraseña")
-            Spacer()
-        }
-    }
-}
-struct FifthRegisterView: View {
-    @StateObject var viewModel: RegisterViewModel
-    
-    var body: some View {
-        VStack(alignment: .leading){
-            Text("Datos de la institución académica")
-                .padding(.leading)
-            customDropDown(selectedValue: $viewModel.healthInstitution, values: ["UV1", "UV2", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3"])
-            customDropDown(selectedValue: $viewModel.stayType, values: ["UV1", "UV2", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3"])
-            customDropDown(selectedValue: $viewModel.especiality, values: ["UV1", "UV2", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3"])
-            customDatePicker(value: $viewModel.startDate, title: "Fecha de inicio")
-            customDatePicker(value: $viewModel.startDate, title: "Fecha de fin")
-            
             Spacer()
         }
     }
@@ -183,6 +173,8 @@ struct RadioButtonField: View {
 struct customDatePicker: View {
     @Binding var value: Date
     var title: String
+    var maxDate: Date
+    var minDate: Date
     @State var isShown: Bool = false
     
     
@@ -193,7 +185,6 @@ struct customDatePicker: View {
         }(
     )
     var body: some View{
-            let max = Calendar.current.date(byAdding: .year, value: -19, to: Date())!
             ZStack{
                 Button(action: {
                     isShown.toggle()
@@ -215,7 +206,7 @@ struct customDatePicker: View {
                 
                 if(isShown){
                     VStack{
-                        DatePicker("Date", selection:$value, in: ...max, displayedComponents: .date)
+                        DatePicker("Date", selection:$value, in: minDate...maxDate, displayedComponents: .date)
                             .datePickerStyle(GraphicalDatePickerStyle())
                             .background(Color.white)
                             .labelsHidden()
@@ -237,13 +228,12 @@ struct customDropDown: View {
     @State var isExpanded = false
     
     var body: some View{
-        HStack{
+        VStack{
             DisclosureGroup("\(selectedValue)", isExpanded: $isExpanded){
                 ScrollView {
                     VStack {
                         ForEach(values, id: \.self) { value in
                             Text("\(value)")
-                                .frame(maxWidth: .infinity)
                                 .font(.custom("Avenir Book", size: 15))
                                 .padding(.all)
                                 .onTapGesture {
@@ -254,7 +244,7 @@ struct customDropDown: View {
                                 }
                         }
                     }
-                }
+                }.frame(height:170)
             }
             .onTapGesture {
                 withAnimation{

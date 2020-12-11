@@ -23,6 +23,15 @@ class RegisterViewModel: ObservableObject {
     @Published var password = ""
     @Published var confirmPassword = ""
 
+    @Published var isGenderValid = false
+    @Published var isBirthDateValid = false
+    @Published var isCountryValid = false
+    @Published var isUniversityValid = false
+    @Published var isHealthInstitutionValid = false
+    @Published var isStayTypeValid = false
+    @Published var isEspecialtyValid = false
+    @Published var isStartDateValid = false
+    @Published var isEndDateValid = false
     @Published var isMailValid = false
     @Published var isPasswordValid = false
     @Published var isError = false
