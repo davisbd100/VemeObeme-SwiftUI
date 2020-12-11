@@ -25,3 +25,11 @@ func isValidPasword(pass: String) -> Bool {
     }
     return result
 }
+
+func formatDate(date: Date) -> Date{
+    print(date)
+    let formatter = DateFormatter()
+    formatter.dateFormat = "E, dd MMM yyyy"
+    let formatedDate = formatter.date(from: "\(date)")!
+    return formatedDate
+}
