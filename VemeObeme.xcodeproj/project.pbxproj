@@ -10,6 +10,7 @@
 		5446C7EA256CC3E9003B93CA /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 5446C7E9256CC3E9003B93CA /* Lottie */; };
 		5446C7F2256CC63D003B93CA /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5446C7F1256CC63D003B93CA /* LottieView.swift */; };
 		5446C7FD256CD5DE003B93CA /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5446C7FC256CD5DE003B93CA /* RootView.swift */; };
+		544BF7442583C4750071B2DE /* CustomProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544BF7432583C4750071B2DE /* CustomProgressBarView.swift */; };
 		544C0F5C255FE2E1001D0CA3 /* OnboardStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544C0F5B255FE2E1001D0CA3 /* OnboardStep.swift */; };
 		544C0F61255FE86F001D0CA3 /* OnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544C0F60255FE86F001D0CA3 /* OnboardView.swift */; };
 		544C0F66255FEAB0001D0CA3 /* AboutObeme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544C0F65255FEAB0001D0CA3 /* AboutObeme.swift */; };
@@ -57,6 +58,7 @@
 /* Begin PBXFileReference section */
 		5446C7F1256CC63D003B93CA /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		5446C7FC256CD5DE003B93CA /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		544BF7432583C4750071B2DE /* CustomProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressBarView.swift; sourceTree = "<group>"; };
 		544C0F5B255FE2E1001D0CA3 /* OnboardStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardStep.swift; sourceTree = "<group>"; };
 		544C0F60255FE86F001D0CA3 /* OnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardView.swift; sourceTree = "<group>"; };
 		544C0F65255FEAB0001D0CA3 /* AboutObeme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutObeme.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 		544D0092256EC91100BE743E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				544BF7432583C4750071B2DE /* CustomProgressBarView.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -395,6 +398,7 @@
 				54B50C10255C5964008DD49C /* LoginViewModel.swift in Sources */,
 				54C605C1255C407B00003D70 /* LoginView.swift in Sources */,
 				544C0F61255FE86F001D0CA3 /* OnboardView.swift in Sources */,
+				544BF7442583C4750071B2DE /* CustomProgressBarView.swift in Sources */,
 				54C605BF255C407B00003D70 /* VemeObemeApp.swift in Sources */,
 				54D1C62525816AEE00E7F9C1 /* RegisterViewModel.swift in Sources */,
 				5446C7FD256CD5DE003B93CA /* RootView.swift in Sources */,

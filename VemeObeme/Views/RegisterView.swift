@@ -12,13 +12,14 @@ struct RegisterView: View {
     @State var currentTab = 1
     @State var isSwipeDisabled = true
     @State var isTermsAndConditionsAccepted = false
+    @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     
     var body: some View {
         VStack(alignment: .center, spacing: /*@START_MENU_TOKEN@*/nil/*@END_MENU_TOKEN@*/, content: {
             HStack{
                 Button(action: {
-                    if (currentTab < 1){
-                        
+                    if (currentTab <= 1){
+                        self.mode.wrappedValue.dismiss()
                     }else{
                         currentTab -= 1
                     }
@@ -31,6 +32,7 @@ struct RegisterView: View {
                     .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
                     .foregroundColor(.white)
             }.background(Color.blue)
+        CustomProgressBarView(value: currentTab, maximum: 5)
             if (currentTab == 5){
                 ScrollView {
                     Text("Aviso de privacidad")
@@ -44,10 +46,11 @@ struct RegisterView: View {
                     customParagraph(title: "", content: "En caso  de solicitar  la rectificación,  adicionalmente deberá  indicar  las modificaciones a realizarse  y aportar la documentación  oficial  necesaria  que  sustente  su  petición.  En  el  derecho  de  cancelación  debe  expresar  las causas  que  motivan  la  eliminación.  Y  en  el  derecho  de  oposición  debe  señalar  los  motivos  que  justifican  se finalice  el tratamiento de los datos personales  y el daño o perjuicio que le causaría, o bien, si  la oposición es parcial,  debe  indicar  las  finalidades  específicas  con  las  que  se  no  está  de  acuerdo,  siempre  que  no  sea  un requisito obligatorio. La Coordinación de Transparencia responderá en el domicilio o medio que el titular de los datos personales designe en su solicitud, en un plazo de 15 días hábiles, que puede ser ampliado por 10 días hábiles más previa notificación. La respuesta indicará si la solicitud de acceso, rectificación, cancelación u oposición es procedente y, en su caso, hará efectivo dentro de los 15 días hábiles siguientes a la fecha en que comunique la respuesta. ")
                     customParagraph(title: "Datos de la Unidad de Transparencia", content: "Domicilio: Calle Veracruz # 46 Depto. 5, Fracc. Pomona, C.P.91040. \n Teléfono: (228) 841-59-20, 818-78-91 \n Correo electrónico institucional: transparencia@uv.mx")
                 }
+                .padding(.leading)
                 RadioButtonField(label: "Acepto los términos y condiciones", isMarked: $isTermsAndConditionsAccepted)
                     .padding()
                 Button(action: {
-                    
+                        self.mode.wrappedValue.dismiss()
                 }, label: {
                     Text("Continuar")
                         .foregroundColor(.white)
@@ -79,13 +82,14 @@ struct RegisterView: View {
                     Text("Siguiente")
                         .foregroundColor(.white)
                         .font(.custom("Avenir Heavy", size: 15))
-                        .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: 344, maxWidth: 370, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: 53, maxHeight: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        .frame(minWidth: 0/*@END_MENU_TOKEN@*/, idealWidth: 344, maxWidth: 370, minHeight: 0, idealHeight: 53, maxHeight: 60, alignment: /*@START_MENU_TOKEN@*/.center)
                 })
                 .background(Color.blue)
                 .cornerRadius(10.0)
             }
 
         })
+        .navigationBarHidden(true)
     }
 }
 
@@ -113,8 +117,8 @@ struct SecondRegisterView: View {
         VStack(alignment: .leading){
             Text("Datos de la institución académica")
                 .padding(.leading)
-            customDropDown(selectedValue: $viewModel.country, values: ["UV1", "UV2", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3"])
-            customDropDown(selectedValue: $viewModel.university, values: ["UV1", "UV2", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3"])
+            customDropDown(selectedValue: $viewModel.country, values: ["México"])
+            customDropDown(selectedValue: $viewModel.university, values: ["Universidad Veracruzana"])
             Spacer()
         }
     }
@@ -124,11 +128,11 @@ struct ThirdRegisterView: View {
     
     var body: some View {
         VStack(alignment: .leading){
-            Text("Datos de la institución académica")
+            Text("Datos de la unidad médica")
                 .padding(.leading)
-            customDropDown(selectedValue: $viewModel.healthInstitution, values: ["UV1", "UV2", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3"])
-            customDropDown(selectedValue: $viewModel.stayType, values: ["UV1", "UV2", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3"])
-            customDropDown(selectedValue: $viewModel.especiality, values: ["UV1", "UV2", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3", "UV3"])
+            customDropDown(selectedValue: $viewModel.healthInstitution, values: ["IMSS H.G.Z", "ISSTE", "CAE", "Hospital General Misantla"])
+            customDropDown(selectedValue: $viewModel.stayType, values: ["Internado", "Servicio Social", "Residencia"])
+            customDropDown(selectedValue: $viewModel.especiality, values: ["Cardiologia", "Neurologia"])
             customDatePicker(value: $viewModel.startDate, title: "Fecha de inicio", maxDate: Calendar.current.date(byAdding: .month, value:1, to: Date())!, minDate: Calendar.current.date(byAdding: .month, value: -6, to: Date())!)
             customDatePicker(value: $viewModel.endDate, title: "Fecha de fin", maxDate: Calendar.current.date(byAdding: .year, value: 100, to: Date())!, minDate: Calendar.current.date(byAdding: .month, value: 1, to: Date())!)
             Spacer()
@@ -139,6 +143,7 @@ struct FourthRegisterView: View {
     @StateObject var viewModel: RegisterViewModel
     
     var body: some View {
+        Text("Datos de la cuenta")
         VStack(alignment: .leading){
             ValidatorField(value: $viewModel.username, placeholder: "Correo", keyType: .emailAddress, borderlineColor: .black)
             ValidatorSecureField(value: $viewModel.password, placeholder: "Contraseña")
@@ -209,7 +214,7 @@ struct customDatePicker: View {
                         DatePicker("Date", selection:$value, in: minDate...maxDate, displayedComponents: .date)
                             .datePickerStyle(GraphicalDatePickerStyle())
                             .background(Color.white)
-                            .labelsHidden()
+                            .frame(maxWidth: 370)
                         Button(action: {
                             isShown.toggle()
                         }, label: {
@@ -226,6 +231,7 @@ struct customDropDown: View {
     @Binding var selectedValue : String
     var values: [String]
     @State var isExpanded = false
+    @State var isFocused = false
     
     var body: some View{
         VStack{
@@ -234,6 +240,7 @@ struct customDropDown: View {
                     VStack {
                         ForEach(values, id: \.self) { value in
                             Text("\(value)")
+                                .frame(maxWidth: .infinity)
                                 .font(.custom("Avenir Book", size: 15))
                                 .padding(.all)
                                 .onTapGesture {
@@ -242,9 +249,11 @@ struct customDropDown: View {
                                         self.isExpanded.toggle()
                                     }
                                 }
+                                .onHover(perform: { hovering in
+                                })
                         }
                     }
-                }.frame(height:170)
+                }.frame(minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: 100, maxHeight: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
             }
             .onTapGesture {
                 withAnimation{
@@ -253,9 +262,9 @@ struct customDropDown: View {
             }
             .font(.custom("Avenir Book", size: 15)).padding()
             .background(Color.white)
-            .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: 344, maxWidth: 370, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             .addBorder(Color.black, width: 2, cornerRadius: 20)
         }
+        .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: 344, maxWidth: 370, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
     }
 }
 struct customParagraph: View {
@@ -281,6 +290,10 @@ extension View {
 }
 struct RegisterView_Previews: PreviewProvider {
     static var previews: some View {
-        RegisterView()
+        Group {
+            RegisterView()
+                .previewDevice("iPhone 8")
+            RegisterView()
+        }
     }
 }
