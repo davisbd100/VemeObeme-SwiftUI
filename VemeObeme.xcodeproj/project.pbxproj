@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5409C9C725BA35BF007CF221 /* ObservationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5409C9C625BA35BF007CF221 /* ObservationButton.swift */; };
 		5446C7EA256CC3E9003B93CA /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 5446C7E9256CC3E9003B93CA /* Lottie */; };
 		5446C7F2256CC63D003B93CA /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5446C7F1256CC63D003B93CA /* LottieView.swift */; };
 		5446C7FD256CD5DE003B93CA /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5446C7FC256CD5DE003B93CA /* RootView.swift */; };
@@ -63,6 +64,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5409C9C625BA35BF007CF221 /* ObservationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservationButton.swift; sourceTree = "<group>"; };
 		5446C7F1256CC63D003B93CA /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		5446C7FC256CD5DE003B93CA /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		544BF7432583C4750071B2DE /* CustomProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressBarView.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				547E8A6D25BA30BC005C7FE0 /* CustomRadioButtonField.swift */,
 				547E8A7225BA313E005C7FE0 /* ValidatorField.swift */,
 				547E8A7725BA31DE005C7FE0 /* ValidatorSecureField.swift */,
+				5409C9C625BA35BF007CF221 /* ObservationButton.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 				547E8A8025BA3385005C7FE0 /* WelcomeView.swift in Sources */,
 				54D1C62525816AEE00E7F9C1 /* RegisterViewModel.swift in Sources */,
 				5446C7FD256CD5DE003B93CA /* RootView.swift in Sources */,
+				5409C9C725BA35BF007CF221 /* ObservationButton.swift in Sources */,
 				547E8A7825BA31DE005C7FE0 /* ValidatorSecureField.swift in Sources */,
 				547E8A5C25BA2FC2005C7FE0 /* CustomParagraph.swift in Sources */,
 				54B50C08255C5870008DD49C /* User.swift in Sources */,
