@@ -11,22 +11,24 @@ struct ObservationButton: View {
     @State var logo: String
     @State var barColor: Color
     @State var message: String
-    @State var action: ()->Void
+    @State var destinationView: AnyView
     var body: some View {
         ZStack(alignment: .leading){
+            NavigationLink(
+                destination: destinationView,
+                label: {
+                        Text(message)
+                            .foregroundColor(.black)
+                            .font(.custom("Avenir Medium", size: 16))
+                            .padding(.leading)
+                            .multilineTextAlignment(.leading)
 
-            Button(action: action, label: {
-                    Text(message)
-                        .foregroundColor(.black)
-                        .font(.custom("Avenir Medium", size: 16))
-                        .padding(.leading)
-                        .multilineTextAlignment(.leading)
-
-            })
-            .frame(minWidth: 320, idealWidth: 336, maxWidth: 370, minHeight: 40, idealHeight: 65, maxHeight: 60)
-            .background(Color.white)
-            .padding(.leading, 5.0)
-            .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/)
+                })
+                .frame(minWidth: 320, idealWidth: 336, maxWidth: 370, minHeight: 40, idealHeight: 65, maxHeight: 60)
+                .background(Color.white)
+                .padding(.leading, 5.0)
+                .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/)
+            Spacer()
             Image(logo)
                 .resizable()
                 .scaledToFit()
@@ -37,6 +39,6 @@ struct ObservationButton: View {
 
 struct ObservationButton_Previews: PreviewProvider {
     static var previews: some View {
-        ObservationButton(logo: "ic_reporte_trasgresion", barColor: .green, message: "Observacion Positiva", action: {})
+        ObservationButton(logo: "ic_reporte_trasgresion", barColor: .green, message: "Observacion Positiva", destination: "hola")
     }
 }
