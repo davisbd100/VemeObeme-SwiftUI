@@ -15,7 +15,20 @@ struct WelcomeRootView: View {
                     Image(systemName: "house.fill")
                     Text("Inicio")
                 }
+            
+            WelcomeView()
+                .tabItem {
+                    Image(systemName: "doc.text.fill")
+                    Text("Reportes")
+                }
+            
+            WelcomeView()
+                .tabItem {
+                    Image(systemName: "person.fill")
+                    Text("Información")
+                }
         }
+        .frame(alignment: .top)
     }
 }
 

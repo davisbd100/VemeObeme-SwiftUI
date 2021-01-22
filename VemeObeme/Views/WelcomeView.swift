@@ -14,7 +14,7 @@ struct WelcomeView: View {
             Image("LogoOBEME")
                 .resizable()
                 .scaledToFit()
-                .frame(width: 180, height: 82)
+                .frame(minWidth: 150, idealWidth: 180, maxWidth: 300, minHeight: 70, idealHeight: 82, maxHeight: 160, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             Text("Bienvenido " + name)
                 .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: 302, maxWidth: 400, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: 31, maxHeight: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 .font(.custom("Avenir Heavy", size: 20))
@@ -23,6 +23,7 @@ struct WelcomeView: View {
             ObservationButton(logo: "ic_reporte_positivo", barColor: .green, message: "Observación positiva", action: {})
             ObservationButton(logo: "ic_reporte_supervision", barColor: .yellow, message: "Ausencia de supervisión médica", action: {})
             ObservationButton(logo: "ic_reporte_trasgresion", barColor: .red, message: "Transgresión de derechos", action: {})
+            Spacer()
         }
     }
 }
