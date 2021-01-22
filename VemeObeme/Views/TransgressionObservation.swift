@@ -13,43 +13,44 @@ struct TransgressionObservation: View {
             Text("¿Qué tipo de falta a derechos sufriste?")
                 .font(.custom("Avenir Mediym", size: 18))
             padding()
-            HStack{
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                    VStack{
-                        Image("ic_castigos")
-                        Text("Castigos")
-                    }
-                })
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                    VStack{
-                        Image("ic_acoso")
-                        Text("Acoso Sexual")
-                    }
-                })
+            Group{
+                HStack{
+                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                        VStack{
+                            Image("ic_castigos")
+                            Text("Castigos")
+                        }
+                    })
+                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                        VStack{
+                            Image("ic_acoso")
+                            Text("Acoso Sexual")
+                        }
+                    })
+                }
+                HStack{
+                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                        VStack{
+                            Image("ic_violencia_verbal")
+                            Text("Violencia verbal")
+                        }
+                    })
+                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                        VStack{
+                            Image("ic_violencia_fisica")
+                            Text("Violencia física")
+                        }
+                    })
+                }
+                HStack{
+                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                        VStack{
+                            Image("ic_otro")
+                            Text("Otros")
+                        }
+                    })
+                }
             }
-            HStack{
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                    VStack{
-                        Image("ic_violencia_verbal")
-                        Text("Violencia verbal")
-                    }
-                })
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                    VStack{
-                        Image("ic_violencia_fisica")
-                        Text("Violencia física")
-                    }
-                })
-            }
-            HStack{
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                    VStack{
-                        Image("ic_otros")
-                        Text("Otros")
-                    }
-                })
-            }
-            Spacer()
         }
         
     }
