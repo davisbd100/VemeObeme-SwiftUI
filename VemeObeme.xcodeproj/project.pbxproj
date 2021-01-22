@@ -18,6 +18,8 @@
 		542F815725BAA94800EC9B05 /* TransgressionObservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542F815625BAA94800EC9B05 /* TransgressionObservation.swift */; };
 		544313D225BAAE5800103E0A /* CheckInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544313D125BAAE5800103E0A /* CheckInfoView.swift */; };
 		54445BBF25BB1D4600E90F48 /* CustomUserDefaultSave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54445BBE25BB1D4600E90F48 /* CustomUserDefaultSave.swift */; };
+		54445BC425BB245600E90F48 /* University.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54445BC325BB245600E90F48 /* University.swift */; };
+		54445BC925BB249700E90F48 /* HealthUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54445BC825BB249700E90F48 /* HealthUnit.swift */; };
 		5446C7EA256CC3E9003B93CA /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 5446C7E9256CC3E9003B93CA /* Lottie */; };
 		5446C7F2256CC63D003B93CA /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5446C7F1256CC63D003B93CA /* LottieView.swift */; };
 		5446C7FD256CD5DE003B93CA /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5446C7FC256CD5DE003B93CA /* RootView.swift */; };
@@ -85,6 +87,8 @@
 		542F815625BAA94800EC9B05 /* TransgressionObservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransgressionObservation.swift; sourceTree = "<group>"; };
 		544313D125BAAE5800103E0A /* CheckInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInfoView.swift; sourceTree = "<group>"; };
 		54445BBE25BB1D4600E90F48 /* CustomUserDefaultSave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUserDefaultSave.swift; sourceTree = "<group>"; };
+		54445BC325BB245600E90F48 /* University.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = University.swift; sourceTree = "<group>"; };
+		54445BC825BB249700E90F48 /* HealthUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthUnit.swift; sourceTree = "<group>"; };
 		5446C7F1256CC63D003B93CA /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		5446C7FC256CD5DE003B93CA /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		544BF7432583C4750071B2DE /* CustomProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressBarView.swift; sourceTree = "<group>"; };
@@ -214,6 +218,8 @@
 			isa = PBXGroup;
 			children = (
 				54B50C07255C5870008DD49C /* User.swift */,
+				54445BC325BB245600E90F48 /* University.swift */,
+				54445BC825BB249700E90F48 /* HealthUnit.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -453,10 +459,12 @@
 				54B50C15255C5C73008DD49C /* PetititonManager.swift in Sources */,
 				544C0F66255FEAB0001D0CA3 /* AboutObeme.swift in Sources */,
 				54B50C10255C5964008DD49C /* LoginViewModel.swift in Sources */,
+				54445BC425BB245600E90F48 /* University.swift in Sources */,
 				5409C9CC25BA9013007CF221 /* HomeRootView.swift in Sources */,
 				542F814925BAA2AA00EC9B05 /* LoadingScreenCompleteView.swift in Sources */,
 				5409C9D925BA97C4007CF221 /* SimpleCheckbox.swift in Sources */,
 				54C605C1255C407B00003D70 /* LoginView.swift in Sources */,
+				54445BC925BB249700E90F48 /* HealthUnit.swift in Sources */,
 				544C0F61255FE86F001D0CA3 /* OnboardView.swift in Sources */,
 				547E8A6125BA3031005C7FE0 /* CustomDropDown.swift in Sources */,
 				544BF7442583C4750071B2DE /* CustomProgressBarView.swift in Sources */,
