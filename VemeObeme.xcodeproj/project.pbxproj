@@ -14,6 +14,8 @@
 		542F813F25BA9E9F00EC9B05 /* GenericMakeObservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542F813E25BA9E9F00EC9B05 /* GenericMakeObservation.swift */; };
 		542F814425BAA18C00EC9B05 /* LoadingScreenObservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542F814325BAA18C00EC9B05 /* LoadingScreenObservation.swift */; };
 		542F814925BAA2AA00EC9B05 /* LoadingScreenCompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542F814825BAA2AA00EC9B05 /* LoadingScreenCompleteView.swift */; };
+		542F814F25BAA65B00EC9B05 /* SupervisionObservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542F814E25BAA65B00EC9B05 /* SupervisionObservationView.swift */; };
+		542F815725BAA94800EC9B05 /* TransgressionObservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542F815625BAA94800EC9B05 /* TransgressionObservation.swift */; };
 		5446C7EA256CC3E9003B93CA /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 5446C7E9256CC3E9003B93CA /* Lottie */; };
 		5446C7F2256CC63D003B93CA /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5446C7F1256CC63D003B93CA /* LottieView.swift */; };
 		5446C7FD256CD5DE003B93CA /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5446C7FC256CD5DE003B93CA /* RootView.swift */; };
@@ -77,6 +79,8 @@
 		542F813E25BA9E9F00EC9B05 /* GenericMakeObservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericMakeObservation.swift; sourceTree = "<group>"; };
 		542F814325BAA18C00EC9B05 /* LoadingScreenObservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreenObservation.swift; sourceTree = "<group>"; };
 		542F814825BAA2AA00EC9B05 /* LoadingScreenCompleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreenCompleteView.swift; sourceTree = "<group>"; };
+		542F814E25BAA65B00EC9B05 /* SupervisionObservationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupervisionObservationView.swift; sourceTree = "<group>"; };
+		542F815625BAA94800EC9B05 /* TransgressionObservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransgressionObservation.swift; sourceTree = "<group>"; };
 		5446C7F1256CC63D003B93CA /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		5446C7FC256CD5DE003B93CA /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		544BF7432583C4750071B2DE /* CustomProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressBarView.swift; sourceTree = "<group>"; };
@@ -194,6 +198,8 @@
 				542F813E25BA9E9F00EC9B05 /* GenericMakeObservation.swift */,
 				542F814325BAA18C00EC9B05 /* LoadingScreenObservation.swift */,
 				542F814825BAA2AA00EC9B05 /* LoadingScreenCompleteView.swift */,
+				542F814E25BAA65B00EC9B05 /* SupervisionObservationView.swift */,
+				542F815625BAA94800EC9B05 /* TransgressionObservation.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -455,12 +461,14 @@
 				5446C7FD256CD5DE003B93CA /* RootView.swift in Sources */,
 				5409C9C725BA35BF007CF221 /* ObservationButton.swift in Sources */,
 				5409C9D425BA9449007CF221 /* PositiveObservationView.swift in Sources */,
+				542F814F25BAA65B00EC9B05 /* SupervisionObservationView.swift in Sources */,
 				547E8A7825BA31DE005C7FE0 /* ValidatorSecureField.swift in Sources */,
 				547E8A5C25BA2FC2005C7FE0 /* CustomParagraph.swift in Sources */,
 				54B50C08255C5870008DD49C /* User.swift in Sources */,
 				5446C7F2256CC63D003B93CA /* LottieView.swift in Sources */,
 				542F813F25BA9E9F00EC9B05 /* GenericMakeObservation.swift in Sources */,
 				54D3C4BF255D90960087B2BF /* Utils.swift in Sources */,
+				542F815725BAA94800EC9B05 /* TransgressionObservation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

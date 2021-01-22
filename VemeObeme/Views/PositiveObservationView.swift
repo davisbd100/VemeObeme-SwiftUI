@@ -24,11 +24,10 @@ struct PositiveObservationView: View {
                 Text("General")
                     .font(.custom("Avenir Book", size: 14))
                     .foregroundColor(.green)
-                    .padding()
                 HStack{
                     Rectangle()
                         .fill(Color.green)
-                        .frame(width: 20)
+                        .frame(width: 20, height: 20)
                     Text("Observación positiva")
                         .font(.custom("Avenir Heavy", size: 14))
                         .padding()
