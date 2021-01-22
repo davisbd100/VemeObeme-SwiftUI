@@ -34,6 +34,7 @@ class PetititonManager {
             if (responseData.statusCode == 200){
                 do {
                     let user = try JSONDecoder().decode(User.self, from: sentData)
+                    debugPrint(sentData)
                     completion(user)
                 } catch let error {
                     debugPrint("Error: \(error.localizedDescription)")

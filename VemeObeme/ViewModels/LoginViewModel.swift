@@ -54,6 +54,7 @@ class LoginViewModel: ObservableObject {
                 DispatchQueue.main.async {
                     self.isError = false
                 }
+                UserDefaults.standard.setValue(self.currentUser, forKey: "currentUser")
                 completion("Ok")
             }else{
                 DispatchQueue.main.async {
