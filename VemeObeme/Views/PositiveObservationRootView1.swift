@@ -1,19 +1,19 @@
 //
-//  PositiveObservationRootView.swift
+//  PositiveObservationRootView1.swift
 //  VemeObeme
 //
-//  Created by David Bárcenas Duran
+//  Created by David Bárcenas Duran on 22/01/21.
 //
 
 import SwiftUI
 
-struct PositiveObservationRootView: View {
+struct PositiveObservationRootView1: View {
     @State var currentTab = 1
     @State var isSwipeDisabled = true
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     var body: some View {
         TabView(selection:$currentTab){
-            PositiveObservationView()
+            PositiveObservationRootView()
                 .tag(1)
                 .gesture(isSwipeDisabled ? DragGesture() : nil)
             GenericMakeObservation()
@@ -44,8 +44,8 @@ struct PositiveObservationRootView: View {
     }
 }
 
-struct PositiveObservationRootView_Previews: PreviewProvider {
+struct PositiveObservationRootView1_Previews: PreviewProvider {
     static var previews: some View {
-        PositiveObservationRootView()
+        PositiveObservationRootView1()
     }
 }

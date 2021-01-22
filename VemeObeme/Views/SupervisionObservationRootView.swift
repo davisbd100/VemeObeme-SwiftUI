@@ -10,6 +10,7 @@ import SwiftUI
 struct SupervisionObservationRootView: View {
     @State var currentTab = 1
     @State var isSwipeDisabled = true
+    @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     var body: some View {
         TabView(selection:$currentTab){
             SupervisionObservationView()
@@ -30,7 +31,7 @@ struct SupervisionObservationRootView: View {
         if (currentTab < 4){
             currentTab += 1
         }else{
-            
+            self.mode.wrappedValue.dismiss()
         }
     }, label: {
         Text("Siguiente")
