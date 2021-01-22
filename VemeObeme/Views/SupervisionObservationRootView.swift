@@ -27,7 +27,11 @@ struct SupervisionObservationRootView: View {
         }
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
     Button(action: {
-        currentTab += 1
+        if (currentTab < 4){
+            currentTab += 1
+        }else{
+            
+        }
     }, label: {
         Text("Siguiente")
             .foregroundColor(.white)

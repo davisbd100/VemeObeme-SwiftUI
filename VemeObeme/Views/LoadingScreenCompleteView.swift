@@ -20,9 +20,11 @@ struct LoadingScreenCompleteView: View {
                 .font(.custom("Avenir Book", size: 18))
                 .padding()
             Spacer()
-            Button("Finalizar", action: {
-                
-            })
+            NavigationLink(
+                destination: HomeRootView(),
+                label: {
+                    Text("Finalizar")
+                })
             Spacer()
         }
         .padding()
