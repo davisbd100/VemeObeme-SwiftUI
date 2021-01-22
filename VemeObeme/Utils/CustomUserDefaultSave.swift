@@ -8,7 +8,11 @@
 import Foundation
 
 extension UserDefaults {
-    func setcodableObject<T : Codable>(dataType: T.Type, key: String) -> T? {
+    func setCodableObject<T: Codable>(_ data: T?, forKey defaultName: String) {
+      let encoded = try? JSONEncoder().encode(data)
+      set(encoded, forKey: defaultName)
+    }
+    func getcodableObject<T : Codable>(dataType: T.Type, key: String) -> T? {
       guard let userDefaultData = data(forKey: key) else {
         return nil
       }

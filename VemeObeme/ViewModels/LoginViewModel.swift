@@ -54,7 +54,7 @@ class LoginViewModel: ObservableObject {
                 DispatchQueue.main.async {
                     self.isError = false
                 }
-                UserDefaults.standard.setValue(self.currentUser, forKey: "currentUser")
+                UserDefaults.standard.setCodableObject(self.currentUser, forKey: "currentUser")
                 completion("Ok")
             }else{
                 DispatchQueue.main.async {
@@ -67,6 +67,12 @@ class LoginViewModel: ObservableObject {
         dispatch.notify(queue: .main){
             print("Finished Task")
         }
+    }
+    func testData() -> User{
+        let university = Univesity(pais: "Mexico", nombreUniversidad: "Universidad Veracruzana")
+        let healthUnit = HealthUnit(healthUnitName: "Clinica 11 IMSS")
+        let user = User(correo: "davisbd100@gmail.com", jwt: "validToken", nombres: "David", apellidos: "Bárcenas Duran", email: "davisbd100@gmail.com", fechaNacimiento: "24/05/1999", genero: "Masculino", celular: "2288888888", university: university, healtUnit: healthUnit)
+        return user
     }
     
     func checkFields() -> Bool {

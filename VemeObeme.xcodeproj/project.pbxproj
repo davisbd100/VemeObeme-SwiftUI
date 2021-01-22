@@ -20,6 +20,7 @@
 		54445BBF25BB1D4600E90F48 /* CustomUserDefaultSave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54445BBE25BB1D4600E90F48 /* CustomUserDefaultSave.swift */; };
 		54445BC425BB245600E90F48 /* University.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54445BC325BB245600E90F48 /* University.swift */; };
 		54445BC925BB249700E90F48 /* HealthUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54445BC825BB249700E90F48 /* HealthUnit.swift */; };
+		54445BCE25BB257E00E90F48 /* CheckInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54445BCD25BB257E00E90F48 /* CheckInfoViewModel.swift */; };
 		5446C7EA256CC3E9003B93CA /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 5446C7E9256CC3E9003B93CA /* Lottie */; };
 		5446C7F2256CC63D003B93CA /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5446C7F1256CC63D003B93CA /* LottieView.swift */; };
 		5446C7FD256CD5DE003B93CA /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5446C7FC256CD5DE003B93CA /* RootView.swift */; };
@@ -89,6 +90,7 @@
 		54445BBE25BB1D4600E90F48 /* CustomUserDefaultSave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUserDefaultSave.swift; sourceTree = "<group>"; };
 		54445BC325BB245600E90F48 /* University.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = University.swift; sourceTree = "<group>"; };
 		54445BC825BB249700E90F48 /* HealthUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthUnit.swift; sourceTree = "<group>"; };
+		54445BCD25BB257E00E90F48 /* CheckInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInfoViewModel.swift; sourceTree = "<group>"; };
 		5446C7F1256CC63D003B93CA /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		5446C7FC256CD5DE003B93CA /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		544BF7432583C4750071B2DE /* CustomProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressBarView.swift; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 				54D3C4BE255D90960087B2BF /* Utils.swift */,
 				54B50C0F255C5964008DD49C /* LoginViewModel.swift */,
 				54D1C62425816AEE00E7F9C1 /* RegisterViewModel.swift */,
+				54445BCD25BB257E00E90F48 /* CheckInfoViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -478,6 +481,7 @@
 				5409C9C725BA35BF007CF221 /* ObservationButton.swift in Sources */,
 				5409C9D425BA9449007CF221 /* PositiveObservationView.swift in Sources */,
 				542F814F25BAA65B00EC9B05 /* SupervisionObservationView.swift in Sources */,
+				54445BCE25BB257E00E90F48 /* CheckInfoViewModel.swift in Sources */,
 				547E8A7825BA31DE005C7FE0 /* ValidatorSecureField.swift in Sources */,
 				547E8A5C25BA2FC2005C7FE0 /* CustomParagraph.swift in Sources */,
 				54B50C08255C5870008DD49C /* User.swift in Sources */,

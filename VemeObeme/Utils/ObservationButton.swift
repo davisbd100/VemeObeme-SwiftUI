@@ -23,14 +23,14 @@ struct ObservationButton: View {
                         .multilineTextAlignment(.leading)
 
             })
-            .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: 336, maxWidth: 370, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: 65, maxHeight: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            .frame(minWidth: 320, idealWidth: 336, maxWidth: 370, minHeight: 40, idealHeight: 65, maxHeight: 60)
             .background(Color.white)
             .padding(.leading, 5.0)
             .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/)
             Image(logo)
                 .resizable()
                 .scaledToFit()
-                .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: 40, maxWidth: 80, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: 65, maxHeight: 60, alignment: .leading)
+                .frame(minWidth: 30, idealWidth: 40, maxWidth: 80, minHeight: 40, idealHeight: 65, maxHeight: 60, alignment: .leading)
         }
     }
 }

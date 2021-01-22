@@ -9,26 +9,28 @@ import SwiftUI
 
 struct HomeRootView: View {
     var body: some View {
-        TabView{
-            WelcomeView()
-                .tabItem {
-                    Image(systemName: "house.fill")
-                    Text("Inicio")
-                }
-            
-            WelcomeView()
-                .tabItem {
-                    Image(systemName: "doc.text.fill")
-                    Text("Reportes")
-                }
-            
-            WelcomeView()
-                .tabItem {
-                    Image(systemName: "person.fill")
-                    Text("Información")
-                }
+        NavigationView{
+            TabView{
+                WelcomeView()
+                    .tabItem {
+                        Image(systemName: "house.fill")
+                        Text("Inicio")
+                    }
+                
+                WelcomeView()
+                    .tabItem {
+                        Image(systemName: "doc.text.fill")
+                        Text("Reportes")
+                    }
+                
+                CheckInfoView()
+                    .tabItem {
+                        Image(systemName: "person.fill")
+                        Text("Información")
+                    }
+            }
+            .frame(alignment: .top)
         }
-        .frame(alignment: .top)
     }
 }
 
