@@ -32,7 +32,7 @@ struct PositiveObservationView: View {
                         .font(.custom("Avenir Heavy", size: 14))
                         .padding()
                 }
-                Text("Observación hecha el: " + "eeeee")
+                Text("Observación hecha el: " + DateFormatter().string(from: Date()))
                     .font(.custom("Avenir Book", size: 14))
                     .padding()
                 Divider()

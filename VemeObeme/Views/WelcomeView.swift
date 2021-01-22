@@ -20,8 +20,8 @@ struct WelcomeView: View {
                 .font(.custom("Avenir Heavy", size: 20))
             Text("¿Desea realizar una observación?")
                 .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: 243, maxWidth: 300, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: 22, maxHeight: 44, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-            ObservationButton(logo: "ic_reporte_positivo", barColor: .green, message: "Observación positiva", destinationView: AnyView(PositiveObservationView()))
-            ObservationButton(logo: "ic_reporte_supervision", barColor: .yellow, message: "Ausencia de supervisión médica", destinationView: AnyView(SupervisionObservationView()))
+            ObservationButton(logo: "ic_reporte_positivo", barColor: .green, message: "Observación positiva", destinationView: AnyView(PositiveObservationRootView()))
+            ObservationButton(logo: "ic_reporte_supervision", barColor: .yellow, message: "Ausencia de supervisión médica", destinationView: AnyView(SupervisionObservationRootView()))
             ObservationButton(logo: "ic_reporte_trasgresion", barColor: .red, message: "Transgresión de derechos", destinationView: AnyView(TransgressionObservation()))
             Spacer()
         }
