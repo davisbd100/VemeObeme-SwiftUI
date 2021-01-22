@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		5409C9C725BA35BF007CF221 /* ObservationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5409C9C625BA35BF007CF221 /* ObservationButton.swift */; };
-		5409C9CC25BA9013007CF221 /* WelcomeRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5409C9CB25BA9013007CF221 /* WelcomeRootView.swift */; };
+		5409C9CC25BA9013007CF221 /* HomeRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5409C9CB25BA9013007CF221 /* HomeRootView.swift */; };
+		5409C9D425BA9449007CF221 /* PositiveObservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5409C9D325BA9449007CF221 /* PositiveObservationView.swift */; };
+		5409C9D925BA97C4007CF221 /* SimpleCheckbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5409C9D825BA97C4007CF221 /* SimpleCheckbox.swift */; };
 		5446C7EA256CC3E9003B93CA /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 5446C7E9256CC3E9003B93CA /* Lottie */; };
 		5446C7F2256CC63D003B93CA /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5446C7F1256CC63D003B93CA /* LottieView.swift */; };
 		5446C7FD256CD5DE003B93CA /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5446C7FC256CD5DE003B93CA /* RootView.swift */; };
@@ -66,7 +68,9 @@
 
 /* Begin PBXFileReference section */
 		5409C9C625BA35BF007CF221 /* ObservationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservationButton.swift; sourceTree = "<group>"; };
-		5409C9CB25BA9013007CF221 /* WelcomeRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeRootView.swift; sourceTree = "<group>"; };
+		5409C9CB25BA9013007CF221 /* HomeRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRootView.swift; sourceTree = "<group>"; };
+		5409C9D325BA9449007CF221 /* PositiveObservationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositiveObservationView.swift; sourceTree = "<group>"; };
+		5409C9D825BA97C4007CF221 /* SimpleCheckbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCheckbox.swift; sourceTree = "<group>"; };
 		5446C7F1256CC63D003B93CA /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		5446C7FC256CD5DE003B93CA /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		544BF7432583C4750071B2DE /* CustomProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressBarView.swift; sourceTree = "<group>"; };
@@ -164,6 +168,7 @@
 				547E8A7225BA313E005C7FE0 /* ValidatorField.swift */,
 				547E8A7725BA31DE005C7FE0 /* ValidatorSecureField.swift */,
 				5409C9C625BA35BF007CF221 /* ObservationButton.swift */,
+				5409C9D825BA97C4007CF221 /* SimpleCheckbox.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -178,7 +183,8 @@
 				5446C7FC256CD5DE003B93CA /* RootView.swift */,
 				54D1C61C2581583500E7F9C1 /* RegisterView.swift */,
 				547E8A7F25BA3385005C7FE0 /* WelcomeView.swift */,
-				5409C9CB25BA9013007CF221 /* WelcomeRootView.swift */,
+				5409C9CB25BA9013007CF221 /* HomeRootView.swift */,
+				5409C9D325BA9449007CF221 /* PositiveObservationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -425,7 +431,8 @@
 				54B50C15255C5C73008DD49C /* PetititonManager.swift in Sources */,
 				544C0F66255FEAB0001D0CA3 /* AboutObeme.swift in Sources */,
 				54B50C10255C5964008DD49C /* LoginViewModel.swift in Sources */,
-				5409C9CC25BA9013007CF221 /* WelcomeRootView.swift in Sources */,
+				5409C9CC25BA9013007CF221 /* HomeRootView.swift in Sources */,
+				5409C9D925BA97C4007CF221 /* SimpleCheckbox.swift in Sources */,
 				54C605C1255C407B00003D70 /* LoginView.swift in Sources */,
 				544C0F61255FE86F001D0CA3 /* OnboardView.swift in Sources */,
 				547E8A6125BA3031005C7FE0 /* CustomDropDown.swift in Sources */,
@@ -436,6 +443,7 @@
 				54D1C62525816AEE00E7F9C1 /* RegisterViewModel.swift in Sources */,
 				5446C7FD256CD5DE003B93CA /* RootView.swift in Sources */,
 				5409C9C725BA35BF007CF221 /* ObservationButton.swift in Sources */,
+				5409C9D425BA9449007CF221 /* PositiveObservationView.swift in Sources */,
 				547E8A7825BA31DE005C7FE0 /* ValidatorSecureField.swift in Sources */,
 				547E8A5C25BA2FC2005C7FE0 /* CustomParagraph.swift in Sources */,
 				54B50C08255C5870008DD49C /* User.swift in Sources */,

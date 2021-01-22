@@ -1,13 +1,13 @@
 //
-//  WelcomeRootView.swift
+//  HomeRootView.swift
 //  VemeObeme
 //
-//  Created by David Bárcenas Duran on 21/01/21.
+//  Created by David Bárcenas Duran
 //
 
 import SwiftUI
 
-struct WelcomeRootView: View {
+struct HomeRootView: View {
     var body: some View {
         TabView{
             WelcomeView()
@@ -32,8 +32,8 @@ struct WelcomeRootView: View {
     }
 }
 
-struct WelcomeRootView_Previews: PreviewProvider {
+struct HomeRootView_Previews: PreviewProvider {
     static var previews: some View {
-        WelcomeRootView()
+        HomeRootView()
     }
 }
