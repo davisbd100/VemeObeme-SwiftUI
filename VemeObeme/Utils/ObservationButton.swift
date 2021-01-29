@@ -32,7 +32,7 @@ struct ObservationButton: View {
             Image(logo)
                 .resizable()
                 .scaledToFit()
-                .frame(minWidth: 30, idealWidth: 40, maxWidth: 80, minHeight: 40, idealHeight: 65, maxHeight: 60, alignment: .leading)
+                .frame(minWidth: 30, idealWidth: 40, maxWidth: 80, minHeight: 40, idealHeight: 65, maxHeight: 65, alignment: .leading)
         }
     }
 }

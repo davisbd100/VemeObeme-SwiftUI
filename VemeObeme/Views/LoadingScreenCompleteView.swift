@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LoadingScreenCompleteView: View {
+    @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     var body: some View {
         VStack{
             Text("Observación enviada con éxito")
@@ -20,11 +21,11 @@ struct LoadingScreenCompleteView: View {
                 .font(.custom("Avenir Book", size: 18))
                 .padding()
             Spacer()
-            NavigationLink(
-                destination: HomeRootView(),
-                label: {
-                    Text("Finalizar")
-                })
+            Button(action: {
+                    self.mode.wrappedValue.dismiss()
+            }, label: {
+                Text("Finalizar")
+            })
             Spacer()
         }
         .padding()

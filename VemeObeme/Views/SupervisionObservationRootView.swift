@@ -37,7 +37,7 @@ struct SupervisionObservationRootView: View {
         Text("Siguiente")
             .foregroundColor(.white)
             .font(.custom("Avenir Heavy", size: 15))
-            .frame(minWidth: 0/*@END_MENU_TOKEN@*/, idealWidth: 344, maxWidth: 370, minHeight: 0, idealHeight: 53, maxHeight: 60, alignment: /*@START_MENU_TOKEN@*/.center)
+            .frame(minWidth: 0, idealWidth: 344, maxWidth: 370, minHeight: 0, idealHeight: 53, maxHeight: 60, alignment: .center)
     })
     .background(Color.blue)
     .cornerRadius(10.0)

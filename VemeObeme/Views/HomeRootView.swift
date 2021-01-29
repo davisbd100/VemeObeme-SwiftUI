@@ -16,18 +16,26 @@ struct HomeRootView: View {
                         Image(systemName: "house.fill")
                         Text("Inicio")
                     }
-                
+                    .navigationBarHidden(true)
+                    .navigationBarTitle(Text("Home"))
+                    .edgesIgnoringSafeArea([.top, .bottom])
                 WelcomeView()
                     .tabItem {
                         Image(systemName: "doc.text.fill")
                         Text("Reportes")
                     }
+                    .navigationBarHidden(true)
+                    .navigationBarTitle(Text("Home"))
+                    .edgesIgnoringSafeArea([.top, .bottom])
                 
                 CheckInfoView()
                     .tabItem {
                         Image(systemName: "person.fill")
                         Text("Información")
                     }
+                    .navigationBarHidden(true)
+                    .navigationBarTitle(Text("Home"))
+                    .edgesIgnoringSafeArea([.top, .bottom])
             }
             .frame(alignment: .top)
         }
