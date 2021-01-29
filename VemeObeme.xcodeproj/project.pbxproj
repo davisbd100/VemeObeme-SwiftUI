@@ -42,6 +42,8 @@
 		544D008D256EC02500BE743E /* safe.json in Resources */ = {isa = PBXBuildFile; fileRef = 544D0083256EC02500BE743E /* safe.json */; };
 		544D008E256EC02500BE743E /* telescope.json in Resources */ = {isa = PBXBuildFile; fileRef = 544D0084256EC02500BE743E /* telescope.json */; };
 		546AB90325C461A500835A8E /* ReviewObservationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546AB90225C461A500835A8E /* ReviewObservationButton.swift */; };
+		546AB90825C464E400835A8E /* ObservationConsultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546AB90725C464E400835A8E /* ObservationConsultView.swift */; };
+		546AB90D25C465A300835A8E /* ObservationConsultInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546AB90C25C465A300835A8E /* ObservationConsultInfoView.swift */; };
 		547E8A5C25BA2FC2005C7FE0 /* CustomParagraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547E8A5B25BA2FC2005C7FE0 /* CustomParagraph.swift */; };
 		547E8A6125BA3031005C7FE0 /* CustomDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547E8A6025BA3031005C7FE0 /* CustomDropDown.swift */; };
 		547E8A6925BA3092005C7FE0 /* CustomDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547E8A6825BA3092005C7FE0 /* CustomDatePicker.swift */; };
@@ -115,6 +117,8 @@
 		544D0083256EC02500BE743E /* safe.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = safe.json; sourceTree = "<group>"; };
 		544D0084256EC02500BE743E /* telescope.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = telescope.json; sourceTree = "<group>"; };
 		546AB90225C461A500835A8E /* ReviewObservationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewObservationButton.swift; sourceTree = "<group>"; };
+		546AB90725C464E400835A8E /* ObservationConsultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservationConsultView.swift; sourceTree = "<group>"; };
+		546AB90C25C465A300835A8E /* ObservationConsultInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservationConsultInfoView.swift; sourceTree = "<group>"; };
 		547E8A5B25BA2FC2005C7FE0 /* CustomParagraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomParagraph.swift; sourceTree = "<group>"; };
 		547E8A6025BA3031005C7FE0 /* CustomDropDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDropDown.swift; sourceTree = "<group>"; };
 		547E8A6825BA3092005C7FE0 /* CustomDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDatePicker.swift; sourceTree = "<group>"; };
@@ -224,6 +228,8 @@
 				544313D125BAAE5800103E0A /* CheckInfoView.swift */,
 				54445BD525BB36AE00E90F48 /* PositiveObservationRootView.swift */,
 				54445BDA25BB36C200E90F48 /* SupervisionObservationRootView.swift */,
+				546AB90725C464E400835A8E /* ObservationConsultView.swift */,
+				546AB90C25C465A300835A8E /* ObservationConsultInfoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -470,8 +476,10 @@
 				544C0F5C255FE2E1001D0CA3 /* OnboardStep.swift in Sources */,
 				5441D4A725BB416E004CA4DB /* PositiveObservationRootView1.swift in Sources */,
 				547E8A6E25BA30BC005C7FE0 /* CustomRadioButtonField.swift in Sources */,
+				546AB90D25C465A300835A8E /* ObservationConsultInfoView.swift in Sources */,
 				54D1C61D2581583500E7F9C1 /* RegisterView.swift in Sources */,
 				54445BBF25BB1D4600E90F48 /* CustomUserDefaultSave.swift in Sources */,
+				546AB90825C464E400835A8E /* ObservationConsultView.swift in Sources */,
 				54B50C15255C5C73008DD49C /* PetititonManager.swift in Sources */,
 				546AB90325C461A500835A8E /* ReviewObservationButton.swift in Sources */,
 				544C0F66255FEAB0001D0CA3 /* AboutObeme.swift in Sources */,

@@ -18,15 +18,13 @@ struct HomeRootView: View {
                     }
                     .navigationBarHidden(true)
                     .navigationBarTitle(Text("Home"))
-                    .edgesIgnoringSafeArea([.top, .bottom])
-                WelcomeView()
+                ObservationConsultView()
                     .tabItem {
                         Image(systemName: "doc.text.fill")
                         Text("Reportes")
                     }
                     .navigationBarHidden(true)
                     .navigationBarTitle(Text("Home"))
-                    .edgesIgnoringSafeArea([.top, .bottom])
                 
                 CheckInfoView()
                     .tabItem {
@@ -35,7 +33,6 @@ struct HomeRootView: View {
                     }
                     .navigationBarHidden(true)
                     .navigationBarTitle(Text("Home"))
-                    .edgesIgnoringSafeArea([.top, .bottom])
             }
             .frame(alignment: .top)
         }

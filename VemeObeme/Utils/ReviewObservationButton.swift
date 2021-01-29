@@ -37,7 +37,7 @@ struct ReviewObservationButton: View {
                         .padding(.leading)
 
                 })
-                .frame(minWidth: 320, idealWidth: 336, maxWidth: 370, minHeight: 40, idealHeight: 65, maxHeight: 60, alignment: .leading)
+                .frame(minWidth: 320, idealWidth: 336, maxWidth: 370, minHeight: 40, idealHeight: 65, maxHeight: 70, alignment: .leading)
                 .background(Color.white)
                 .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/)
             Spacer()

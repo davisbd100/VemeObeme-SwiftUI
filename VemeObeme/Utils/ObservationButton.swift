@@ -24,7 +24,7 @@ struct ObservationButton: View {
                             .multilineTextAlignment(.leading)
 
                 })
-                .frame(minWidth: 320, idealWidth: 336, maxWidth: 370, minHeight: 40, idealHeight: 65, maxHeight: 60)
+                .frame(minWidth: 320, idealWidth: 336, maxWidth: 370, minHeight: 40, idealHeight: 65, maxHeight: 70)
                 .background(Color.white)
                 .padding(.leading, 5.0)
                 .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/)
