@@ -41,6 +41,7 @@
 		544D008C256EC02500BE743E /* pills-bottle.json in Resources */ = {isa = PBXBuildFile; fileRef = 544D0082256EC02500BE743E /* pills-bottle.json */; };
 		544D008D256EC02500BE743E /* safe.json in Resources */ = {isa = PBXBuildFile; fileRef = 544D0083256EC02500BE743E /* safe.json */; };
 		544D008E256EC02500BE743E /* telescope.json in Resources */ = {isa = PBXBuildFile; fileRef = 544D0084256EC02500BE743E /* telescope.json */; };
+		546AB90325C461A500835A8E /* ReviewObservationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546AB90225C461A500835A8E /* ReviewObservationButton.swift */; };
 		547E8A5C25BA2FC2005C7FE0 /* CustomParagraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547E8A5B25BA2FC2005C7FE0 /* CustomParagraph.swift */; };
 		547E8A6125BA3031005C7FE0 /* CustomDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547E8A6025BA3031005C7FE0 /* CustomDropDown.swift */; };
 		547E8A6925BA3092005C7FE0 /* CustomDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547E8A6825BA3092005C7FE0 /* CustomDatePicker.swift */; };
@@ -113,6 +114,7 @@
 		544D0082256EC02500BE743E /* pills-bottle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "pills-bottle.json"; sourceTree = "<group>"; };
 		544D0083256EC02500BE743E /* safe.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = safe.json; sourceTree = "<group>"; };
 		544D0084256EC02500BE743E /* telescope.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = telescope.json; sourceTree = "<group>"; };
+		546AB90225C461A500835A8E /* ReviewObservationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewObservationButton.swift; sourceTree = "<group>"; };
 		547E8A5B25BA2FC2005C7FE0 /* CustomParagraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomParagraph.swift; sourceTree = "<group>"; };
 		547E8A6025BA3031005C7FE0 /* CustomDropDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDropDown.swift; sourceTree = "<group>"; };
 		547E8A6825BA3092005C7FE0 /* CustomDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDatePicker.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				5409C9C625BA35BF007CF221 /* ObservationButton.swift */,
 				5409C9D825BA97C4007CF221 /* SimpleCheckbox.swift */,
 				54445BBE25BB1D4600E90F48 /* CustomUserDefaultSave.swift */,
+				546AB90225C461A500835A8E /* ReviewObservationButton.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -470,6 +473,7 @@
 				54D1C61D2581583500E7F9C1 /* RegisterView.swift in Sources */,
 				54445BBF25BB1D4600E90F48 /* CustomUserDefaultSave.swift in Sources */,
 				54B50C15255C5C73008DD49C /* PetititonManager.swift in Sources */,
+				546AB90325C461A500835A8E /* ReviewObservationButton.swift in Sources */,
 				544C0F66255FEAB0001D0CA3 /* AboutObeme.swift in Sources */,
 				54B50C10255C5964008DD49C /* LoginViewModel.swift in Sources */,
 				54445BC425BB245600E90F48 /* University.swift in Sources */,
