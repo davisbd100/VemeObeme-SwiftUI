@@ -172,6 +172,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5445396925CA1CEE002A8C4C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				54D3C4BE255D90960087B2BF /* Utils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		5446C7F6256CC959003B93CA /* Lottie */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,7 +197,7 @@
 			path = Lottie;
 			sourceTree = "<group>";
 		};
-		544D0092256EC91100BE743E /* Utils */ = {
+		544D0092256EC91100BE743E /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				544BF7432583C4750071B2DE /* CustomProgressBarView.swift */,
@@ -204,7 +212,7 @@
 				54445BBE25BB1D4600E90F48 /* CustomUserDefaultSave.swift */,
 				546AB90225C461A500835A8E /* ReviewObservationButton.swift */,
 			);
-			path = Utils;
+			path = Components;
 			sourceTree = "<group>";
 		};
 		54B50C04255C581F008DD49C /* Views */ = {
@@ -247,7 +255,6 @@
 		54B50C06255C5845008DD49C /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				54D3C4BE255D90960087B2BF /* Utils.swift */,
 				54B50C0F255C5964008DD49C /* LoginViewModel.swift */,
 				54D1C62425816AEE00E7F9C1 /* RegisterViewModel.swift */,
 				54445BCD25BB257E00E90F48 /* CheckInfoViewModel.swift */,
@@ -286,7 +293,8 @@
 		54C605BD255C407B00003D70 /* VemeObeme */ = {
 			isa = PBXGroup;
 			children = (
-				544D0092256EC91100BE743E /* Utils */,
+				5445396925CA1CEE002A8C4C /* Utils */,
+				544D0092256EC91100BE743E /* Components */,
 				54B50C19255C5C7A008DD49C /* Network */,
 				54B50C04255C581F008DD49C /* Views */,
 				54B50C06255C5845008DD49C /* ViewModels */,

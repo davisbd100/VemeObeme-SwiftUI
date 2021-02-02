@@ -16,8 +16,10 @@ struct AboutObeme: View {
                         content:  {
                             FirstAboutObemeView(page: $currentTab)
                                 .tag(1)
+                                .gesture(isSwipeDisabled ? DragGesture() : nil)
                             SecondAboutObemeView()
                                 .tag(2)
+                                .gesture(isSwipeDisabled ? DragGesture() : nil)
                         })
                     .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
             }
@@ -42,18 +44,19 @@ struct FirstAboutObemeView: View {
                     .font(.custom("Avenir Book", size: 14))
                 Link("Correo electrónico del OBEME", destination: URL(string: "obeme@uv.mx")!)
                     .font(.custom("Avenir Book", size: 14))
-                Button(action: {
-                    page += 1
-                }, label: {
-                    Text("Siguiente")
-                        .foregroundColor(.white)
-                        .font(.custom("Avenir Heavy", size: 15))
-                        .frame(minWidth: 0, idealWidth: 344, maxWidth: 370, minHeight: 0, idealHeight: 53, maxHeight: 60, alignment: .center)
-                })
-                .background(Color.blue)
-                .cornerRadius(10.0)
+                
             }
             .padding()
+            Button(action: {
+                page += 1
+            }, label: {
+                Text("Siguiente")
+                    .foregroundColor(.white)
+                    .font(.custom("Avenir Heavy", size: 15))
+                    .frame(minWidth: 0, idealWidth: 344, maxWidth: 370, minHeight: 0, idealHeight: 53, maxHeight: 60, alignment: .center)
+            })
+            .background(Color.blue)
+            .cornerRadius(10.0)
         }
     }
 }
@@ -76,17 +79,17 @@ struct SecondAboutObemeView: View {
                     .font(.custom("Avenir Book", size: 14))
                 Text("¡REPORTA! ES TU DERECHO")
                     .font(.custom("Avenir Medium", size: 20))
-                Button(action: {
-                    self.mode.wrappedValue.dismiss()
-                }, label: {
-                    Text("REGRESAR AL INICIO")
-                        .foregroundColor(.white)
-                        .font(.custom("Avenir Heavy", size: 15))
-                        .frame(minWidth: 0, idealWidth: 344, maxWidth: 370, minHeight: 0, idealHeight: 53, maxHeight: 60, alignment: .center)
-                })
-                .background(Color.blue)
-                .cornerRadius(10.0)
             }
+            Button(action: {
+                self.mode.wrappedValue.dismiss()
+            }, label: {
+                Text("REGRESAR AL INICIO")
+                    .foregroundColor(.white)
+                    .font(.custom("Avenir Heavy", size: 15))
+                    .frame(minWidth: 0, idealWidth: 344, maxWidth: 370, minHeight: 0, idealHeight: 53, maxHeight: 60, alignment: .center)
+            })
+            .background(Color.blue)
+            .cornerRadius(10.0)
             .padding()
         }
     }
