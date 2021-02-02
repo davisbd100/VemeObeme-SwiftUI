@@ -24,7 +24,8 @@ struct ObservationButton: View {
                             .multilineTextAlignment(.leading)
 
                 })
-                .frame(minWidth: 320, idealWidth: 336, maxWidth: 370, minHeight: 40, idealHeight: 65, maxHeight: 70)
+                .frame(minWidth: 320, idealWidth: 336, maxWidth: 350, minHeight: 40, idealHeight: 65, maxHeight: 70)
+                .frame(minWidth: 320, idealWidth: 336, maxWidth: 350, minHeight: 40, idealHeight: 65, maxHeight: 70)
                 .background(Color.white)
                 .padding(.leading, 5.0)
                 .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/)
@@ -32,7 +33,7 @@ struct ObservationButton: View {
             Image(logo)
                 .resizable()
                 .scaledToFit()
-                .frame(minWidth: 30, idealWidth: 40, maxWidth: 80, minHeight: 40, idealHeight: 65, maxHeight: 65, alignment: .leading)
+                .frame(minWidth: 30, idealWidth: 40, maxWidth: 80, minHeight: 40, idealHeight: 65, maxHeight: 70, alignment: .leading)
         }
     }
 }

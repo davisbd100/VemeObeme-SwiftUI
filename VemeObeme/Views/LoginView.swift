@@ -73,15 +73,17 @@ struct LoginView: View {
                         .background(Color.green)
                         .cornerRadius(10.0)
                     Spacer()
-                    
-                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                        Text("¿Que es el Obeme?")
-                            .foregroundColor(.white)
-                            .font(.custom("Avenir Heavy", size: 15))
-                            .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: 344, maxWidth: 370, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: 53, maxHeight: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    })
-                    .background(Color.yellow)
-                    .cornerRadius(10.0)
+                    NavigationLink(
+                        destination: AboutObeme()
+                            .navigationBarTitle("¿Qué es el OBEME?", displayMode: .inline),
+                        label: {
+                            Text("¿Que es el Obeme?")
+                                .foregroundColor(.white)
+                                .font(.custom("Avenir Heavy", size: 15))
+                                .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: 344, maxWidth: 370, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: 53, maxHeight: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        })
+                        .background(Color.yellow)
+                        .cornerRadius(10.0)
                     
                 })
                 .padding(.trailing)

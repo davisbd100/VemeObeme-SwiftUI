@@ -14,7 +14,7 @@ struct ObservationConsultView: View {
                 .font(.custom("Avenir Book", size: 14))
                 .foregroundColor(.gray)
             Divider()
-            ReviewObservationButton(title: "OBSERVACIÓN 01", incidentDate: "12/05/19", observationDate: "12/05/19", destinationView: AnyView(ObservationConsultInfoView()))
+            ReviewObservationButton(title: "OBSERVACIÓN 01", incidentDate: "12/05/19", observationDate: "12/05/19", destinationView: AnyView(ObservationConsultInfoView(title: "REP-01")))
             Spacer()
         }
     }

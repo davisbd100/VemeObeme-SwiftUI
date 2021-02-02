@@ -9,26 +9,21 @@ import SwiftUI
 
 struct RootView: View {
     @State var login = false
-    @State var isLoggedIn = true
+    @State var isLoggedIn = (UserDefaults.standard.bool(forKey: "isLoggedIn"))
     var body: some View {
+            UserDefaults.standard.setCodableObject(User(correo: "davisbd100@gmail.com", jwt: "token", nombres: "David", apellidos: "Bárcenas Durán", email: "davisbd100@gmail.com", fechaNacimiento: "24&05/99", genero: "Masculino", celular: "2288455625", university: Univesity(pais: "México", nombreUniversidad: "Universidad Veracruzana"), healtUnit: HealthUnit(healthUnitName: "Clínica 11 IMSS")), forKey: "currentUser")
         return Group {
             NavigationView{
                 if (isLoggedIn){
                     HomeRootView()
                         .navigationBarHidden(true)
-                        .navigationBarTitle(Text("Home View"))
-                        .edgesIgnoringSafeArea([.top, .bottom])
                 }
                 else if login {
                     LoginView()
                         .navigationBarHidden(true)
-                        .navigationBarTitle(Text("Login"))
-                        .edgesIgnoringSafeArea([.top, .bottom])
                 }else{
                     OnboardView(showLogin: $login)
                         .navigationBarHidden(true)
-                        .navigationBarTitle(Text("Onboard"))
-                        .edgesIgnoringSafeArea([.top, .bottom])
                 }
             }
         }

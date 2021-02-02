@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ObservationConsultInfoView: View {
+    @State var title: String
     var body: some View {
         ScrollView{
             VStack(alignment: .leading){
@@ -60,11 +61,12 @@ struct ObservationConsultInfoView: View {
                 }
             }
         }
+        .navigationBarTitle(Text(title))
     }
 }
 
 struct ObservationConsultInfoView_Previews: PreviewProvider {
     static var previews: some View {
-        ObservationConsultInfoView()
+        ObservationConsultInfoView(title: "REP-01")
     }
 }
