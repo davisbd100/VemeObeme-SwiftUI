@@ -176,6 +176,7 @@ struct ThirdRegisterView: View {
             CustomDropDown(selectedValue: $viewModel.healthInstitution, values: ["IMSS H.G.Z", "ISSTE", "CAE", "Hospital General Misantla"])
             CustomDropDown(selectedValue: $viewModel.stayType, values: ["Internado", "Servicio Social", "Residencia"])
             CustomDropDown(selectedValue: $viewModel.especiality, values: ["Cardiologia", "Neurologia"])
+                .disabled(!viewModel.isResidencySelected)
             CustomDatePicker(value: $viewModel.startDate, title: "Fecha de inicio", maxDate: Calendar.current.date(byAdding: .month, value:1, to: Date())!, minDate: Calendar.current.date(byAdding: .month, value: -6, to: Date())!)
             CustomDatePicker(value: $viewModel.endDate, title: "Fecha de fin", maxDate: Calendar.current.date(byAdding: .year, value: 100, to: Date())!, minDate: Calendar.current.date(byAdding: .month, value: 1, to: Date())!)
             Spacer()

@@ -35,7 +35,7 @@ class RegisterViewModel: ObservableObject {
     @Published var isMailValid = false
     @Published var isPasswordValid = false
     @Published var isError = false
-    
+    @Published var isResidencySelected = false
     private var cancellableSet: Set<AnyCancellable> = []
     
     private var currentUser = User()
@@ -97,6 +97,13 @@ class RegisterViewModel: ObservableObject {
                 stayType in
                 return !stayType.isEmpty
             }.assign(to: \.isStayTypeValid, on: self)
+            .store(in: &cancellableSet)
+        $stayType
+            .receive(on: RunLoop.main)
+            .map{
+                stayType in
+                return stayType == "Residencia"
+            }.assign(to: \.isResidencySelected, on: self)
             .store(in: &cancellableSet)
         $especiality
             .receive(on: RunLoop.main)
