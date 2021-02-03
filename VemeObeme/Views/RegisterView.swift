@@ -12,6 +12,8 @@ struct RegisterView: View {
     @State var currentTab = 1
     @State var isSwipeDisabled = true
     @State var isTermsAndConditionsAccepted = false
+    @State var isError = false
+    @State var errorMessage = "Error desconocido"
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     
     var body: some View {
@@ -77,7 +79,43 @@ struct RegisterView: View {
                         })
                     .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
                 Button(action: {
-                    currentTab += 1
+                    switch currentTab{
+                    case 1:
+                        if(viewModel.isGenderValid && viewModel.isBirthDateValid){
+                            currentTab += 1
+                        }else{
+                            errorMessage = "Datos invalidos, revisa los datos ingresados"
+                            isError.toggle()
+                        }
+                    break;
+                    case 2:
+                        if(viewModel.isCountryValid && viewModel.isUniversityValid){
+                            currentTab += 1
+                        }else{
+                            errorMessage = "Datos invalidos, revisa los datos ingresados"
+                            isError.toggle()
+                        }
+                    break;
+                    case 3:
+                        if(viewModel.isHealthInstitutionValid && viewModel.isStayTypeValid && viewModel.isEspecialityValid && viewModel.isStartDateValid && viewModel.isEndDateValid){
+                            currentTab += 1
+                        }else{
+                            errorMessage = "Datos invalidos, revisa los datos ingresados"
+                            isError.toggle()
+                        }
+                    break;
+                    case 4:
+                        if(viewModel.isMailValid && viewModel.isPasswordValid && viewModel.password == viewModel.confirmPassword){
+                            currentTab += 1
+                        }else{
+                            errorMessage = "Datos invalidos, revisa los datos ingresados"
+                            isError.toggle()
+                        }
+                    break;
+                    default:
+                        errorMessage = "Error desconocido"
+                        isError.toggle()
+                    }
                 }, label: {
                     Text("Siguiente")
                         .foregroundColor(.white)
@@ -90,6 +128,11 @@ struct RegisterView: View {
 
         })
         .navigationBarHidden(true)
+        .alert(isPresented: $isError, content: {
+            Alert(title: Text("Error"), message: Text(errorMessage), dismissButton: .default(Text("Cerrar"), action: {
+                isError = false
+            }))
+        })
     }
 }
 
@@ -143,8 +186,8 @@ struct FourthRegisterView: View {
     @StateObject var viewModel: RegisterViewModel
     
     var body: some View {
-        Text("Datos de la cuenta")
         VStack(alignment: .leading){
+            Text("Datos de la cuenta")
             ValidatorField(value: $viewModel.username, placeholder: "Correo", keyType: .emailAddress, borderlineColor: .black)
             ValidatorSecureField(value: $viewModel.password, placeholder: "Contraseña")
             ValidatorSecureField(value: $viewModel.confirmPassword, placeholder: "Confirmar Contraseña")
