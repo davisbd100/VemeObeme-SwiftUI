@@ -63,6 +63,7 @@
 		54D1C61D2581583500E7F9C1 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D1C61C2581583500E7F9C1 /* RegisterView.swift */; };
 		54D1C62525816AEE00E7F9C1 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D1C62425816AEE00E7F9C1 /* RegisterViewModel.swift */; };
 		54D3C4BF255D90960087B2BF /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D3C4BE255D90960087B2BF /* Utils.swift */; };
+		54F1B54D25CCC150003130EA /* AddBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F1B54C25CCC150003130EA /* AddBorder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -144,6 +145,7 @@
 		54D1C61C2581583500E7F9C1 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		54D1C62425816AEE00E7F9C1 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		54D3C4BE255D90960087B2BF /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		54F1B54C25CCC150003130EA /* AddBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBorder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				54D3C4BE255D90960087B2BF /* Utils.swift */,
+				54F1B54C25CCC150003130EA /* AddBorder.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -487,6 +490,7 @@
 				546AB90D25C465A300835A8E /* ObservationConsultInfoView.swift in Sources */,
 				54D1C61D2581583500E7F9C1 /* RegisterView.swift in Sources */,
 				54445BBF25BB1D4600E90F48 /* CustomUserDefaultSave.swift in Sources */,
+				54F1B54D25CCC150003130EA /* AddBorder.swift in Sources */,
 				546AB90825C464E400835A8E /* ObservationConsultView.swift in Sources */,
 				54B50C15255C5C73008DD49C /* PetititonManager.swift in Sources */,
 				546AB90325C461A500835A8E /* ReviewObservationButton.swift in Sources */,
