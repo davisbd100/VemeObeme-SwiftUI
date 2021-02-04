@@ -22,14 +22,12 @@ struct CustomDatePicker: View {
         }(
     )
     var body: some View{
-            VStack {
-                DatePicker(title, selection:$value, in: minDate...maxDate, displayedComponents: .date)
-                    .background(Color.white)
-                    .accentColor(.black)
-                    .font(.custom("Avenir Book", size: 14)).padding()
-                    .frame(idealWidth: 344, maxWidth: 370, idealHeight: 53, maxHeight: 60)
-                    .addBorder(Color.black, width: 2, cornerRadius: 20)
-            }
+            DatePicker(title, selection:$value, in: minDate...maxDate, displayedComponents: .date)
+                .background(Color.white)
+                .accentColor(.black)
+                .font(.custom("Avenir Book", size: 14)).padding()
+                .frame(idealWidth: 344, maxWidth: 370, idealHeight: 53, maxHeight: 60)
+                .addBorder(Color.black, width: 2, cornerRadius: 20)
         }
     }
 
