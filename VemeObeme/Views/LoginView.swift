@@ -16,90 +16,87 @@ struct LoginView: View {
     
     
     var body: some View {
-        NavigationView{
-            ZStack(alignment: Alignment(horizontal: .center, vertical: .center), content: {
-                VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 10, content: {
-                    Image("LogoOBEME")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 250, height: 130)
-                        
+        ZStack(alignment: Alignment(horizontal: .center, vertical: .center), content: {
+            VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 10, content: {
+                Image("LogoOBEME")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 250, height: 130)
+                
+                
+                Text("Iniciar Sesión")
+                    .foregroundColor(.green)
+                    .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: 168, maxWidth: 200, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: 41, maxHeight: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .font(.custom("Avenir Heavy", size: 30))
+                
+                ValidatorField(value: $viewModel.username, placeholder: "Correo", keyType: .emailAddress, borderlineColor: viewModel.isMailValid || viewModel.username.isEmpty ? Color.black : Color.red)
+                
+                ValidatorSecureField(value: $viewModel.password, placeholder: "Contraseña")
+                Button(action: {
+                    let dispatch = DispatchGroup()
+                    isLogin.toggle()
                     
-                    Text("Iniciar Sesión")
-                        .foregroundColor(.green)
-                        .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: 168, maxWidth: 200, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: 41, maxHeight: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        .font(.custom("Avenir Heavy", size: 30))
-                    
-                    ValidatorField(value: $viewModel.username, placeholder: "Correo", keyType: .emailAddress, borderlineColor: viewModel.isMailValid || viewModel.username.isEmpty ? Color.black : Color.red)
-                    
-                    ValidatorSecureField(value: $viewModel.password, placeholder: "Contraseña")
-                    Button(action: {
-                        let dispatch = DispatchGroup()
+                    dispatch.enter()
+                    viewModel.tryLogin(){code in
+                        codeMessages = code
+                        dispatch.leave()
+                    }
+                    dispatch.notify(queue: .main){
+                        self.isErrorPresented = viewModel.isError
                         isLogin.toggle()
-                        
-                        dispatch.enter()
-                        viewModel.tryLogin(){code in
-                            codeMessages = code
-                            dispatch.leave()
-                        }
-                        dispatch.notify(queue: .main){
-                            self.isErrorPresented = viewModel.isError
-                            isLogin.toggle()
-                            UserDefaults.standard.setCodableObject(viewModel.testData(), forKey: "currentUser")
-                        }
-                    }, label: {
-                        Text("Iniciar Sesion")
+                        UserDefaults.standard.setCodableObject(viewModel.testData(), forKey: "currentUser")
+                    }
+                }, label: {
+                    Text("Iniciar Sesion")
+                        .foregroundColor(.white)
+                        .font(.custom("Avenir Heavy", size: 15))
+                        .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: 344, maxWidth: 370, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: 53, maxHeight: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                })
+                .background((!viewModel.isMailValid || !viewModel.isPasswordValid) ? Color.gray: Color.blue)
+                .cornerRadius(10.0)
+                .alert(isPresented: $isErrorPresented, content: {
+                    Alert(title: Text("Error"), message: Text(codeMessages), dismissButton: .default(Text("Cerrar"), action: {
+                        isErrorPresented = false
+                    }))
+                }).disabled(!viewModel.isMailValid || !viewModel.isPasswordValid)
+                
+                NavigationLink(
+                    destination: RegisterView(),
+                    isActive: $isShowingRegister,
+                    label: {
+                        Text("Registrate")
                             .foregroundColor(.white)
                             .font(.custom("Avenir Heavy", size: 15))
                             .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: 344, maxWidth: 370, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: 53, maxHeight: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     })
-                    .background((!viewModel.isMailValid || !viewModel.isPasswordValid) ? Color.gray: Color.blue)
+                    .background(Color.green)
                     .cornerRadius(10.0)
-                    .alert(isPresented: $isErrorPresented, content: {
-                        Alert(title: Text("Error"), message: Text(codeMessages), dismissButton: .default(Text("Cerrar"), action: {
-                            isErrorPresented = false
-                        }))
-                    }).disabled(!viewModel.isMailValid || !viewModel.isPasswordValid)
-                    
-                    NavigationLink(
-                        destination: RegisterView(),
-                        isActive: $isShowingRegister,
-                        label: {
-                            Text("Registrate")
-                                .foregroundColor(.white)
-                                .font(.custom("Avenir Heavy", size: 15))
-                                .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: 344, maxWidth: 370, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: 53, maxHeight: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        })
-                        .background(Color.green)
-                        .cornerRadius(10.0)
-                    Spacer()
-                    NavigationLink(
-                        destination: AboutObeme()
-                            .navigationBarTitle("¿Qué es el OBEME?", displayMode: .inline),
-                        label: {
-                            Text("¿Que es el Obeme?")
-                                .foregroundColor(.white)
-                                .font(.custom("Avenir Heavy", size: 15))
-                                .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: 344, maxWidth: 370, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: 53, maxHeight: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        })
-                        .background(Color.yellow)
-                        .cornerRadius(10.0)
-                    
-                })
-                .padding(.trailing)
-                .padding(.leading)
-                .padding(.bottom)
-                if isLogin{
-                    GeometryReader { geo in
-                        LoadingView()
-                            .position(x:geo.frame(in:.global).midX,y:geo.frame(in:.global).midY)
-                    }.background(Color.black.opacity(0.45).edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/))
-                }
+                Spacer()
+                NavigationLink(
+                    destination: AboutObeme()
+                        .navigationBarTitle("¿Qué es el OBEME?", displayMode: .inline),
+                    label: {
+                        Text("¿Que es el Obeme?")
+                            .foregroundColor(.white)
+                            .font(.custom("Avenir Heavy", size: 15))
+                            .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: 344, maxWidth: 370, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: 53, maxHeight: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    })
+                    .background(Color.yellow)
+                    .cornerRadius(10.0)
+                
             })
-            .navigationBarHidden(true)
-        }
+            .padding(.trailing)
+            .padding(.leading)
+            .padding(.bottom)
+            if isLogin{
+                GeometryReader { geo in
+                    LoadingView()
+                        .position(x:geo.frame(in:.global).midX,y:geo.frame(in:.global).midY)
+                }.background(Color.black.opacity(0.45).edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/))
+            }
+        })
+        .navigationBarHidden(true)
     }
-        
 }
 
 
