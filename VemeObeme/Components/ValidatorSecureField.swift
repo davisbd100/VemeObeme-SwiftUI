@@ -19,27 +19,24 @@ struct ValidatorSecureField: View {
                 SecureField(placeholder, text: $value)
                     .foregroundColor(.green)
                     .font(.custom("Avenir Book", size: 15)).padding()
-                    .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: 344, maxWidth: 370, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: 53, maxHeight: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 20)
-                            .stroke(Color.black, lineWidth: 2)
-                    )
+                    .keyboardType(.default)
+                    .autocapitalization(.none)
+                    .disableAutocorrection(true)
+                    .frame(idealWidth: 344, maxWidth: 370, idealHeight: 53, maxHeight: 60)
+                    .addBorder(Color.black, width: 2, cornerRadius: 20)
             }else{
                 TextField(placeholder, text: $value)
                     .foregroundColor(.green)
                     .font(.custom("Avenir Book", size: 15)).padding()
-                    .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: 344, maxWidth: 370, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: 53, maxHeight: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 20)
-                            .stroke(Color.black, lineWidth: 2)
-                    )
                     .keyboardType(.default)
                     .autocapitalization(.none)
                     .disableAutocorrection(true)
+                    .frame(idealWidth: 344, maxWidth: 370, idealHeight: 53, maxHeight: 60)
+                    .addBorder(Color.black, width: 2, cornerRadius: 20)
             }
             HStack{
                 EyeButton(value: $secured)
-                    .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: 344, maxWidth: 370, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: 53, maxHeight: 60, alignment: .trailing)
+                    .frame(idealWidth: 344, maxWidth: 370, idealHeight: 53, maxHeight: 60, alignment: .trailing)
             }
             
         }
