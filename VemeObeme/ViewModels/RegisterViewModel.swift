@@ -10,13 +10,13 @@ import Combine
 
 class RegisterViewModel: ObservableObject {
     
-    @Published var gender = "Género"
+    @Published var gender = ""
     @Published var birthDate = Calendar.current.date(byAdding: .year, value: -19, to: Date())!
-    @Published var country = "País"
-    @Published var university = "Universidad"
-    @Published var healthInstitution = "Institucion de Salud"
-    @Published var stayType = "Tipo de Estancia"
-    @Published var especiality = "Especialidad"
+    @Published var country = ""
+    @Published var university = ""
+    @Published var healthInstitution = ""
+    @Published var stayType = ""
+    @Published var especiality = ""
     @Published var startDate = Calendar.current.date(byAdding: .year, value: -19, to: Date())!
     @Published var endDate = Calendar.current.date(byAdding: .year, value: -19, to: Date())!
     @Published var username = ""

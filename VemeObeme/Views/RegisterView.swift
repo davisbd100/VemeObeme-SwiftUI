@@ -184,7 +184,7 @@ struct FourthRegisterView: View {
     @StateObject var viewModel: RegisterViewModel
     
     var body: some View {
-        VStack(alignment: .leading){
+        Form{
             Text("Datos de la cuenta")
             ValidatorField(value: $viewModel.username, placeholder: "Correo", keyType: .emailAddress, borderlineColor: .black)
             ValidatorSecureField(value: $viewModel.password, placeholder: "Contraseña")
