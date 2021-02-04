@@ -56,7 +56,7 @@ struct SupervisionObservationView: View {
                             .foregroundColor(.green)
                             .padding()
                     }
-                    CustomDropDown(selectedValue: $selectedValue, values: values)
+                    CustomDropDown(selectedValue: $selectedValue, title: "Efe", values: values)
                 }
 
                 

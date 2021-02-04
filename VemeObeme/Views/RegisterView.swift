@@ -141,15 +141,12 @@ struct FirstRegisterView: View {
     @StateObject var viewModel: RegisterViewModel
     
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading){
-                Text("Datos Personales")
-                    .padding(.leading)
-                CustomDropDown(selectedValue: $viewModel.gender, values: ["Masculino", "Femenino", "Otro"])
-                    .zIndex(/*@START_MENU_TOKEN@*/1.0/*@END_MENU_TOKEN@*/)
-                CustomDatePicker(value: $viewModel.birthDate, title: "Fecha de nacimiento", maxDate: Calendar.current.date(byAdding: .year, value: -19, to: Date())!, minDate: Calendar.current.date(byAdding: .year, value: -100, to: Date())!)
-                Spacer()
-            }
+        Form {
+            Text("Datos Personales")
+                .padding(.leading)
+            CustomDropDown(selectedValue: $viewModel.gender, title: "Género", values: ["Masculino", "Femenino", "Otro"])
+                .zIndex(/*@START_MENU_TOKEN@*/1.0/*@END_MENU_TOKEN@*/)
+            CustomDatePicker(value: $viewModel.birthDate, title: "Fecha de nacimiento", maxDate: Calendar.current.date(byAdding: .year, value: -19, to: Date())!, minDate: Calendar.current.date(byAdding: .year, value: -100, to: Date())!)
         }
     }
 }
@@ -157,11 +154,11 @@ struct SecondRegisterView: View {
     @StateObject var viewModel: RegisterViewModel
     
     var body: some View {
-        VStack(alignment: .leading){
+        Form{
             Text("Datos de la institución académica")
                 .padding(.leading)
-            CustomDropDown(selectedValue: $viewModel.country, values: ["México"])
-            CustomDropDown(selectedValue: $viewModel.university, values: ["Universidad Veracruzana"])
+            CustomDropDown(selectedValue: $viewModel.country, title: "País", values: ["México"])
+            CustomDropDown(selectedValue: $viewModel.university, title: "Universidad", values: ["Universidad Veracruzana"])
             Spacer()
         }
     }
@@ -170,12 +167,12 @@ struct ThirdRegisterView: View {
     @StateObject var viewModel: RegisterViewModel
     
     var body: some View {
-        VStack(alignment: .leading){
+        Form{
             Text("Datos de la unidad médica")
                 .padding(.leading)
-            CustomDropDown(selectedValue: $viewModel.healthInstitution, values: ["IMSS H.G.Z", "ISSTE", "CAE", "Hospital General Misantla"])
-            CustomDropDown(selectedValue: $viewModel.stayType, values: ["Internado", "Servicio Social", "Residencia"])
-            CustomDropDown(selectedValue: $viewModel.especiality, values: ["Cardiologia", "Neurologia"])
+            CustomDropDown(selectedValue: $viewModel.healthInstitution, title: "Unidad de Salud", values: ["IMSS H.G.Z", "ISSTE", "CAE", "Hospital General Misantla"])
+            CustomDropDown(selectedValue: $viewModel.stayType, title: "Estancia", values: ["Internado", "Servicio Social", "Residencia"])
+            CustomDropDown(selectedValue: $viewModel.especiality, title: "Especialidad", values: ["Cardiologia", "Neurologia"])
                 .disabled(!viewModel.isResidencySelected)
             CustomDatePicker(value: $viewModel.startDate, title: "Fecha de inicio", maxDate: Calendar.current.date(byAdding: .month, value:1, to: Date())!, minDate: Calendar.current.date(byAdding: .month, value: -6, to: Date())!)
             CustomDatePicker(value: $viewModel.endDate, title: "Fecha de fin", maxDate: Calendar.current.date(byAdding: .year, value: 100, to: Date())!, minDate: Calendar.current.date(byAdding: .month, value: 1, to: Date())!)
