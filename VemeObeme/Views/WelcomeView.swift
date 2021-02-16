@@ -23,7 +23,6 @@ struct WelcomeView: View {
             ObservationButton(logo: "ic_reporte_positivo", barColor: .green, message: "Observación positiva", destinationView: AnyView(PositiveObservationRootView()))
             ObservationButton(logo: "ic_reporte_supervision", barColor: .yellow, message: "Ausencia de supervisión médica", destinationView: AnyView(SupervisionObservationRootView()))
             ObservationButton(logo: "ic_reporte_trasgresion", barColor: .red, message: "Transgresión de derechos", destinationView: AnyView(TransgressionObservationView()))
-            Image("ic_violencia_fisica")
             Spacer()
         }
     }

@@ -129,28 +129,11 @@ class RegisterViewModel: ObservableObject {
         
     }
     
-    func tryRegister(completion: @escaping(String) -> ()){
+    func getCountries(completion: @escaping([Country]) -> ()){
         let dispatch = DispatchGroup()
         
         dispatch.enter()
-        PetititonManager().tryLogin(username: username, password: password) {
-            self.currentUser = $0
-            if (self.currentUser.correo == nil){
-                DispatchQueue.main.async {
-                    self.isError = true
-                }
-                completion("No existe el usuario: " + self.username)
-            }else if(self.currentUser.jwt != ""){
-                DispatchQueue.main.async {
-                    self.isError = false
-                }
-                completion("Ok")
-            }else{
-                DispatchQueue.main.async {
-                    self.isError = true
-                }
-                completion("Error no identificado")
-            }
+        GetPublicInfoManager().getCountry(){_ in 
             dispatch.leave()
         }
         dispatch.notify(queue: .main){

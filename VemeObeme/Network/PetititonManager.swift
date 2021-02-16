@@ -8,10 +8,10 @@
 import Foundation
 
 class PetititonManager {
-    
+    private var hostname = "https://veme-test.uc.r.appspot.com/obemeapi/v1/"
     func tryLogin(username: String, password: String, completion: @escaping(User) -> ()){
         
-        guard let url = URL(string: "https://veme-test.uc.r.appspot.com/obemeapi/v1/user/authenticate") else {
+        guard let url = URL(string: hostname + "user/authenticate") else {
             fatalError("URL Unreacheble")
         }
         var request = URLRequest(url: url)
@@ -34,7 +34,6 @@ class PetititonManager {
             if (responseData.statusCode == 200){
                 do {
                     let user = try JSONDecoder().decode(User.self, from: sentData)
-                    debugPrint(sentData)
                     completion(user)
                 } catch let error {
                     debugPrint("Error: \(error.localizedDescription)")
@@ -46,4 +45,6 @@ class PetititonManager {
         }
         task.resume()
     }
+
+    
 }

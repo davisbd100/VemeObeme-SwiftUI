@@ -21,13 +21,11 @@ struct CheckInfoView: View {
                         .font(.custom("Avenir Book", size: 14))
                     Text("Apellidos: " + viewModel.currentUser.apellidos!)
                         .font(.custom("Avenir Book", size: 14))
-                    Text("Correo electrónico: " + viewModel.currentUser.email!)
+                    Text("Correo electrónico: " + viewModel.currentUser.correo!)
                         .font(.custom("Avenir Book", size: 14))
                     Text("Fecha de nacimiento: " + viewModel.currentUser.fechaNacimiento!)
                         .font(.custom("Avenir Book", size: 14))
                     Text("Genero: " + viewModel.currentUser.genero!)
-                        .font(.custom("Avenir Book", size: 14))
-                    Text("Celular: " + viewModel.currentUser.celular!)
                         .font(.custom("Avenir Book", size: 14))
                 }
                 Divider()
@@ -35,7 +33,7 @@ struct CheckInfoView: View {
                     .font(.custom("Avenir Medium", size: 16))
                     .padding()
                 Group{
-                    Text("País: " + (viewModel.currentUser.university?.pais)!)
+                    Text("País: " + (viewModel.currentUser.university?.pais?.nombre)!)
                         .font(.custom("Avenir Book", size: 14))
                     Text("Universidad: " + (viewModel.currentUser.university?.nombreUniversidad)!)
                         .font(.custom("Avenir Book", size: 14))

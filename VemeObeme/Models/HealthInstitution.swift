@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct HealthUnit: Codable, Hashable {
-    public var healthUnitName: String?
+struct HealthInstitution: Codable, Hashable {
+    public var healthInstitutionName: String?
 }

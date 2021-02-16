@@ -19,7 +19,7 @@
 		544313D225BAAE5800103E0A /* CheckInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544313D125BAAE5800103E0A /* CheckInfoView.swift */; };
 		54445BBF25BB1D4600E90F48 /* CustomUserDefaultSave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54445BBE25BB1D4600E90F48 /* CustomUserDefaultSave.swift */; };
 		54445BC425BB245600E90F48 /* University.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54445BC325BB245600E90F48 /* University.swift */; };
-		54445BC925BB249700E90F48 /* HealthUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54445BC825BB249700E90F48 /* HealthUnit.swift */; };
+		54445BC925BB249700E90F48 /* HealthInstitution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54445BC825BB249700E90F48 /* HealthInstitution.swift */; };
 		54445BCE25BB257E00E90F48 /* CheckInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54445BCD25BB257E00E90F48 /* CheckInfoViewModel.swift */; };
 		54445BD625BB36AE00E90F48 /* PositiveObservationRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54445BD525BB36AE00E90F48 /* PositiveObservationRootView.swift */; };
 		54445BDB25BB36C200E90F48 /* SupervisionObservationRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54445BDA25BB36C200E90F48 /* SupervisionObservationRootView.swift */; };
@@ -40,6 +40,7 @@
 		544D008C256EC02500BE743E /* pills-bottle.json in Resources */ = {isa = PBXBuildFile; fileRef = 544D0082256EC02500BE743E /* pills-bottle.json */; };
 		544D008D256EC02500BE743E /* safe.json in Resources */ = {isa = PBXBuildFile; fileRef = 544D0083256EC02500BE743E /* safe.json */; };
 		544D008E256EC02500BE743E /* telescope.json in Resources */ = {isa = PBXBuildFile; fileRef = 544D0084256EC02500BE743E /* telescope.json */; };
+		545F676725DC51BD00C37B64 /* GetPublicInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545F676625DC51BD00C37B64 /* GetPublicInfoManager.swift */; };
 		546AB90325C461A500835A8E /* ReviewObservationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546AB90225C461A500835A8E /* ReviewObservationButton.swift */; };
 		546AB90825C464E400835A8E /* ObservationConsultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546AB90725C464E400835A8E /* ObservationConsultView.swift */; };
 		546AB90D25C465A300835A8E /* ObservationConsultInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546AB90C25C465A300835A8E /* ObservationConsultInfoView.swift */; };
@@ -51,7 +52,7 @@
 		547E8A7825BA31DE005C7FE0 /* ValidatorSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547E8A7725BA31DE005C7FE0 /* ValidatorSecureField.swift */; };
 		547E8A8025BA3385005C7FE0 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547E8A7F25BA3385005C7FE0 /* WelcomeView.swift */; };
 		54887EAE25CCDA2900C79056 /* TransgressionObservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54887EAD25CCDA2900C79056 /* TransgressionObservationView.swift */; };
-		54B50C08255C5870008DD49C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B50C07255C5870008DD49C /* User.swift */; };
+		54B50C08255C5870008DD49C /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B50C07255C5870008DD49C /* Student.swift */; };
 		54B50C10255C5964008DD49C /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B50C0F255C5964008DD49C /* LoginViewModel.swift */; };
 		54B50C15255C5C73008DD49C /* PetititonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B50C14255C5C73008DD49C /* PetititonManager.swift */; };
 		54C605BF255C407B00003D70 /* VemeObemeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C605BE255C407B00003D70 /* VemeObemeApp.swift */; };
@@ -63,6 +64,9 @@
 		54D1C61D2581583500E7F9C1 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D1C61C2581583500E7F9C1 /* RegisterView.swift */; };
 		54D1C62525816AEE00E7F9C1 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D1C62425816AEE00E7F9C1 /* RegisterViewModel.swift */; };
 		54D3C4BF255D90960087B2BF /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D3C4BE255D90960087B2BF /* Utils.swift */; };
+		54E8653F25D720F400779DA9 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E8653E25D720F400779DA9 /* Country.swift */; };
+		54E8654425D7214F00779DA9 /* StayType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E8654325D7214F00779DA9 /* StayType.swift */; };
+		54E8654925D721A700779DA9 /* Specialty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E8654825D721A700779DA9 /* Specialty.swift */; };
 		54F1B54D25CCC150003130EA /* AddBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F1B54C25CCC150003130EA /* AddBorder.swift */; };
 /* End PBXBuildFile section */
 
@@ -96,7 +100,7 @@
 		544313D125BAAE5800103E0A /* CheckInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInfoView.swift; sourceTree = "<group>"; };
 		54445BBE25BB1D4600E90F48 /* CustomUserDefaultSave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUserDefaultSave.swift; sourceTree = "<group>"; };
 		54445BC325BB245600E90F48 /* University.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = University.swift; sourceTree = "<group>"; };
-		54445BC825BB249700E90F48 /* HealthUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthUnit.swift; sourceTree = "<group>"; };
+		54445BC825BB249700E90F48 /* HealthInstitution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthInstitution.swift; sourceTree = "<group>"; };
 		54445BCD25BB257E00E90F48 /* CheckInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInfoViewModel.swift; sourceTree = "<group>"; };
 		54445BD525BB36AE00E90F48 /* PositiveObservationRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositiveObservationRootView.swift; sourceTree = "<group>"; };
 		54445BDA25BB36C200E90F48 /* SupervisionObservationRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupervisionObservationRootView.swift; sourceTree = "<group>"; };
@@ -116,6 +120,7 @@
 		544D0082256EC02500BE743E /* pills-bottle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "pills-bottle.json"; sourceTree = "<group>"; };
 		544D0083256EC02500BE743E /* safe.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = safe.json; sourceTree = "<group>"; };
 		544D0084256EC02500BE743E /* telescope.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = telescope.json; sourceTree = "<group>"; };
+		545F676625DC51BD00C37B64 /* GetPublicInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPublicInfoManager.swift; sourceTree = "<group>"; };
 		546AB90225C461A500835A8E /* ReviewObservationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewObservationButton.swift; sourceTree = "<group>"; };
 		546AB90725C464E400835A8E /* ObservationConsultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservationConsultView.swift; sourceTree = "<group>"; };
 		546AB90C25C465A300835A8E /* ObservationConsultInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservationConsultInfoView.swift; sourceTree = "<group>"; };
@@ -127,7 +132,7 @@
 		547E8A7725BA31DE005C7FE0 /* ValidatorSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorSecureField.swift; sourceTree = "<group>"; };
 		547E8A7F25BA3385005C7FE0 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		54887EAD25CCDA2900C79056 /* TransgressionObservationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransgressionObservationView.swift; sourceTree = "<group>"; };
-		54B50C07255C5870008DD49C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		54B50C07255C5870008DD49C /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		54B50C0F255C5964008DD49C /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		54B50C14255C5C73008DD49C /* PetititonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetititonManager.swift; sourceTree = "<group>"; };
 		54C605BB255C407B00003D70 /* VemeObeme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VemeObeme.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,6 +150,9 @@
 		54D1C61C2581583500E7F9C1 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		54D1C62425816AEE00E7F9C1 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		54D3C4BE255D90960087B2BF /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		54E8653E25D720F400779DA9 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		54E8654325D7214F00779DA9 /* StayType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayType.swift; sourceTree = "<group>"; };
+		54E8654825D721A700779DA9 /* Specialty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Specialty.swift; sourceTree = "<group>"; };
 		54F1B54C25CCC150003130EA /* AddBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBorder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -248,9 +256,12 @@
 		54B50C05255C5840008DD49C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				54B50C07255C5870008DD49C /* User.swift */,
+				54B50C07255C5870008DD49C /* Student.swift */,
 				54445BC325BB245600E90F48 /* University.swift */,
-				54445BC825BB249700E90F48 /* HealthUnit.swift */,
+				54445BC825BB249700E90F48 /* HealthInstitution.swift */,
+				54E8653E25D720F400779DA9 /* Country.swift */,
+				54E8654325D7214F00779DA9 /* StayType.swift */,
+				54E8654825D721A700779DA9 /* Specialty.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -269,6 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				54B50C14255C5C73008DD49C /* PetititonManager.swift */,
+				545F676625DC51BD00C37B64 /* GetPublicInfoManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -486,6 +498,7 @@
 				547E8A7325BA313E005C7FE0 /* ValidatorField.swift in Sources */,
 				544C0F5C255FE2E1001D0CA3 /* OnboardStep.swift in Sources */,
 				5441D4A725BB416E004CA4DB /* PositiveObservationRootView1.swift in Sources */,
+				54E8654925D721A700779DA9 /* Specialty.swift in Sources */,
 				547E8A6E25BA30BC005C7FE0 /* CustomRadioButtonField.swift in Sources */,
 				546AB90D25C465A300835A8E /* ObservationConsultInfoView.swift in Sources */,
 				54D1C61D2581583500E7F9C1 /* RegisterView.swift in Sources */,
@@ -496,12 +509,13 @@
 				546AB90325C461A500835A8E /* ReviewObservationButton.swift in Sources */,
 				544C0F66255FEAB0001D0CA3 /* AboutObeme.swift in Sources */,
 				54B50C10255C5964008DD49C /* LoginViewModel.swift in Sources */,
+				54E8653F25D720F400779DA9 /* Country.swift in Sources */,
 				54445BC425BB245600E90F48 /* University.swift in Sources */,
 				5409C9CC25BA9013007CF221 /* HomeRootView.swift in Sources */,
 				542F814925BAA2AA00EC9B05 /* LoadingScreenCompleteView.swift in Sources */,
 				5409C9D925BA97C4007CF221 /* SimpleCheckbox.swift in Sources */,
 				54C605C1255C407B00003D70 /* LoginView.swift in Sources */,
-				54445BC925BB249700E90F48 /* HealthUnit.swift in Sources */,
+				54445BC925BB249700E90F48 /* HealthInstitution.swift in Sources */,
 				544C0F61255FE86F001D0CA3 /* OnboardView.swift in Sources */,
 				547E8A6125BA3031005C7FE0 /* CustomDropDown.swift in Sources */,
 				544BF7442583C4750071B2DE /* CustomProgressBarView.swift in Sources */,
@@ -510,17 +524,19 @@
 				54887EAE25CCDA2900C79056 /* TransgressionObservationView.swift in Sources */,
 				547E8A6925BA3092005C7FE0 /* CustomDatePicker.swift in Sources */,
 				54C605BF255C407B00003D70 /* VemeObemeApp.swift in Sources */,
+				54E8654425D7214F00779DA9 /* StayType.swift in Sources */,
 				547E8A8025BA3385005C7FE0 /* WelcomeView.swift in Sources */,
 				54D1C62525816AEE00E7F9C1 /* RegisterViewModel.swift in Sources */,
 				5446C7FD256CD5DE003B93CA /* RootView.swift in Sources */,
 				5409C9C725BA35BF007CF221 /* ObservationButton.swift in Sources */,
 				5409C9D425BA9449007CF221 /* PositiveObservationView.swift in Sources */,
+				545F676725DC51BD00C37B64 /* GetPublicInfoManager.swift in Sources */,
 				54445BD625BB36AE00E90F48 /* PositiveObservationRootView.swift in Sources */,
 				542F814F25BAA65B00EC9B05 /* SupervisionObservationView.swift in Sources */,
 				54445BCE25BB257E00E90F48 /* CheckInfoViewModel.swift in Sources */,
 				547E8A7825BA31DE005C7FE0 /* ValidatorSecureField.swift in Sources */,
 				547E8A5C25BA2FC2005C7FE0 /* CustomParagraph.swift in Sources */,
-				54B50C08255C5870008DD49C /* User.swift in Sources */,
+				54B50C08255C5870008DD49C /* Student.swift in Sources */,
 				5446C7F2256CC63D003B93CA /* LottieView.swift in Sources */,
 				54445BDB25BB36C200E90F48 /* SupervisionObservationRootView.swift in Sources */,
 				542F813F25BA9E9F00EC9B05 /* GenericMakeObservation.swift in Sources */,

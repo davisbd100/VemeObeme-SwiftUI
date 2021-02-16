@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Univesity: Codable, Hashable {
-    public var pais: String?
+struct University: Codable, Hashable {
+    public var pais: Country?
     public var nombreUniversidad: String?
 }

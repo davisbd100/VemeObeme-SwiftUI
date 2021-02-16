@@ -142,6 +142,17 @@ struct FirstRegisterView: View {
     
     var body: some View {
         Form {
+            Button(action: {
+                    let dispatch = DispatchGroup()
+                    dispatch.enter()
+                    viewModel.getCountries{code in
+                        dispatch.leave()
+                    }
+                    dispatch.notify(queue: .main){
+                    }
+            }, label: {
+                /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
+            })
             Text("Datos Personales")
                 .padding(.leading)
             CustomDropDown(selectedValue: $viewModel.gender, title: "Género", values: ["Masculino", "Femenino", "Otro"])

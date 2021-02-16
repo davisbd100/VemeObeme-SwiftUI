@@ -68,10 +68,11 @@ class LoginViewModel: ObservableObject {
             print("Finished Task")
         }
     }
+    
     func testData() -> User{
-        let university = Univesity(pais: "Mexico", nombreUniversidad: "Universidad Veracruzana")
-        let healthUnit = HealthUnit(healthUnitName: "Clinica 11 IMSS")
-        let user = User(correo: "davisbd100@gmail.com", jwt: "validToken", nombres: "David", apellidos: "Bárcenas Duran", email: "davisbd100@gmail.com", fechaNacimiento: "24/05/1999", genero: "Masculino", celular: "2288888888", university: university, healtUnit: healthUnit)
+        let university = University(pais: Country(nombre: "México"), nombreUniversidad: "Universidad Veracruzana")
+        let healthUnit = HealthInstitution(healthInstitutionName: "Clinica 11 IMSS")
+        let user = User(correo: "davisbd100@gmail.com", jwt: "validToken", nombres: "David", apellidos: "Bárcenas Duran", fechaNacimiento: "24/05/1999", genero: "Masculino", university: university, healtInstitution: healthUnit)
         return user
     }
     
