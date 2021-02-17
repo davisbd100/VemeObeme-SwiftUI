@@ -69,12 +69,7 @@ class LoginViewModel: ObservableObject {
         }
     }
     
-    func testData() -> User{
-        let university = University(pais: Country(nombre: "México"), nombreUniversidad: "Universidad Veracruzana")
-        let healthUnit = HealthInstitution(healthInstitutionName: "Clinica 11 IMSS")
-        let user = User(correo: "davisbd100@gmail.com", jwt: "validToken", nombres: "David", apellidos: "Bárcenas Duran", fechaNacimiento: "24/05/1999", genero: "Masculino", university: university, healtInstitution: healthUnit)
-        return user
-    }
+
     
     func checkFields() -> Bool {
         var validation = false

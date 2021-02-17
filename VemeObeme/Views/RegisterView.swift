@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RegisterView: View {
     @StateObject var viewModel = RegisterViewModel()
-    @State var currentTab = 1
+    @State var currentTab = 2
     @State var isSwipeDisabled = true
     @State var isTermsAndConditionsAccepted = false
     @State var isError = false
@@ -142,34 +142,64 @@ struct FirstRegisterView: View {
     
     var body: some View {
         Form {
-            Button(action: {
-                    let dispatch = DispatchGroup()
-                    dispatch.enter()
-                    viewModel.getCountries{code in
-                        dispatch.leave()
-                    }
-                    dispatch.notify(queue: .main){
-                    }
-            }, label: {
-                /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
-            })
             Text("Datos Personales")
                 .padding(.leading)
             CustomDropDown(selectedValue: $viewModel.gender, title: "Género", values: ["Masculino", "Femenino", "Otro"])
-                .zIndex(/*@START_MENU_TOKEN@*/1.0/*@END_MENU_TOKEN@*/)
             CustomDatePicker(value: $viewModel.birthDate, title: "Fecha de nacimiento", maxDate: Calendar.current.date(byAdding: .year, value: -19, to: Date())!, minDate: Calendar.current.date(byAdding: .year, value: -100, to: Date())!)
         }
     }
 }
 struct SecondRegisterView: View {
     @StateObject var viewModel: RegisterViewModel
+    @State var countries: [Country] = []
+    @State var universities: [University] = []
+    @State var selectedCountry: Country = Country()
     
     var body: some View {
         Form{
             Text("Datos de la institución académica")
                 .padding(.leading)
-            CustomDropDown(selectedValue: $viewModel.country, title: "País", values: ["México"])
-            CustomDropDown(selectedValue: $viewModel.university, title: "Universidad", values: ["Universidad Veracruzana"])
+            Picker(selection: $viewModel.country, label: Text("País"), content: {
+                ForEach(countries, id: \.self) { value in
+                    Text("\(value.nombre!)")
+                        .font(.custom("Avenir Book", size: 15))
+                }
+            })
+            .font(.custom("Avenir Book", size: 15)).padding()
+            .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: 344, maxWidth: 370, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            .background(Color.white)
+            .addBorder(Color.black, width: 2, cornerRadius: 20)
+            .onAppear(perform: {
+                let dispatch = DispatchGroup()
+                
+                dispatch.enter()
+                viewModel.getCountries{countries in
+                    self.countries = countries
+                    dispatch.leave()
+                }
+            })
+            Picker(selection: $viewModel.university, label: Text("Universidad"), content: {
+                ForEach(universities, id: \.self) { value in
+                    Text("\(value.nombre!)")
+                        .font(.custom("Avenir Book", size: 15))
+                }
+            })
+            .font(.custom("Avenir Book", size: 15)).padding()
+            .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: 344, maxWidth: 370, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            .background(Color.white)
+            .addBorder(Color.black, width: 2, cornerRadius: 20)
+            .onAppear(perform: {
+                let dispatch = DispatchGroup()
+                
+                dispatch.enter()
+                viewModel.getUniversityByCountry(){universities in
+                    self.universities = universities
+                    dispatch.leave()
+                }
+                dispatch.notify(queue: .main){
+                    debugPrint("Holalala")
+                }
+            })
             Spacer()
         }
     }

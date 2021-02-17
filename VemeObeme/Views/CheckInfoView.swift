@@ -33,10 +33,10 @@ struct CheckInfoView: View {
                     .font(.custom("Avenir Medium", size: 16))
                     .padding()
                 Group{
-                    Text("País: " + (viewModel.currentUser.university?.pais?.nombre)!)
-                        .font(.custom("Avenir Book", size: 14))
-                    Text("Universidad: " + (viewModel.currentUser.university?.nombreUniversidad)!)
-                        .font(.custom("Avenir Book", size: 14))
+                    //Text("País: " + (viewModel.currentUser.university?.pais?.nombre)!)
+                    //    .font(.custom("Avenir Book", size: 14))
+                    //Text("Universidad: " + (viewModel.currentUser.university?.nombreUniversidad)!)
+                    //    .font(.custom("Avenir Book", size: 14))
                 }
                 Divider()
                 Text("Datos de la unidad de salud (actual)")

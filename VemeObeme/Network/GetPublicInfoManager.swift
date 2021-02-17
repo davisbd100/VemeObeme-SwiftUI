@@ -34,4 +34,28 @@ class GetPublicInfoManager {
         }
         task.resume()
     }
+    func getUniversityByCountry(completion: @escaping([University]) -> ()){
+        
+        guard let url = URL(string: hostname + "universidades/") else {
+            fatalError("URL Unreacheble")
+        }
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let sentData = data, error == nil, let responseData = response as? HTTPURLResponse else {
+                return
+            }
+            if (responseData.statusCode == 200){
+                do {
+                    let university = try JSONDecoder().decode([University].self, from: sentData)
+                    completion(university)
+                } catch let error {
+                    debugPrint("Error: \(error.localizedDescription)")
+                }
+            }
+        }
+        task.resume()
+    }
 }

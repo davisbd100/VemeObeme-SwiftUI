@@ -12,8 +12,8 @@ class RegisterViewModel: ObservableObject {
     
     @Published var gender = ""
     @Published var birthDate = Calendar.current.date(byAdding: .year, value: -19, to: Date())!
-    @Published var country = ""
-    @Published var university = ""
+    @Published var country: Country = Country()
+    @Published var university: University = University()
     @Published var healthInstitution = ""
     @Published var stayType = ""
     @Published var especiality = ""
@@ -38,7 +38,6 @@ class RegisterViewModel: ObservableObject {
     @Published var isResidencySelected = false
     private var cancellableSet: Set<AnyCancellable> = []
     
-    private var currentUser = User()
     
     
     init() {
@@ -67,14 +66,14 @@ class RegisterViewModel: ObservableObject {
             .receive(on: RunLoop.main)
             .map{
                 country in
-                return (!country.isEmpty && country != "País")
+                return (!(country.nombre?.isEmpty ?? true) && country.nombre != "País")
             }.assign(to: \.isCountryValid, on: self)
             .store(in: &cancellableSet)
         $university
             .receive(on: RunLoop.main)
             .map{
                 university in
-                return (!university.isEmpty && university != "Universidad")
+                return (!(university.nombre?.isEmpty ?? true) && university.nombre != "Universidad")
             }.assign(to: \.isUniversityValid, on: self)
             .store(in: &cancellableSet)
         $birthDate
@@ -133,11 +132,32 @@ class RegisterViewModel: ObservableObject {
         let dispatch = DispatchGroup()
         
         dispatch.enter()
-        GetPublicInfoManager().getCountry(){_ in 
+        GetPublicInfoManager().getCountry(){
+            if $0.isEmpty {
+                completion($0)
+            }else{
+                completion($0)
+            }
             dispatch.leave()
         }
         dispatch.notify(queue: .main){
-            print("Finished Task")
+            print("Finished Searching for countries")
+        }
+    }
+    func getUniversityByCountry(completion: @escaping([University]) -> ()){
+        let dispatch = DispatchGroup()
+        
+        dispatch.enter()
+        GetPublicInfoManager().getUniversityByCountry(){
+            if $0.isEmpty {
+                completion($0)
+            }else{
+                completion($0)
+            }
+            dispatch.leave()
+        }
+        dispatch.notify(queue: .main){
+            print("Finished Searching for universities")
         }
     }
     

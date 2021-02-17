@@ -44,7 +44,6 @@ struct LoginView: View {
                     dispatch.notify(queue: .main){
                         self.isErrorPresented = viewModel.isError
                         isLogin.toggle()
-                        UserDefaults.standard.setCodableObject(viewModel.testData(), forKey: "currentUser")
                     }
                 }, label: {
                     Text("Iniciar Sesion")

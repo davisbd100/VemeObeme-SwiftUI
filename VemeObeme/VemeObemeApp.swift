@@ -13,7 +13,7 @@ struct VemeObemeApp: App {
     }
     var body: some Scene {
         WindowGroup {
-            RegisterView()
+            RootView()
         }
     }
 }
