@@ -88,29 +88,10 @@ struct LoginView: View {
             .padding(.leading)
             .padding(.bottom)
             if isLogin{
-                GeometryReader { geo in
-                    LoadingView()
-                        .position(x:geo.frame(in:.global).midX,y:geo.frame(in:.global).midY)
-                }.background(Color.black.opacity(0.45).edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/))
+                CustomLoadingView(title: "Iniciando Sesión")
             }
         })
         .navigationBarHidden(true)
-    }
-}
-
-
-struct LoadingView: View {
-    
-    var body: some View {
-        VStack{
-            Text("Iniciando Sesión")
-                .foregroundColor(.green)
-                .font(.custom("Avenir Heavy", size: 30))
-            LottieView(filename: "electro", loopMode: .loop)
-                .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxWidth: 200, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxHeight: 200, alignment: Alignment(horizontal: .center, vertical: .center))
-        }
-        .background(Color.white.opacity(0.60))
-        .padding()
     }
 }
 

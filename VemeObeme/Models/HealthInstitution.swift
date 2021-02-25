@@ -8,5 +8,6 @@
 import Foundation
 
 struct HealthInstitution: Codable, Hashable {
-    public var healthInstitutionName: String?
+    public var idInstitucionSalud: Int?
+    public var nombre: String?
 }
