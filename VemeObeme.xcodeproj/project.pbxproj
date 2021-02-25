@@ -24,6 +24,7 @@
 		54445BD625BB36AE00E90F48 /* PositiveObservationRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54445BD525BB36AE00E90F48 /* PositiveObservationRootView.swift */; };
 		54445BDB25BB36C200E90F48 /* SupervisionObservationRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54445BDA25BB36C200E90F48 /* SupervisionObservationRootView.swift */; };
 		54450A6A25E82A2D0016FFA1 /* CustomLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54450A6925E82A2D0016FFA1 /* CustomLoadingView.swift */; };
+		54450A7725E84EA10016FFA1 /* NetworkDataValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54450A7625E84EA10016FFA1 /* NetworkDataValidation.swift */; };
 		5446C7EA256CC3E9003B93CA /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 5446C7E9256CC3E9003B93CA /* Lottie */; };
 		5446C7F2256CC63D003B93CA /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5446C7F1256CC63D003B93CA /* LottieView.swift */; };
 		5446C7FD256CD5DE003B93CA /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5446C7FC256CD5DE003B93CA /* RootView.swift */; };
@@ -106,6 +107,7 @@
 		54445BD525BB36AE00E90F48 /* PositiveObservationRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositiveObservationRootView.swift; sourceTree = "<group>"; };
 		54445BDA25BB36C200E90F48 /* SupervisionObservationRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupervisionObservationRootView.swift; sourceTree = "<group>"; };
 		54450A6925E82A2D0016FFA1 /* CustomLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoadingView.swift; sourceTree = "<group>"; };
+		54450A7625E84EA10016FFA1 /* NetworkDataValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataValidation.swift; sourceTree = "<group>"; };
 		5446C7F1256CC63D003B93CA /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		5446C7FC256CD5DE003B93CA /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		544BF7432583C4750071B2DE /* CustomProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressBarView.swift; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 			children = (
 				54B50C14255C5C73008DD49C /* PetititonManager.swift */,
 				545F676625DC51BD00C37B64 /* GetPublicInfoManager.swift */,
+				54450A7625E84EA10016FFA1 /* NetworkDataValidation.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -523,6 +526,7 @@
 				544C0F61255FE86F001D0CA3 /* OnboardView.swift in Sources */,
 				547E8A6125BA3031005C7FE0 /* CustomDropDown.swift in Sources */,
 				544BF7442583C4750071B2DE /* CustomProgressBarView.swift in Sources */,
+				54450A7725E84EA10016FFA1 /* NetworkDataValidation.swift in Sources */,
 				542F814425BAA18C00EC9B05 /* LoadingScreenObservation.swift in Sources */,
 				544313D225BAAE5800103E0A /* CheckInfoView.swift in Sources */,
 				54887EAE25CCDA2900C79056 /* TransgressionObservationView.swift in Sources */,

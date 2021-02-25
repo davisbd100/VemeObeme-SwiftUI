@@ -192,6 +192,18 @@ class RegisterViewModel: ObservableObject {
             print("Finished Searching for specialties")
         }
     }
+    func getSpecialties(completion: @escaping(Bool) -> ()){
+        let dispatch = DispatchGroup()
+        
+        dispatch.enter()
+        NetworkDataValidations().CheckIfEmailExists(email: username){
+            completion($0)
+            dispatch.leave()
+        }
+        dispatch.notify(queue: .main){
+            print("Finished Searching for specialties")
+        }
+    }
     
     func checkFields() -> Bool {
         var validation = false
