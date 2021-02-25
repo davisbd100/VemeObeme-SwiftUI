@@ -14,9 +14,9 @@ class RegisterViewModel: ObservableObject {
     @Published var birthDate = Calendar.current.date(byAdding: .year, value: -19, to: Date())!
     @Published var country: Country = Country()
     @Published var university: University = University()
-    @Published var healthInstitution = ""
+    @Published var healthInstitution: HealthInstitution = HealthInstitution()
     @Published var stayType = ""
-    @Published var especiality = ""
+    @Published var especiality: Specialty = Specialty()
     @Published var startDate = Calendar.current.date(byAdding: .year, value: -19, to: Date())!
     @Published var endDate = Calendar.current.date(byAdding: .year, value: -19, to: Date())!
     @Published var username = ""
@@ -87,7 +87,7 @@ class RegisterViewModel: ObservableObject {
             .receive(on: RunLoop.main)
             .map{
                 healthInstitution in
-                return !healthInstitution.isEmpty
+                return (!(healthInstitution.nombre?.isEmpty ?? true) && healthInstitution.nombre != "Institución de Salud")
             }.assign(to: \.isHealthInstitutionValid, on: self)
             .store(in: &cancellableSet)
         $stayType
@@ -108,7 +108,7 @@ class RegisterViewModel: ObservableObject {
             .receive(on: RunLoop.main)
             .map{
                 especiality in
-                return !especiality.isEmpty
+                return (!(especiality.nombre?.isEmpty ?? true) && especiality.nombre != "Institución de Salud")
             }.assign(to: \.isEspecialityValid, on: self)
             .store(in: &cancellableSet)
         $startDate
@@ -158,6 +158,38 @@ class RegisterViewModel: ObservableObject {
         }
         dispatch.notify(queue: .main){
             print("Finished Searching for universities")
+        }
+    }
+    func getHealtInstitutionByCountry(completion: @escaping([HealthInstitution]) -> ()){
+        let dispatch = DispatchGroup()
+        
+        dispatch.enter()
+        GetPublicInfoManager().getHealthInstitutionByCountry(){
+            if $0.isEmpty {
+                completion($0)
+            }else{
+                completion($0)
+            }
+            dispatch.leave()
+        }
+        dispatch.notify(queue: .main){
+            print("Finished Searching for health institutions")
+        }
+    }
+    func getSpecialties(completion: @escaping([Specialty]) -> ()){
+        let dispatch = DispatchGroup()
+        
+        dispatch.enter()
+        GetPublicInfoManager().getSpecialities(){
+            if $0.isEmpty {
+                completion($0)
+            }else{
+                completion($0)
+            }
+            dispatch.leave()
+        }
+        dispatch.notify(queue: .main){
+            print("Finished Searching for specialties")
         }
     }
     

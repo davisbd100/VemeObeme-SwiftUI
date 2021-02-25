@@ -49,7 +49,7 @@ struct RegisterView: View {
                                 SecondRegisterView(viewModel: viewModel, isLoading: $isLoading, loadingTitle: $loadingTitle)
                                     .tag(2)
                                     .gesture(isSwipeDisabled ? DragGesture() : nil)
-                                ThirdRegisterView(viewModel: viewModel)
+                                ThirdRegisterView(viewModel: viewModel, isLoading: $isLoading, loadingTitle: $loadingTitle)
                                     .tag(3)
                                     .gesture(isSwipeDisabled ? DragGesture() : nil)
                                 FourthRegisterView(viewModel: viewModel)
@@ -113,7 +113,7 @@ struct RegisterView: View {
                 }))
             })
             if isLoading{
-                CustomLoadingView()
+                CustomLoadingView(title: loadingTitle)
             }
         }
     }
@@ -203,15 +203,64 @@ struct SecondRegisterView: View {
 }
 struct ThirdRegisterView: View {
     @StateObject var viewModel: RegisterViewModel
+    @State var healthInstitutions: [HealthInstitution] = []
+    @State var specialities: [Specialty] = []
     
+    @Binding var isLoading: Bool
+    @Binding var loadingTitle: String
     var body: some View {
         Form{
             Text("Datos de la unidad médica")
                 .padding(.leading)
-            CustomDropDown(selectedValue: $viewModel.healthInstitution, title: "Unidad de Salud", values: ["IMSS H.G.Z", "ISSTE", "CAE", "Hospital General Misantla"])
+            Picker(selection: $viewModel.healthInstitution, label: Text("Institución de salud"), content: {
+                ForEach(healthInstitutions, id: \.self) { value in
+                    Text("\(value.nombre!)")
+                        .font(.custom("Avenir Book", size: 15))
+                }
+            })
+            .font(.custom("Avenir Book", size: 15)).padding()
+            .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: 344, maxWidth: 370, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            .background(Color.white)
+            .addBorder(Color.black, width: 2, cornerRadius: 20)
+            .onAppear(perform: {
+                isLoading.toggle()
+                loadingTitle = "Cargando paises"
+                let dispatch = DispatchGroup()
+                
+                dispatch.enter()
+                viewModel.getHealtInstitutionByCountry(){institutions in
+                    self.healthInstitutions = institutions
+                    isLoading.toggle()
+                    loadingTitle = "Cargando"
+                    dispatch.leave()
+                }
+            })
             CustomDropDown(selectedValue: $viewModel.stayType, title: "Estancia", values: ["Internado", "Servicio Social", "Residencia"])
-            CustomDropDown(selectedValue: $viewModel.especiality, title: "Especialidad", values: ["Cardiologia", "Neurologia"])
-                .disabled(!viewModel.isResidencySelected)
+            if (viewModel.isResidencySelected){
+                Picker(selection: $viewModel.especiality, label: Text("Especialidad"), content: {
+                    ForEach(specialities, id: \.self) { value in
+                        Text("\(value.nombre!)")
+                            .font(.custom("Avenir Book", size: 15))
+                    }
+                })
+                .font(.custom("Avenir Book", size: 15)).padding()
+                .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: 344, maxWidth: 370, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .background(Color.white)
+                .addBorder(Color.black, width: 2, cornerRadius: 20)
+                .onAppear(perform: {
+                    isLoading.toggle()
+                    loadingTitle = "Cargando especialidades"
+                    let dispatch = DispatchGroup()
+                    
+                    dispatch.enter()
+                    viewModel.getSpecialties(){specialitiesList in
+                        self.specialities = specialitiesList
+                        isLoading.toggle()
+                        loadingTitle = "Cargando"
+                        dispatch.leave()
+                    }
+                })
+            }
             CustomDatePicker(value: $viewModel.startDate, title: "Fecha de inicio", maxDate: Calendar.current.date(byAdding: .month, value:1, to: Date())!, minDate: Calendar.current.date(byAdding: .month, value: -6, to: Date())!)
             CustomDatePicker(value: $viewModel.endDate, title: "Fecha de fin", maxDate: Calendar.current.date(byAdding: .year, value: 100, to: Date())!, minDate: Calendar.current.date(byAdding: .month, value: 1, to: Date())!)
             Spacer()

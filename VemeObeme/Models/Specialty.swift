@@ -7,6 +7,7 @@
 
 import Foundation
 
-struct Specialty {
-    private var nombreEspecialidad: String?
+struct Specialty: Codable, Hashable {
+    public var idEspecialidad: Int?
+    public var nombre: String?
 }
