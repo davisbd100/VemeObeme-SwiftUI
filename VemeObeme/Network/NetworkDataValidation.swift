@@ -10,11 +10,11 @@ class NetworkDataValidations {
     private var hostname = "https://veme-test.uc.r.appspot.com/obemeapi/v1/"
     func CheckIfEmailExists(email: String, completion: @escaping(Bool) -> ()){
         
-        guard let url = URL(string: hostname + "checkIfExists/" + email) else {
+        guard let url = URL(string: hostname + "user/checkIfExists/" + email) else {
             fatalError("URL Unreacheble")
         }
         var request = URLRequest(url: url)
-        request.httpMethod = "POST"
+        request.httpMethod = "GET"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in

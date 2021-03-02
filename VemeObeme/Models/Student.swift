@@ -8,14 +8,11 @@
 import Foundation
 
 
-struct User: Codable, Hashable {
-    public var correo: String?
-    public var jwt: String?
-    public var nombres: String?
-    public var apellidos: String?
+struct Student: Codable, Hashable {
+    public var idEstudiante: Int?
     public var fechaNacimiento: String?
     public var genero: String?
-    public var rol: String?
+    public var estancias: 
     public var university: University?
     public var healtInstitution: HealthInstitution?
 }

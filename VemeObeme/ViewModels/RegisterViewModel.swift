@@ -192,7 +192,7 @@ class RegisterViewModel: ObservableObject {
             print("Finished Searching for specialties")
         }
     }
-    func getSpecialties(completion: @escaping(Bool) -> ()){
+    func checkIfEmailExists(completion: @escaping(Bool) -> ()){
         let dispatch = DispatchGroup()
         
         dispatch.enter()
@@ -201,7 +201,7 @@ class RegisterViewModel: ObservableObject {
             dispatch.leave()
         }
         dispatch.notify(queue: .main){
-            print("Finished Searching for specialties")
+            print("Finished Checking Mail")
         }
     }
     

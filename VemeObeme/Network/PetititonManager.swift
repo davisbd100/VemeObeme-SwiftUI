@@ -11,7 +11,7 @@ class PetititonManager {
     private var hostname = "https://veme-test.uc.r.appspot.com/obemeapi/v1/"
     func tryLogin(username: String, password: String, completion: @escaping(User) -> ()){
         
-        guard let url = URL(string: hostname + "user/authenticate") else {
+        guard let url = URL(string: hostname + "user/authenticate/") else {
             fatalError("URL Unreacheble")
         }
         var request = URLRequest(url: url)

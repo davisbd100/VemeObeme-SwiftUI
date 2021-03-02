@@ -37,8 +37,15 @@ struct LoginView: View {
                     isLogin.toggle()
                     
                     dispatch.enter()
-                    viewModel.tryLogin(){code in
-                        codeMessages = code
+                    viewModel.tryLogin(){result in
+                        if (result){
+                            var bolean = UserDefaults.standard.bool(forKey: "isLoggedIn")
+                            debugPrint(bolean)
+                            UserDefaults.standard.setValue(true, forKey: "isLoggedIn")
+                        }else{
+                            codeMessages = "Error en los datos, verficia los datos e intenta de nuevo"
+                            isErrorPresented.toggle()
+                        }
                         dispatch.leave()
                     }
                     dispatch.notify(queue: .main){

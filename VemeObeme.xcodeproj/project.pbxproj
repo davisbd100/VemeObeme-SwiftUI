@@ -25,6 +25,9 @@
 		54445BDB25BB36C200E90F48 /* SupervisionObservationRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54445BDA25BB36C200E90F48 /* SupervisionObservationRootView.swift */; };
 		54450A6A25E82A2D0016FFA1 /* CustomLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54450A6925E82A2D0016FFA1 /* CustomLoadingView.swift */; };
 		54450A7725E84EA10016FFA1 /* NetworkDataValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54450A7625E84EA10016FFA1 /* NetworkDataValidation.swift */; };
+		5446046325EDE7D700E37CE0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5446046225EDE7D700E37CE0 /* User.swift */; };
+		5446046825EDE89900E37CE0 /* Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5446046725EDE89900E37CE0 /* Role.swift */; };
+		5446046D25EDE93F00E37CE0 /* Stay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5446046C25EDE93F00E37CE0 /* Stay.swift */; };
 		5446C7EA256CC3E9003B93CA /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 5446C7E9256CC3E9003B93CA /* Lottie */; };
 		5446C7F2256CC63D003B93CA /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5446C7F1256CC63D003B93CA /* LottieView.swift */; };
 		5446C7FD256CD5DE003B93CA /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5446C7FC256CD5DE003B93CA /* RootView.swift */; };
@@ -108,6 +111,9 @@
 		54445BDA25BB36C200E90F48 /* SupervisionObservationRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupervisionObservationRootView.swift; sourceTree = "<group>"; };
 		54450A6925E82A2D0016FFA1 /* CustomLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoadingView.swift; sourceTree = "<group>"; };
 		54450A7625E84EA10016FFA1 /* NetworkDataValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataValidation.swift; sourceTree = "<group>"; };
+		5446046225EDE7D700E37CE0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		5446046725EDE89900E37CE0 /* Role.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Role.swift; sourceTree = "<group>"; };
+		5446046C25EDE93F00E37CE0 /* Stay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stay.swift; sourceTree = "<group>"; };
 		5446C7F1256CC63D003B93CA /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		5446C7FC256CD5DE003B93CA /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		544BF7432583C4750071B2DE /* CustomProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressBarView.swift; sourceTree = "<group>"; };
@@ -267,6 +273,9 @@
 				54E8653E25D720F400779DA9 /* Country.swift */,
 				54E8654325D7214F00779DA9 /* StayType.swift */,
 				54E8654825D721A700779DA9 /* Specialty.swift */,
+				5446046225EDE7D700E37CE0 /* User.swift */,
+				5446046725EDE89900E37CE0 /* Role.swift */,
+				5446046C25EDE93F00E37CE0 /* Stay.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -542,13 +551,16 @@
 				54445BD625BB36AE00E90F48 /* PositiveObservationRootView.swift in Sources */,
 				542F814F25BAA65B00EC9B05 /* SupervisionObservationView.swift in Sources */,
 				54445BCE25BB257E00E90F48 /* CheckInfoViewModel.swift in Sources */,
+				5446046325EDE7D700E37CE0 /* User.swift in Sources */,
 				547E8A7825BA31DE005C7FE0 /* ValidatorSecureField.swift in Sources */,
 				547E8A5C25BA2FC2005C7FE0 /* CustomParagraph.swift in Sources */,
 				54B50C08255C5870008DD49C /* Student.swift in Sources */,
 				5446C7F2256CC63D003B93CA /* LottieView.swift in Sources */,
 				54445BDB25BB36C200E90F48 /* SupervisionObservationRootView.swift in Sources */,
 				542F813F25BA9E9F00EC9B05 /* GenericMakeObservation.swift in Sources */,
+				5446046D25EDE93F00E37CE0 /* Stay.swift in Sources */,
 				54D3C4BF255D90960087B2BF /* Utils.swift in Sources */,
+				5446046825EDE89900E37CE0 /* Role.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

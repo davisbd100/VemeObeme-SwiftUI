@@ -85,7 +85,24 @@ struct RegisterView: View {
                             break;
                         case 4:
                             if(viewModel.isMailValid && viewModel.isPasswordValid && viewModel.password == viewModel.confirmPassword){
-                                currentTab += 1
+                                isLoading.toggle()
+                                loadingTitle = "Comprobando correo"
+                                let dispatch = DispatchGroup()
+                                
+                                dispatch.enter()
+                                viewModel.checkIfEmailExists{value in
+                                    if (!value){
+                                        isLoading.toggle()
+                                        loadingTitle = "Cargando"
+                                        currentTab += 1
+                                    }else{
+                                        isLoading.toggle()
+                                        loadingTitle = "Cargando"
+                                        errorMessage = "Correo existente"
+                                        isError.toggle()
+                                    }
+                                    dispatch.leave()
+                                }
                             }else{
                                 errorMessage = "Datos invalidos, revisa los datos ingresados"
                                 isError.toggle()

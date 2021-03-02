@@ -39,7 +39,7 @@ class LoginViewModel: ObservableObject {
             .store(in: &cancellableSet)
     }
     
-    func tryLogin(completion: @escaping(String) -> ()){
+    func tryLogin(completion: @escaping(Bool) -> ()){
         let dispatch = DispatchGroup()
         
         dispatch.enter()
@@ -49,23 +49,23 @@ class LoginViewModel: ObservableObject {
                 DispatchQueue.main.async {
                     self.isError = true
                 }
-                completion("No existe el usuario: " + self.username)
+                completion(false)
             }else if(self.currentUser.jwt != ""){
                 DispatchQueue.main.async {
                     self.isError = false
                 }
                 UserDefaults.standard.setCodableObject(self.currentUser, forKey: "currentUser")
-                completion("Ok")
+                completion(true)
             }else{
                 DispatchQueue.main.async {
                     self.isError = true
                 }
-                completion("Error no identificado")
+                completion(false)
             }
             dispatch.leave()
         }
         dispatch.notify(queue: .main){
-            print("Finished Task")
+            print("Finished login process")
         }
     }
     
