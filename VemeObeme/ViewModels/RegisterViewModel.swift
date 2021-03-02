@@ -16,7 +16,7 @@ class RegisterViewModel: ObservableObject {
     @Published var university: University = University()
     @Published var healthInstitution: HealthInstitution = HealthInstitution()
     @Published var stayType = ""
-    @Published var especiality: Specialty = Specialty()
+    @Published var speciality: Specialty = Specialty()
     @Published var startDate = Calendar.current.date(byAdding: .year, value: -19, to: Date())!
     @Published var endDate = Calendar.current.date(byAdding: .year, value: -19, to: Date())!
     @Published var username = ""
@@ -38,6 +38,7 @@ class RegisterViewModel: ObservableObject {
     @Published var isResidencySelected = false
     private var cancellableSet: Set<AnyCancellable> = []
     
+    private var currentUser = User()
     
     
     init() {
@@ -104,7 +105,7 @@ class RegisterViewModel: ObservableObject {
                 return stayType == "Residencia"
             }.assign(to: \.isResidencySelected, on: self)
             .store(in: &cancellableSet)
-        $especiality
+        $speciality
             .receive(on: RunLoop.main)
             .map{
                 especiality in
@@ -205,13 +206,34 @@ class RegisterViewModel: ObservableObject {
         }
     }
     
-    func checkFields() -> Bool {
-        var validation = false
-        if (username.isEmpty || password.isEmpty) {
-            validation = false
-        }else{
-            validation = !isValidEmail(email: username)
+    func tryLogin(completion: @escaping(User) -> ()){
+        let dispatch = DispatchGroup()
+        let tempUser = User(correo: username, password: password, estudiante: Student(fechaNacimiento: convertDateToString(date: birthDate), genero: gender, estancias: [Stay(fechaInicio: convertDateToString(date: startDate), fechaFin: convertDateToString(date: endDate), institucionSalud: healthInstitution, especialidad: speciality)], universidad: university))
+        dispatch.enter()
+        UserManagementPetitionManager().tryRegister(user: tempUser) {
+            self.currentUser = $0
+            if (self.currentUser.correo == nil){
+                DispatchQueue.main.async {
+                    self.isError = true
+                }
+                completion($0)
+            }else if(self.currentUser.jwt != ""){
+                DispatchQueue.main.async {
+                    self.isError = false
+                }
+                UserDefaults.standard.setCodableObject(self.currentUser, forKey: "currentUser")
+                completion($0)
+            }else{
+                DispatchQueue.main.async {
+                    self.isError = true
+                }
+                completion($0)
+            }
+            dispatch.leave()
         }
-        return validation
+        dispatch.notify(queue: .main){
+            print("Finished login process")
+        }
     }
+
 }
