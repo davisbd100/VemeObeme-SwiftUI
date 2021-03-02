@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct WelcomeView: View {
-    @State var name:String = (UserDefaults.standard.getcodableObject(dataType: User.self, key: "currentUser")?.nombres)!
+    @State var name:String = "Bienvenido a VemeOBEME"
     var body: some View {
         VStack{
             Image("LogoOBEME")

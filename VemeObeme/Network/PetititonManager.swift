@@ -37,6 +37,8 @@ class PetititonManager {
                     completion(user)
                 } catch let error {
                     debugPrint("Error: \(error.localizedDescription)")
+                    let user = User()
+                    completion(user)
                 }
             }else{
                 let user = User()
