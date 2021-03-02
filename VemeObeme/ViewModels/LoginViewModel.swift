@@ -43,7 +43,7 @@ class LoginViewModel: ObservableObject {
         let dispatch = DispatchGroup()
         
         dispatch.enter()
-        PetititonManager().tryLogin(username: username, password: password) {
+        UserManagementPetitionManager().tryLogin(username: username, password: password) {
             self.currentUser = $0
             if (self.currentUser.correo == nil){
                 DispatchQueue.main.async {
@@ -55,6 +55,7 @@ class LoginViewModel: ObservableObject {
                     self.isError = false
                 }
                 UserDefaults.standard.setCodableObject(self.currentUser, forKey: "currentUser")
+                UserDefaults.standard.setValue(true, forKey: "isLoggedIn")
                 completion(true)
             }else{
                 DispatchQueue.main.async {

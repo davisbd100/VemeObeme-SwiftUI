@@ -9,6 +9,8 @@ import SwiftUI
 
 struct CheckInfoView: View {
     @StateObject var viewModel = CheckInfoViewModel()
+    @Binding var isLoggedIn: Bool
+    
     var body: some View {
         VStack{
         ScrollView{
@@ -57,6 +59,7 @@ struct CheckInfoView: View {
         }
             Button(action: {
                 viewModel.Logout()
+                isLoggedIn = false
             }, label: {
                 Text("Cerrar sesión")
                     .foregroundColor(.white)
@@ -66,11 +69,5 @@ struct CheckInfoView: View {
             .background(Color.red)
             .cornerRadius(10.0)
         }
-    }
-}
-
-struct CheckInfoView_Previews: PreviewProvider {
-    static var previews: some View {
-        CheckInfoView()
     }
 }

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct HomeRootView: View {
+    
+    @Binding var isLoggedIn: Bool
     var body: some View {
         NavigationView{
             TabView{
@@ -25,7 +27,7 @@ struct HomeRootView: View {
                     .navigationBarHidden(true)
                     .navigationTitle("Observaciones")
                 
-                CheckInfoView()
+                CheckInfoView(isLoggedIn: $isLoggedIn)
                     .tabItem {
                         Image(systemName: "person.fill")
                         Text("Información")
@@ -34,11 +36,5 @@ struct HomeRootView: View {
                     .navigationTitle("Información general")
             }
         }
-    }
-}
-
-struct HomeRootView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeRootView()
     }
 }

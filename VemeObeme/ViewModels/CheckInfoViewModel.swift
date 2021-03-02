@@ -11,9 +11,8 @@ class CheckInfoViewModel: ObservableObject {
     @Published var currentUser:User = UserDefaults.standard.getcodableObject(dataType: User.self, key: "currentUser")!
     
     func Logout(){
+        UserDefaults.standard.setValue(false, forKey: "isLoggedIn")
         let emptyUser = User()
         UserDefaults.standard.setCodableObject(emptyUser, forKey: "currentUser")
-        UserDefaults.standard.setValue(false, forKey: "isLoggedIn")
-        
     }
 }

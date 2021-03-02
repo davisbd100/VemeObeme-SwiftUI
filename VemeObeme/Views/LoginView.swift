@@ -14,6 +14,7 @@ struct LoginView: View {
     @State var isErrorPresented: Bool = false
     @State var isShowingRegister: Bool = false
     
+    @Binding var isLoggedIn: Bool
     
     var body: some View {
         ZStack(alignment: Alignment(horizontal: .center, vertical: .center), content: {
@@ -39,9 +40,9 @@ struct LoginView: View {
                     dispatch.enter()
                     viewModel.tryLogin(){result in
                         if (result){
-                            UserDefaults.standard.setValue(true, forKey: "isLoggedIn")
+                            isLoggedIn = true
                         }else{
-                            codeMessages = "Error en los datos, verficia los datos e intenta de nuevo"
+                            codeMessages = "Error en los datos, verfica los datos e intenta de nuevo"
                             isErrorPresented.toggle()
                         }
                         dispatch.leave()
@@ -100,10 +101,5 @@ struct LoginView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        LoginView()
-            .previewDevice("iPhone 11")
-    }
-}
+
 

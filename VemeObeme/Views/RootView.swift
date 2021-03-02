@@ -9,16 +9,16 @@ import SwiftUI
 
 struct RootView: View {
     @State var login = false
-    @State var isLoggedIn = (UserDefaults.standard.bool(forKey: "isLoggedIn"))
+    @State var isLoggedIn = UserDefaults.standard.bool(forKey: "isLoggedIn")
     var body: some View {
         return Group {
             NavigationView{
                 if (isLoggedIn){
-                    HomeRootView()
+                    HomeRootView(isLoggedIn: $isLoggedIn)
                         .navigationBarHidden(true)
                 }
                 else if login {
-                    LoginView()
+                    LoginView(isLoggedIn: $isLoggedIn)
                         .navigationBarHidden(true)
                 }else{
                     OnboardView(showLogin: $login)
