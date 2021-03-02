@@ -39,7 +39,7 @@ struct LoginView: View {
                     dispatch.enter()
                     viewModel.tryLogin(){result in
                         if (result){
-                            var bolean = UserDefaults.standard.bool(forKey: "isLoggedIn")
+                            let bolean = UserDefaults.standard.bool(forKey: "isLoggedIn")
                             debugPrint(bolean)
                             UserDefaults.standard.setValue(true, forKey: "isLoggedIn")
                         }else{

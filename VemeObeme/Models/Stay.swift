@@ -11,5 +11,7 @@ struct Stay: Codable, Hashable {
     public var idEstancia: Int?
     public var fechaInicio: String?
     public var fechaFin: String?
-    
+    public var institucionSalud: HealthInstitution?
+    public var tipoEstancia: StayType?
+    public var especialidad: Specialty?
 }

@@ -12,7 +12,6 @@ struct Student: Codable, Hashable {
     public var idEstudiante: Int?
     public var fechaNacimiento: String?
     public var genero: String?
-    public var estancias: 
+    public var estancias: [Stay]?
     public var university: University?
-    public var healtInstitution: HealthInstitution?
 }

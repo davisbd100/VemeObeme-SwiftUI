@@ -10,4 +10,5 @@ import Foundation
 struct HealthInstitution: Codable, Hashable {
     public var idInstitucionSalud: Int?
     public var nombre: String?
+    public var pais: Country?
 }
