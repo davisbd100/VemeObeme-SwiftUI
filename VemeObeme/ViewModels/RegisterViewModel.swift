@@ -148,7 +148,7 @@ class RegisterViewModel: ObservableObject {
         let dispatch = DispatchGroup()
         
         dispatch.enter()
-        GetPublicInfoManager().getUniversityByCountry(){
+        GetPublicInfoManager().getUniversityByCountry(countryId: self.country.idPais!){
             if $0.isEmpty {
                 completion($0)
             }else{

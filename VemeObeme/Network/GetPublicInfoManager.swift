@@ -34,9 +34,9 @@ class GetPublicInfoManager {
         }
         task.resume()
     }
-    func getUniversityByCountry(completion: @escaping([University]) -> ()){
+    func getUniversityByCountry(countryId: Int, completion: @escaping([University]) -> ()){
         
-        guard let url = URL(string: hostname + "universidades/") else {
+        guard let url = URL(string: hostname + "universidades/" + "\(countryId)") else {
             fatalError("URL Unreacheble")
         }
         var request = URLRequest(url: url)

@@ -76,7 +76,7 @@ struct RegisterView: View {
                             }
                             break;
                         case 3:
-                            if(viewModel.isHealthInstitutionValid && viewModel.isStayTypeValid && viewModel.isEspecialityValid && viewModel.isStartDateValid && viewModel.isEndDateValid){
+                            if(viewModel.isHealthInstitutionValid && viewModel.isStayTypeValid && ((viewModel.isResidencySelected && viewModel.isEspecialityValid) || !viewModel.isResidencySelected) && viewModel.isStartDateValid && viewModel.isEndDateValid){
                                 currentTab += 1
                             }else{
                                 errorMessage = "Datos invalidos, revisa los datos ingresados"
