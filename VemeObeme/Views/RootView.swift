@@ -11,7 +11,6 @@ struct RootView: View {
     @State var login = false
     @State var isLoggedIn = (UserDefaults.standard.bool(forKey: "isLoggedIn"))
     var body: some View {
-        UserDefaults.standard.setValue(false, forKey: "isLoggedIn")
         return Group {
             NavigationView{
                 if (isLoggedIn){

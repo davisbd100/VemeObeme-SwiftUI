@@ -13,6 +13,7 @@ class CheckInfoViewModel: ObservableObject {
     func Logout(){
         let emptyUser = User()
         UserDefaults.standard.setCodableObject(emptyUser, forKey: "currentUser")
+        UserDefaults.standard.setValue(false, forKey: "isLoggedIn")
         
     }
 }

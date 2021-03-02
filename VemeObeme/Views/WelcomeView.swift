@@ -8,14 +8,13 @@
 import SwiftUI
 
 struct WelcomeView: View {
-    @State var name:String = "Bienvenido a VemeOBEME"
     var body: some View {
         VStack{
             Image("LogoOBEME")
                 .resizable()
                 .scaledToFit()
                 .frame(minWidth: 150, idealWidth: 180, maxWidth: 300, minHeight: 70, idealHeight: 82, maxHeight: 160, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-            Text("Bienvenido " + name)
+            Text("Bienvenido a VemeOBEME")
                 .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: 302, maxWidth: 400, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: 31, maxHeight: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 .font(.custom("Avenir Heavy", size: 20))
             Text("¿Desea realizar una observación?")

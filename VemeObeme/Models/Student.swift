@@ -13,5 +13,5 @@ struct Student: Codable, Hashable {
     public var fechaNacimiento: String?
     public var genero: String?
     public var estancias: [Stay]?
-    public var university: University?
+    public var universidad: University?
 }

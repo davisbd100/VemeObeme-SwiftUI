@@ -19,10 +19,10 @@ struct CheckInfoView: View {
                 Group{
                     Text("Correo electrónico: " + viewModel.currentUser.correo!)
                         .font(.custom("Avenir Book", size: 14))
-                    //Text("Fecha de nacimiento: " + (viewModel.currentUser.estudiante?.fechaNacimiento)!)
-                       // .font(.custom("Avenir Book", size: 14))
-                    //Text("Genero: " + (viewModel.currentUser.estudiante?.genero!)!)
-                        //.font(.custom("Avenir Book", size: 14))
+                    Text("Fecha de nacimiento: " + (viewModel.currentUser.estudiante?.fechaNacimiento)!)
+                        .font(.custom("Avenir Book", size: 14))
+                    Text("Genero: " + (viewModel.currentUser.estudiante?.genero!)!)
+                        .font(.custom("Avenir Book", size: 14))
                 }
                 Divider()
                 Text("Datos de la universidad")
@@ -31,8 +31,8 @@ struct CheckInfoView: View {
                 Group{
                     //Text("País: " + (viewModel.currentUser.university?.pais?.nombre)!)
                     //    .font(.custom("Avenir Book", size: 14))
-                    //Text("Universidad: " + (viewModel.currentUser.university?.nombreUniversidad)!)
-                    //    .font(.custom("Avenir Book", size: 14))
+                    Text("Universidad: " + ((viewModel.currentUser.estudiante?.universidad?.nombre)!))
+                        .font(.custom("Avenir Book", size: 14))
                 }
                 Divider()
                 Text("Datos de la unidad de salud (actual)")
