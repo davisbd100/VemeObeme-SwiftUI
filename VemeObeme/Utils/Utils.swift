@@ -35,7 +35,7 @@ func formatDate(date: Date) -> Date{
 
 func convertDateToString(date: Date) -> String{
     let formatter = DateFormatter()
-    formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+    formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
     let formatedDate = formatter.string(from: date)
     return formatedDate
 }

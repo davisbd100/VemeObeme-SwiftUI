@@ -18,14 +18,17 @@ class UserManagementPetitionManager {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-
-        let parameters: [String: Any] = ["usuario": user]
-
-        guard let encodedParameters = try? JSONSerialization.data(withJSONObject: parameters, options: []) else {
-            return
-        }
-        request.httpBody = encodedParameters
         
+        do {
+            let jsonData = try JSONEncoder().encode(user)
+            request.httpBody = jsonData
+            let user = try? JSONSerialization.jsonObject(with: jsonData, options: [])
+            debugPrint(user as Any)
+
+        } catch let error {
+            debugPrint("Error: \(error.localizedDescription)")
+        }
+
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             
             guard let sentData = data, error == nil, let responseData = response as? HTTPURLResponse else {
@@ -33,6 +36,8 @@ class UserManagementPetitionManager {
             }
             if (responseData.statusCode == 200){
                 do {
+                    let json = try? JSONSerialization.jsonObject(with: sentData, options: [])
+                    debugPrint(json as Any)
                     let user = try JSONDecoder().decode(User.self, from: sentData)
                     completion(user)
                 } catch let error {
@@ -41,6 +46,8 @@ class UserManagementPetitionManager {
                     completion(user)
                 }
             }else{
+                let json = try? JSONSerialization.jsonObject(with: sentData, options: [])
+                debugPrint(json as Any)
                 let user = User()
                 completion(user)
             }

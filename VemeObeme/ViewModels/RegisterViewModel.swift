@@ -206,9 +206,14 @@ class RegisterViewModel: ObservableObject {
         }
     }
     
-    func tryLogin(completion: @escaping(User) -> ()){
+    func tryRegister(completion: @escaping(User) -> ()){
         let dispatch = DispatchGroup()
-        let tempUser = User(correo: username, password: password, estudiante: Student(fechaNacimiento: convertDateToString(date: birthDate), genero: gender, estancias: [Stay(fechaInicio: convertDateToString(date: startDate), fechaFin: convertDateToString(date: endDate), institucionSalud: healthInstitution, especialidad: speciality)], universidad: university))
+        var tempUser: User
+        if isResidencySelected{
+            tempUser = User(correo: username, password: password, activo: true, estudiante: Student(fechaNacimiento: convertDateToString(date: birthDate), genero: gender, estancias: [Stay(fechaInicio: convertDateToString(date: startDate), fechaFin: convertDateToString(date: endDate), institucionSalud: healthInstitution, especialidad: speciality)], universidad: university))
+        }else{
+            tempUser = User(correo: username, password: password, activo: true, estudiante: Student(fechaNacimiento: convertDateToString(date: birthDate), genero: gender, estancias: [Stay(fechaInicio: convertDateToString(date: startDate), fechaFin: convertDateToString(date: endDate), institucionSalud: healthInstitution)], universidad: university))
+        }
         dispatch.enter()
         UserManagementPetitionManager().tryRegister(user: tempUser) {
             self.currentUser = $0
@@ -232,7 +237,7 @@ class RegisterViewModel: ObservableObject {
             dispatch.leave()
         }
         dispatch.notify(queue: .main){
-            print("Finished login process")
+            print("Finished register process")
         }
     }
 

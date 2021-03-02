@@ -39,7 +39,7 @@ struct RegisterView: View {
                 }.background(Color.blue)
                 CustomProgressBarView(value: currentTab, maximum: 5)
                 if (currentTab == 5){
-                    FifthRegisterView()
+                    FifthRegisterView(viewModel: viewModel, isLoading: $isLoading, loadingTitle: $loadingTitle)
                 }else{
                     TabView(selection: $currentTab,
                             content:  {
@@ -254,7 +254,7 @@ struct ThirdRegisterView: View {
             })
             CustomDropDown(selectedValue: $viewModel.stayType, title: "Estancia", values: ["Internado", "Servicio Social", "Residencia"])
             if (viewModel.isResidencySelected){
-                Picker(selection: $viewModel.especiality, label: Text("Especialidad"), content: {
+                Picker(selection: $viewModel.speciality, label: Text("Especialidad"), content: {
                     ForEach(specialities, id: \.self) { value in
                         Text("\(value.nombre!)")
                             .font(.custom("Avenir Book", size: 15))
@@ -311,7 +311,10 @@ struct RegisterView_Previews: PreviewProvider {
 
 struct FifthRegisterView: View {
     @State var isTermsAndConditionsAccepted = false
+    @StateObject var viewModel: RegisterViewModel
     
+    @Binding var isLoading: Bool
+    @Binding var loadingTitle: String
     var body: some View{
         ScrollView {
             Text("Aviso de privacidad")
@@ -329,7 +332,16 @@ struct FifthRegisterView: View {
         CustomRadioButtonField(label: "Acepto los términos y condiciones", isMarked: $isTermsAndConditionsAccepted)
             .padding()
         Button(action: {
-            // Return to login
+            isLoading.toggle()
+            loadingTitle = "Intentando registrar"
+            let dispatch = DispatchGroup()
+            
+            dispatch.enter()
+            viewModel.tryRegister(){value in
+                isLoading.toggle()
+                loadingTitle = "Cargando"
+                dispatch.leave()
+            }
         }, label: {
             Text("Continuar")
                 .foregroundColor(.white)
