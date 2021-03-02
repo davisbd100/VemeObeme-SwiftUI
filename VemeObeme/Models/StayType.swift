@@ -8,5 +8,6 @@
 import Foundation
 
 struct StayType: Codable, Hashable {
-    private var nombreEspecialidad: String?
+    public var idTipoEstancia: Int?
+    public var nombre: String?
 }

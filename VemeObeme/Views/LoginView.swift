@@ -39,8 +39,6 @@ struct LoginView: View {
                     dispatch.enter()
                     viewModel.tryLogin(){result in
                         if (result){
-                            let bolean = UserDefaults.standard.bool(forKey: "isLoggedIn")
-                            debugPrint(bolean)
                             UserDefaults.standard.setValue(true, forKey: "isLoggedIn")
                         }else{
                             codeMessages = "Error en los datos, verficia los datos e intenta de nuevo"

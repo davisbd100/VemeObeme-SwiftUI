@@ -17,14 +17,13 @@ struct HomeRootView: View {
                         Text("Inicio")
                     }
                     .navigationBarHidden(true)
-                    .navigationBarTitle(Text("Home"))
                 ObservationConsultView()
                     .tabItem {
                         Image(systemName: "doc.text.fill")
-                        Text("Reportes")
+                        Text("Observaciones")
                     }
                     .navigationBarHidden(true)
-                    .navigationBarTitle(Text("Home"))
+                    .navigationTitle("Observaciones")
                 
                 CheckInfoView()
                     .tabItem {
@@ -32,9 +31,8 @@ struct HomeRootView: View {
                         Text("Información")
                     }
                     .navigationBarHidden(true)
-                    .navigationBarTitle(Text("Home"))
+                    .navigationTitle("Información general")
             }
-            .frame(alignment: .top)
         }
     }
 }

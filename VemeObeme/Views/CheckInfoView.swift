@@ -41,11 +41,11 @@ struct CheckInfoView: View {
                 Group{
                     Text("Periodo actual: ")
                         .font(.custom("Avenir Book", size: 14))
-                    Text("Unidad de salud: ")
+                    Text("Unidad de salud: " + (viewModel.currentUser.estudiante?.estancias?.last?.institucionSalud?.nombre)!)
                         .font(.custom("Avenir Book", size: 14))
-                    Text("Tipo de estancia: ")
+                    Text("Tipo de estancia: " + (viewModel.currentUser.estudiante?.estancias?.last?.tipoEstancia?.nombre)!)
                         .font(.custom("Avenir Book", size: 14))
-                    Text("Especialidad: ")
+                    Text("Especialidad: " + (viewModel.currentUser.estudiante?.estancias?.last?.especialidad?.nombre)!)
                         .font(.custom("Avenir Book", size: 14))
                 }
                 Divider()
