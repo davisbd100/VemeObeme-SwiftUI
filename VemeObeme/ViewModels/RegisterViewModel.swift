@@ -95,7 +95,7 @@ class RegisterViewModel: ObservableObject {
             .receive(on: RunLoop.main)
             .map{
                 stayType in
-                return !stayType.nombre!.isEmpty
+                return (!(stayType.nombre?.isEmpty ?? true) && stayType.nombre != "Estancia")
             }.assign(to: \.isStayTypeValid, on: self)
             .store(in: &cancellableSet)
         $stayType
@@ -207,7 +207,7 @@ class RegisterViewModel: ObservableObject {
         }
     }
     
-    func tryRegister(completion: @escaping(User) -> ()){
+    func tryRegister(completion: @escaping(Bool) -> ()){
         let dispatch = DispatchGroup()
         var tempUser: User
         if isResidencySelected{
@@ -222,18 +222,19 @@ class RegisterViewModel: ObservableObject {
                 DispatchQueue.main.async {
                     self.isError = true
                 }
-                completion($0)
+                completion(false)
             }else if(self.currentUser.jwt != ""){
                 DispatchQueue.main.async {
                     self.isError = false
                 }
                 UserDefaults.standard.setCodableObject(self.currentUser, forKey: "currentUser")
-                completion($0)
+                UserDefaults.standard.setValue(true, forKey: "isLoggedIn")
+                completion(true)
             }else{
                 DispatchQueue.main.async {
                     self.isError = true
                 }
-                completion($0)
+                completion(false)
             }
             dispatch.leave()
         }

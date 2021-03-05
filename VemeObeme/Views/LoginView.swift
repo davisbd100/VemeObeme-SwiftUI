@@ -66,7 +66,7 @@ struct LoginView: View {
                 }).disabled(!viewModel.isMailValid || !viewModel.isPasswordValid)
                 
                 NavigationLink(
-                    destination: RegisterView(),
+                    destination: RegisterView(isLoggedIn: $isLoggedIn),
                     isActive: $isShowingRegister,
                     label: {
                         Text("Registrate")

@@ -47,7 +47,7 @@ struct CheckInfoView: View {
                         .font(.custom("Avenir Book", size: 14))
                     Text("Tipo de estancia: " + (viewModel.currentUser.estudiante?.estancias?.last?.tipoEstancia?.nombre)!)
                         .font(.custom("Avenir Book", size: 14))
-                    Text("Especialidad: " + (viewModel.currentUser.estudiante?.estancias?.last?.especialidad?.nombre)!)
+                    Text("Especialidad: " + (viewModel.currentUser.estudiante?.estancias?.last?.especialidad?.nombre ?? "No existe"))
                         .font(.custom("Avenir Book", size: 14))
                 }
                 Divider()

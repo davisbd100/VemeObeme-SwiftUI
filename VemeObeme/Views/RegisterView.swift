@@ -17,6 +17,9 @@ struct RegisterView: View {
     @State var isError = false
     @State var errorMessage = "Error desconocido"
     @State var isFatalErrorPresented = false
+    
+    
+    @Binding var isLoggedIn: Bool
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     
     var body: some View {
@@ -40,7 +43,7 @@ struct RegisterView: View {
                 }.background(Color.blue)
                 CustomProgressBarView(value: currentTab, maximum: 5)
                 if (currentTab == 5){
-                    FifthRegisterView(viewModel: viewModel, isLoading: $isLoading, loadingTitle: $loadingTitle)
+                    FifthRegisterView(viewModel: viewModel, isLoading: $isLoading, loadingTitle: $loadingTitle, isLoggedIn: $isLoggedIn)
                 }else{
                     TabView(selection: $currentTab,
                             content:  {
@@ -319,15 +322,6 @@ struct FourthRegisterView: View {
 }
 
 
-struct RegisterView_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            RegisterView()
-                .previewDevice("iPhone 8")
-            RegisterView()
-        }
-    }
-}
 
 struct FifthRegisterView: View {
     @State var isTermsAndConditionsAccepted = false
@@ -335,6 +329,7 @@ struct FifthRegisterView: View {
     
     @Binding var isLoading: Bool
     @Binding var loadingTitle: String
+    @Binding var isLoggedIn: Bool
     var body: some View{
         ScrollView {
             Text("Aviso de privacidad")
@@ -358,6 +353,11 @@ struct FifthRegisterView: View {
             
             dispatch.enter()
             viewModel.tryRegister(){value in
+                if value{
+                    isLoggedIn = true
+                }else{
+                    isLoggedIn = false
+                }
                 isLoading.toggle()
                 loadingTitle = "Cargando"
                 dispatch.leave()

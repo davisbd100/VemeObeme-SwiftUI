@@ -22,8 +22,6 @@ class UserManagementPetitionManager {
         do {
             let jsonData = try JSONEncoder().encode(user)
             request.httpBody = jsonData
-            let user = try? JSONSerialization.jsonObject(with: jsonData, options: [])
-            debugPrint(user as Any)
 
         } catch let error {
             debugPrint("Error: \(error.localizedDescription)")
@@ -36,8 +34,6 @@ class UserManagementPetitionManager {
             }
             if (responseData.statusCode == 200){
                 do {
-                    let json = try? JSONSerialization.jsonObject(with: sentData, options: [])
-                    debugPrint(json as Any)
                     let user = try JSONDecoder().decode(User.self, from: sentData)
                     completion(user)
                 } catch let error {
@@ -46,8 +42,6 @@ class UserManagementPetitionManager {
                     completion(user)
                 }
             }else{
-                let json = try? JSONSerialization.jsonObject(with: sentData, options: [])
-                debugPrint(json as Any)
                 let user = User()
                 completion(user)
             }
