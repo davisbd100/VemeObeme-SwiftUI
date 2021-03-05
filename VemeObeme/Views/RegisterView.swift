@@ -16,6 +16,7 @@ struct RegisterView: View {
     @State var isTermsAndConditionsAccepted = false
     @State var isError = false
     @State var errorMessage = "Error desconocido"
+    @State var isFatalErrorPresented = false
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     
     var body: some View {
@@ -46,7 +47,7 @@ struct RegisterView: View {
                                 FirstRegisterView(viewModel: viewModel)
                                     .tag(1)
                                     .gesture(isSwipeDisabled ? DragGesture() : nil)
-                                SecondRegisterView(viewModel: viewModel, isLoading: $isLoading, loadingTitle: $loadingTitle)
+                                SecondRegisterView(viewModel: viewModel, isLoading: $isLoading, loadingTitle: $loadingTitle, isFatalError: $isFatalErrorPresented)
                                     .tag(2)
                                     .gesture(isSwipeDisabled ? DragGesture() : nil)
                                 ThirdRegisterView(viewModel: viewModel, isLoading: $isLoading, loadingTitle: $loadingTitle)
@@ -129,6 +130,11 @@ struct RegisterView: View {
                     isError = false
                 }))
             })
+            .alert(isPresented: $isFatalErrorPresented, content: {
+                Alert(title: Text("Error!"), message: Text("Error al conectar con el servidor, favor de reintentar mas tarde"), dismissButton: .default(Text("Cerrar registro"), action: {
+                        self.mode.wrappedValue.dismiss()
+                }) )
+            })
             if isLoading{
                 CustomLoadingView(title: loadingTitle)
             }
@@ -158,6 +164,7 @@ struct SecondRegisterView: View {
     
     @Binding var isLoading: Bool
     @Binding var loadingTitle: String
+    @Binding var isFatalError: Bool
     
     var body: some View {
         Form{
@@ -184,6 +191,9 @@ struct SecondRegisterView: View {
                     isLoading.toggle()
                     loadingTitle = "Cargando"
                     dispatch.leave()
+                }
+                dispatch.notify(queue: .main){
+                    isFatalError = viewModel.isError
                 }
             })
             .onChange(of: viewModel.country, perform: { value in

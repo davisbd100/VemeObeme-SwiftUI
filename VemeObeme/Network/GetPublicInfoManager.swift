@@ -29,6 +29,7 @@ class GetPublicInfoManager {
                     completion(countries)
                 } catch let error {
                     debugPrint("Error: \(error.localizedDescription)")
+                    completion([])
                 }
             }
         }

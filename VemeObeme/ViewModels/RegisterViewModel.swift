@@ -135,6 +135,7 @@ class RegisterViewModel: ObservableObject {
         dispatch.enter()
         GetPublicInfoManager().getCountry(){
             if $0.isEmpty {
+                self.isError = true
                 completion($0)
             }else{
                 completion($0)

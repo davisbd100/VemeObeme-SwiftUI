@@ -71,7 +71,7 @@ class UserManagementPetitionManager {
             return
         }
         request.httpBody = encodedParameters
-        
+
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             
             guard let sentData = data, error == nil, let responseData = response as? HTTPURLResponse else {
@@ -83,16 +83,12 @@ class UserManagementPetitionManager {
                     completion(user)
                 } catch let error {
                     debugPrint("Error: \(error.localizedDescription)")
-                    let user = User()
-                    completion(user)
+                    completion(User())
                 }
             }else{
-                let user = User()
-                completion(user)
+                completion(User())
             }
         }
         task.resume()
     }
-
-    
 }
