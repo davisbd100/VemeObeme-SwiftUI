@@ -211,9 +211,9 @@ class RegisterViewModel: ObservableObject {
         let dispatch = DispatchGroup()
         var tempUser: User
         if isResidencySelected{
-            tempUser = User(correo: username, password: password, activo: true, estudiante: Student(fechaNacimiento: convertDateToString(date: birthDate), genero: gender, estancias: [Stay(fechaInicio: convertDateToString(date: startDate), fechaFin: convertDateToString(date: endDate), institucionSalud: healthInstitution, especialidad: speciality)], universidad: university))
+            tempUser = User(correo: username, password: password, activo: true, estudiante: Student(fechaNacimiento: convertDateToString(date: birthDate), genero: gender, estancias: [Stay(fechaInicio: convertDateToString(date: startDate), fechaFin: convertDateToString(date: endDate), institucionSalud: healthInstitution, tipoEstancia: stayType, especialidad: speciality)], universidad: university))
         }else{
-            tempUser = User(correo: username, password: password, activo: true, estudiante: Student(fechaNacimiento: convertDateToString(date: birthDate), genero: gender, estancias: [Stay(fechaInicio: convertDateToString(date: startDate), fechaFin: convertDateToString(date: endDate), institucionSalud: healthInstitution)], universidad: university))
+            tempUser = User(correo: username, password: password, activo: true, estudiante: Student(fechaNacimiento: convertDateToString(date: birthDate), genero: gender, estancias: [Stay(fechaInicio: convertDateToString(date: startDate), fechaFin: convertDateToString(date: endDate), institucionSalud: healthInstitution, tipoEstancia: stayType)], universidad: university))
         }
         dispatch.enter()
         UserManagementPetitionManager().tryRegister(user: tempUser) {
