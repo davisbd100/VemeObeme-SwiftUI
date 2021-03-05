@@ -39,3 +39,9 @@ func convertDateToString(date: Date) -> String{
     let formatedDate = formatter.string(from: date)
     return formatedDate
 }
+func convertOnlyDateToString(date: Date) -> String{
+    let formatter = DateFormatter()
+    formatter.dateFormat = "dd 'de' MMMM, 'del' yyyy"
+    let formatedDate = formatter.string(from: date)
+    return formatedDate
+}

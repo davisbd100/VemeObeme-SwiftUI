@@ -15,7 +15,7 @@ class RegisterViewModel: ObservableObject {
     @Published var country: Country = Country()
     @Published var university: University = University()
     @Published var healthInstitution: HealthInstitution = HealthInstitution()
-    @Published var stayType = ""
+    @Published var stayType: StayType = StayType()
     @Published var speciality: Specialty = Specialty()
     @Published var startDate = Calendar.current.date(byAdding: .year, value: -19, to: Date())!
     @Published var endDate = Calendar.current.date(byAdding: .year, value: -19, to: Date())!
@@ -95,14 +95,14 @@ class RegisterViewModel: ObservableObject {
             .receive(on: RunLoop.main)
             .map{
                 stayType in
-                return !stayType.isEmpty
+                return !stayType.nombre!.isEmpty
             }.assign(to: \.isStayTypeValid, on: self)
             .store(in: &cancellableSet)
         $stayType
             .receive(on: RunLoop.main)
             .map{
                 stayType in
-                return stayType == "Residencia"
+                return stayType.nombre == "Residencia"
             }.assign(to: \.isResidencySelected, on: self)
             .store(in: &cancellableSet)
         $speciality

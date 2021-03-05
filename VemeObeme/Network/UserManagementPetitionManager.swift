@@ -68,6 +68,7 @@ class UserManagementPetitionManager {
                                          "password": password]
 
         guard let encodedParameters = try? JSONSerialization.data(withJSONObject: parameters, options: []) else {
+            completion(User())
             return
         }
         request.httpBody = encodedParameters

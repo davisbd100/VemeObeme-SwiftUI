@@ -27,7 +27,7 @@ struct SupervisionObservationView: View {
                         .padding()
                 }
                 
-                Text("Observación hecha el: " + DateFormatter().string(from: Date()))
+                Text("Observación hecha el: " + convertOnlyDateToString(date: Date()))
                     .font(.custom("Avenir Book", size: 14))
                     .padding()
                 Divider()

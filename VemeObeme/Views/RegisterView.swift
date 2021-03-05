@@ -232,6 +232,7 @@ struct ThirdRegisterView: View {
     @StateObject var viewModel: RegisterViewModel
     @State var healthInstitutions: [HealthInstitution] = []
     @State var specialities: [Specialty] = []
+    @State var stayTypes: [StayType] = [StayType(idTipoEstancia: 1, nombre: "Internado"), StayType(idTipoEstancia: 2, nombre: "Residencia"), StayType(idTipoEstancia: 3, nombre: "Servicio social")]
     
     @Binding var isLoading: Bool
     @Binding var loadingTitle: String
@@ -262,7 +263,16 @@ struct ThirdRegisterView: View {
                     dispatch.leave()
                 }
             })
-            CustomDropDown(selectedValue: $viewModel.stayType, title: "Estancia", values: ["Internado", "Servicio Social", "Residencia"])
+            Picker(selection: $viewModel.stayType, label: Text("Estancia"), content: {
+                ForEach(stayTypes, id: \.self) { value in
+                    Text("\(value.nombre!)")
+                        .font(.custom("Avenir Book", size: 15))
+                }
+            })
+            .font(.custom("Avenir Book", size: 15)).padding()
+            .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: 344, maxWidth: 370, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            .background(Color.white)
+            .addBorder(Color.black, width: 2, cornerRadius: 20)
             if (viewModel.isResidencySelected){
                 Picker(selection: $viewModel.speciality, label: Text("Especialidad"), content: {
                     ForEach(specialities, id: \.self) { value in
