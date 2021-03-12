@@ -1,12 +1,12 @@
 //
-//  UserManagementPetitionManager.swift
+//  ObservationNetworkManager.swift
 //  VemeObeme
 //
 //  Created by David Bárcenas Duran
 //
 
 import Foundation
-class UserManagementPetitionManager {
+class ObservationNetworkManager {
     private var hostname: String = URL.myUrlBase
     
     func tryRegister(user: User, completion: @escaping(Response?, Error?) -> ()){

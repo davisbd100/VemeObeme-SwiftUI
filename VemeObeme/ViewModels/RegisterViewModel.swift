@@ -217,7 +217,17 @@ class RegisterViewModel: ObservableObject {
         }
         dispatch.enter()
         UserManagementPetitionManager().tryRegister(user: tempUser) {
-            self.currentUser = $0
+            if ($1 != nil){
+                completion(false)
+            }else{
+                do{
+                    let user = try JSONDecoder().decode(User.self, from: $0!.data)
+                    self.currentUser = user
+                }catch let error{
+                    debugPrint("Error: \(error.localizedDescription)")
+                    completion(false)
+                }
+            }
             if (self.currentUser.correo == nil){
                 DispatchQueue.main.async {
                     self.isError = true

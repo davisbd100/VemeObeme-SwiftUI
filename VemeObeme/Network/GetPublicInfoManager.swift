@@ -107,4 +107,28 @@ class GetPublicInfoManager {
         }
         task.resume()
     }
+    func getServiceAreas(countryId: Int, completion: @escaping([ServiceArea]) -> ()){
+        
+        guard let url = URL(string: hostname + "areasservicio/") else {
+            fatalError("URL Unreacheble")
+        }
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let sentData = data, error == nil, let responseData = response as? HTTPURLResponse else {
+                return
+            }
+            if (responseData.statusCode == 200){
+                do {
+                    let serviceArea = try JSONDecoder().decode([ServiceArea].self, from: sentData)
+                    completion(serviceArea)
+                } catch let error {
+                    debugPrint("Error: \(error.localizedDescription)")
+                }
+            }
+        }
+        task.resume()
+    }
 }

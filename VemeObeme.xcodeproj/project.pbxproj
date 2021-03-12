@@ -47,6 +47,9 @@
 		544D008D256EC02500BE743E /* safe.json in Resources */ = {isa = PBXBuildFile; fileRef = 544D0083256EC02500BE743E /* safe.json */; };
 		544D008E256EC02500BE743E /* telescope.json in Resources */ = {isa = PBXBuildFile; fileRef = 544D0084256EC02500BE743E /* telescope.json */; };
 		545593B425FC0029009F8AEF /* EndpointExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545593B325FC0029009F8AEF /* EndpointExtension.swift */; };
+		545593BC25FC05E4009F8AEF /* ResponseStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545593BB25FC05E4009F8AEF /* ResponseStruct.swift */; };
+		545593C125FC101D009F8AEF /* ObservationNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545593C025FC101C009F8AEF /* ObservationNetworkManager.swift */; };
+		545593C625FC1484009F8AEF /* ServiceArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545593C525FC1484009F8AEF /* ServiceArea.swift */; };
 		545F676725DC51BD00C37B64 /* GetPublicInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545F676625DC51BD00C37B64 /* GetPublicInfoManager.swift */; };
 		546AB90325C461A500835A8E /* ReviewObservationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546AB90225C461A500835A8E /* ReviewObservationButton.swift */; };
 		546AB90825C464E400835A8E /* ObservationConsultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546AB90725C464E400835A8E /* ObservationConsultView.swift */; };
@@ -133,6 +136,9 @@
 		544D0083256EC02500BE743E /* safe.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = safe.json; sourceTree = "<group>"; };
 		544D0084256EC02500BE743E /* telescope.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = telescope.json; sourceTree = "<group>"; };
 		545593B325FC0029009F8AEF /* EndpointExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointExtension.swift; sourceTree = "<group>"; };
+		545593BB25FC05E4009F8AEF /* ResponseStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseStruct.swift; sourceTree = "<group>"; };
+		545593C025FC101C009F8AEF /* ObservationNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservationNetworkManager.swift; sourceTree = "<group>"; };
+		545593C525FC1484009F8AEF /* ServiceArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceArea.swift; sourceTree = "<group>"; };
 		545F676625DC51BD00C37B64 /* GetPublicInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPublicInfoManager.swift; sourceTree = "<group>"; };
 		546AB90225C461A500835A8E /* ReviewObservationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewObservationButton.swift; sourceTree = "<group>"; };
 		546AB90725C464E400835A8E /* ObservationConsultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservationConsultView.swift; sourceTree = "<group>"; };
@@ -279,6 +285,7 @@
 				5446046225EDE7D700E37CE0 /* User.swift */,
 				5446046725EDE89900E37CE0 /* Role.swift */,
 				5446046C25EDE93F00E37CE0 /* Stay.swift */,
+				545593C525FC1484009F8AEF /* ServiceArea.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -299,6 +306,8 @@
 				545F676625DC51BD00C37B64 /* GetPublicInfoManager.swift */,
 				54450A7625E84EA10016FFA1 /* NetworkDataValidation.swift */,
 				5446047125EDFA8B00E37CE0 /* UserManagementPetitionManager.swift */,
+				545593BB25FC05E4009F8AEF /* ResponseStruct.swift */,
+				545593C025FC101C009F8AEF /* ObservationNetworkManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -520,6 +529,7 @@
 				5441D4A725BB416E004CA4DB /* PositiveObservationRootView1.swift in Sources */,
 				54E8654925D721A700779DA9 /* Specialty.swift in Sources */,
 				547E8A6E25BA30BC005C7FE0 /* CustomRadioButtonField.swift in Sources */,
+				545593C125FC101D009F8AEF /* ObservationNetworkManager.swift in Sources */,
 				546AB90D25C465A300835A8E /* ObservationConsultInfoView.swift in Sources */,
 				54450A6A25E82A2D0016FFA1 /* CustomLoadingView.swift in Sources */,
 				54D1C61D2581583500E7F9C1 /* RegisterView.swift in Sources */,
@@ -531,6 +541,7 @@
 				54B50C10255C5964008DD49C /* LoginViewModel.swift in Sources */,
 				54E8653F25D720F400779DA9 /* Country.swift in Sources */,
 				54445BC425BB245600E90F48 /* University.swift in Sources */,
+				545593BC25FC05E4009F8AEF /* ResponseStruct.swift in Sources */,
 				5409C9CC25BA9013007CF221 /* HomeRootView.swift in Sources */,
 				542F814925BAA2AA00EC9B05 /* LoadingScreenCompleteView.swift in Sources */,
 				5409C9D925BA97C4007CF221 /* SimpleCheckbox.swift in Sources */,
@@ -561,6 +572,7 @@
 				54B50C08255C5870008DD49C /* Student.swift in Sources */,
 				5446C7F2256CC63D003B93CA /* LottieView.swift in Sources */,
 				54445BDB25BB36C200E90F48 /* SupervisionObservationRootView.swift in Sources */,
+				545593C625FC1484009F8AEF /* ServiceArea.swift in Sources */,
 				542F813F25BA9E9F00EC9B05 /* GenericMakeObservation.swift in Sources */,
 				5446046D25EDE93F00E37CE0 /* Stay.swift in Sources */,
 				54D3C4BF255D90960087B2BF /* Utils.swift in Sources */,
