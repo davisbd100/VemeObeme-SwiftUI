@@ -7,7 +7,7 @@
 
 import Foundation
 class UserManagementPetitionManager {
-    private var hostname = "https://veme-test.uc.r.appspot.com/obemeapi/v1/"
+    private var hostname: String = URL.myUrlBase
     
     
     func tryRegister(user: User, completion: @escaping(User) -> ()){

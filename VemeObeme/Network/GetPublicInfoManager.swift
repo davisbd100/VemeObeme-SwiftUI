@@ -8,7 +8,7 @@
 import Foundation
 
 class GetPublicInfoManager {
-    private var hostname = "https://veme-test.uc.r.appspot.com/obemeapi/v1/"
+    private var hostname: String = URL.myUrlBase
     
     func getCountry(completion: @escaping([Country]) -> ()){
         

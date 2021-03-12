@@ -46,6 +46,7 @@
 		544D008C256EC02500BE743E /* pills-bottle.json in Resources */ = {isa = PBXBuildFile; fileRef = 544D0082256EC02500BE743E /* pills-bottle.json */; };
 		544D008D256EC02500BE743E /* safe.json in Resources */ = {isa = PBXBuildFile; fileRef = 544D0083256EC02500BE743E /* safe.json */; };
 		544D008E256EC02500BE743E /* telescope.json in Resources */ = {isa = PBXBuildFile; fileRef = 544D0084256EC02500BE743E /* telescope.json */; };
+		545593B425FC0029009F8AEF /* EndpointExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545593B325FC0029009F8AEF /* EndpointExtension.swift */; };
 		545F676725DC51BD00C37B64 /* GetPublicInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545F676625DC51BD00C37B64 /* GetPublicInfoManager.swift */; };
 		546AB90325C461A500835A8E /* ReviewObservationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546AB90225C461A500835A8E /* ReviewObservationButton.swift */; };
 		546AB90825C464E400835A8E /* ObservationConsultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546AB90725C464E400835A8E /* ObservationConsultView.swift */; };
@@ -131,6 +132,7 @@
 		544D0082256EC02500BE743E /* pills-bottle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "pills-bottle.json"; sourceTree = "<group>"; };
 		544D0083256EC02500BE743E /* safe.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = safe.json; sourceTree = "<group>"; };
 		544D0084256EC02500BE743E /* telescope.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = telescope.json; sourceTree = "<group>"; };
+		545593B325FC0029009F8AEF /* EndpointExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointExtension.swift; sourceTree = "<group>"; };
 		545F676625DC51BD00C37B64 /* GetPublicInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPublicInfoManager.swift; sourceTree = "<group>"; };
 		546AB90225C461A500835A8E /* ReviewObservationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewObservationButton.swift; sourceTree = "<group>"; };
 		546AB90725C464E400835A8E /* ObservationConsultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservationConsultView.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 			children = (
 				54D3C4BE255D90960087B2BF /* Utils.swift */,
 				54F1B54C25CCC150003130EA /* AddBorder.swift */,
+				545593B325FC0029009F8AEF /* EndpointExtension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -510,6 +513,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				545593B425FC0029009F8AEF /* EndpointExtension.swift in Sources */,
 				547E8A7325BA313E005C7FE0 /* ValidatorField.swift in Sources */,
 				5446047225EDFA8B00E37CE0 /* UserManagementPetitionManager.swift in Sources */,
 				544C0F5C255FE2E1001D0CA3 /* OnboardStep.swift in Sources */,
