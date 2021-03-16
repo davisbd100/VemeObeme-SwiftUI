@@ -8,6 +8,7 @@
 import Foundation
 class ObservationNetworkManager {
     private var hostname: String = URL.myUrlBase
+    private var currentUser = UserDefaults.standard.getcodableObject(dataType: User.self, key: "currentUser")
     
     func addPositiveObservition(positiveObservation: PositiveObservation, completion: @escaping(Response?, Error?) -> ()){
         
@@ -17,7 +18,7 @@ class ObservationNetworkManager {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        
+        request.setValue(currentUser?.jwt, forHTTPHeaderField: "Authorization")
         do {
             let jsonData = try JSONEncoder().encode(positiveObservation)
             request.httpBody = jsonData
