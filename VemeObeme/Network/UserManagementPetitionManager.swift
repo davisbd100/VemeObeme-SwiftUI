@@ -71,7 +71,7 @@ class UserManagementPetitionManager {
             if (responseData.statusCode == 200){
                 completion(Response(data: sentData), nil)
             }else{
-                completion(nil, error)
+                completion(nil, NSError(domain: "failed login", code: responseData.statusCode, userInfo: [NSLocalizedDescriptionKey: "Tried login but ok not received"]))
             }
         }
         task.resume()

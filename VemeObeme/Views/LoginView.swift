@@ -43,7 +43,6 @@ struct LoginView: View {
                             isLoggedIn = true
                         }else{
                             codeMessages = "Error en los datos, verfica los datos e intenta de nuevo"
-                            isErrorPresented.toggle()
                         }
                         dispatch.leave()
                     }

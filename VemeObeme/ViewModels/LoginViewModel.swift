@@ -45,6 +45,9 @@ class LoginViewModel: ObservableObject {
         dispatch.enter()
         UserManagementPetitionManager().tryLogin(username: username, password: password) {
             if ($1 != nil){
+                DispatchQueue.main.async {
+                    self.isError = true
+                }
                 completion(false)
             }else{
                 do{
@@ -52,26 +55,29 @@ class LoginViewModel: ObservableObject {
                     self.currentUser = user
                 }catch let error{
                     debugPrint("Error: \(error.localizedDescription)")
+                    DispatchQueue.main.async {
+                        self.isError = true
+                    }
                     completion(false)
                 }
-            }
-            if (self.currentUser.correo == nil){
-                DispatchQueue.main.async {
-                    self.isError = true
+                if (self.currentUser.correo == nil){
+                    DispatchQueue.main.async {
+                        self.isError = true
+                    }
+                    completion(false)
+                }else if(self.currentUser.jwt != ""){
+                    DispatchQueue.main.async {
+                        self.isError = false
+                    }
+                    UserDefaults.standard.setCodableObject(self.currentUser, forKey: "currentUser")
+                    UserDefaults.standard.setValue(true, forKey: "isLoggedIn")
+                    completion(true)
+                }else{
+                    DispatchQueue.main.async {
+                        self.isError = true
+                    }
+                    completion(false)
                 }
-                completion(false)
-            }else if(self.currentUser.jwt != ""){
-                DispatchQueue.main.async {
-                    self.isError = false
-                }
-                UserDefaults.standard.setCodableObject(self.currentUser, forKey: "currentUser")
-                UserDefaults.standard.setValue(true, forKey: "isLoggedIn")
-                completion(true)
-            }else{
-                DispatchQueue.main.async {
-                    self.isError = true
-                }
-                completion(false)
             }
             dispatch.leave()
         }
