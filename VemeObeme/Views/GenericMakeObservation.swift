@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct GenericMakeObservation: View {
-    @State var observations:String = "Observaciones"
+    @Binding var comments: String
     var body: some View {
         VStack(alignment: .leading){
             Divider()
@@ -19,7 +19,7 @@ struct GenericMakeObservation: View {
                     .foregroundColor(.green)
                     .padding()
             }
-            TextEditor(text: $observations)
+            TextEditor(text: $comments)
                 .frame(minWidth: 220, idealWidth: 344, minHeight: 200, idealHeight: 233, maxHeight: 250)
                 .border(Color.green)
             Spacer()
@@ -28,8 +28,3 @@ struct GenericMakeObservation: View {
     }
 }
 
-struct GenericMakeObservation_Previews: PreviewProvider {
-    static var previews: some View {
-        GenericMakeObservation()
-    }
-}

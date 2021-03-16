@@ -8,14 +8,7 @@
 import SwiftUI
 
 struct PositiveObservationView: View {
-    @State var Ensenanza:Bool = false
-    @State var EvaluacionesDelAprendizaje:Bool = false
-    @State var RetroalimentacionRecibida:Bool = false
-    @State var CumplimientoDelPrograma:Bool = false
-    @State var Instalaciones:Bool = false
-    @State var TratoDelDocente:Bool = false
-    @State var TratoDeLosAdscritos:Bool = false
-    @State var TratoDeLosTrabajadores:Bool = false
+    @StateObject var viewmodel: PositiveObservationViewModel
     
     var body: some View {
         ScrollView{
@@ -45,14 +38,14 @@ struct PositiveObservationView: View {
                 }
                     .padding()
                 Group{
-                    SimpleCheckbox(isChecked: $Ensenanza, title: "Enseñanza")
-                    SimpleCheckbox(isChecked: $EvaluacionesDelAprendizaje, title: "Evaluaciones del aprendizaje")
-                    SimpleCheckbox(isChecked: $RetroalimentacionRecibida, title: "Retroalimentación recibida")
-                    SimpleCheckbox(isChecked: $CumplimientoDelPrograma, title: "Cumplimiento del programa académico")
-                    SimpleCheckbox(isChecked: $Instalaciones, title: "Instalaciones")
-                    SimpleCheckbox(isChecked: $TratoDelDocente, title: "Trato del docente")
-                    SimpleCheckbox(isChecked: $TratoDeLosAdscritos, title: "Trato de los adscritos")
-                    SimpleCheckbox(isChecked: $TratoDeLosTrabajadores, title: "Trato de los trabajadores")
+                    SimpleCheckbox(isChecked: $viewmodel.newPositiveObservation.enseñanza, title: "Enseñanza")
+                    SimpleCheckbox(isChecked: $viewmodel.newPositiveObservation.evaluacionesAprendizaje, title: "Evaluaciones del aprendizaje")
+                    SimpleCheckbox(isChecked: $viewmodel.newPositiveObservation.retroalimentacion, title: "Retroalimentación recibida")
+                    SimpleCheckbox(isChecked: $viewmodel.newPositiveObservation.cumplimientoPrograma, title: "Cumplimiento del programa académico")
+                    SimpleCheckbox(isChecked: $viewmodel.newPositiveObservation.instalaciones, title: "Instalaciones")
+                    SimpleCheckbox(isChecked: $viewmodel.newPositiveObservation.tratoDocente, title: "Trato del docente")
+                    SimpleCheckbox(isChecked: $viewmodel.newPositiveObservation.tratoAdscritos, title: "Trato de los adscritos")
+                    SimpleCheckbox(isChecked: $viewmodel.newPositiveObservation.tratoTrabajadores, title: "Trato de los trabajadores")
                 }
                 Spacer()
             }
@@ -63,6 +56,6 @@ struct PositiveObservationView: View {
 
 struct PositiveObservationView_Previews: PreviewProvider {
     static var previews: some View {
-        PositiveObservationView()
+        PositiveObservationView(viewmodel: PositiveObservationViewModel())
     }
 }

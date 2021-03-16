@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		540278AE260119EB00983DA7 /* PositiveObservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540278AD260119EB00983DA7 /* PositiveObservation.swift */; };
 		5409C9C725BA35BF007CF221 /* ObservationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5409C9C625BA35BF007CF221 /* ObservationButton.swift */; };
 		5409C9CC25BA9013007CF221 /* HomeRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5409C9CB25BA9013007CF221 /* HomeRootView.swift */; };
 		5409C9D425BA9449007CF221 /* PositiveObservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5409C9D325BA9449007CF221 /* PositiveObservationView.swift */; };
@@ -15,7 +16,6 @@
 		542F814425BAA18C00EC9B05 /* LoadingScreenObservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542F814325BAA18C00EC9B05 /* LoadingScreenObservation.swift */; };
 		542F814925BAA2AA00EC9B05 /* LoadingScreenCompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542F814825BAA2AA00EC9B05 /* LoadingScreenCompleteView.swift */; };
 		542F814F25BAA65B00EC9B05 /* SupervisionObservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542F814E25BAA65B00EC9B05 /* SupervisionObservationView.swift */; };
-		5441D4A725BB416E004CA4DB /* PositiveObservationRootView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5441D4A625BB416E004CA4DB /* PositiveObservationRootView1.swift */; };
 		544313D225BAAE5800103E0A /* CheckInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544313D125BAAE5800103E0A /* CheckInfoView.swift */; };
 		54445BBF25BB1D4600E90F48 /* CustomUserDefaultSave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54445BBE25BB1D4600E90F48 /* CustomUserDefaultSave.swift */; };
 		54445BC425BB245600E90F48 /* University.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54445BC325BB245600E90F48 /* University.swift */; };
@@ -50,6 +50,7 @@
 		545593BC25FC05E4009F8AEF /* ResponseStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545593BB25FC05E4009F8AEF /* ResponseStruct.swift */; };
 		545593C125FC101D009F8AEF /* ObservationNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545593C025FC101C009F8AEF /* ObservationNetworkManager.swift */; };
 		545593C625FC1484009F8AEF /* ServiceArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545593C525FC1484009F8AEF /* ServiceArea.swift */; };
+		545593CB25FC15E4009F8AEF /* PositiveObservationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545593CA25FC15E4009F8AEF /* PositiveObservationViewModel.swift */; };
 		545F676725DC51BD00C37B64 /* GetPublicInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545F676625DC51BD00C37B64 /* GetPublicInfoManager.swift */; };
 		546AB90325C461A500835A8E /* ReviewObservationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546AB90225C461A500835A8E /* ReviewObservationButton.swift */; };
 		546AB90825C464E400835A8E /* ObservationConsultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546AB90725C464E400835A8E /* ObservationConsultView.swift */; };
@@ -97,6 +98,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		540278AD260119EB00983DA7 /* PositiveObservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositiveObservation.swift; sourceTree = "<group>"; };
 		5409C9C625BA35BF007CF221 /* ObservationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservationButton.swift; sourceTree = "<group>"; };
 		5409C9CB25BA9013007CF221 /* HomeRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRootView.swift; sourceTree = "<group>"; };
 		5409C9D325BA9449007CF221 /* PositiveObservationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositiveObservationView.swift; sourceTree = "<group>"; };
@@ -105,7 +107,6 @@
 		542F814325BAA18C00EC9B05 /* LoadingScreenObservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreenObservation.swift; sourceTree = "<group>"; };
 		542F814825BAA2AA00EC9B05 /* LoadingScreenCompleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreenCompleteView.swift; sourceTree = "<group>"; };
 		542F814E25BAA65B00EC9B05 /* SupervisionObservationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupervisionObservationView.swift; sourceTree = "<group>"; };
-		5441D4A625BB416E004CA4DB /* PositiveObservationRootView1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PositiveObservationRootView1.swift; sourceTree = "<group>"; };
 		544313D125BAAE5800103E0A /* CheckInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInfoView.swift; sourceTree = "<group>"; };
 		54445BBE25BB1D4600E90F48 /* CustomUserDefaultSave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUserDefaultSave.swift; sourceTree = "<group>"; };
 		54445BC325BB245600E90F48 /* University.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = University.swift; sourceTree = "<group>"; };
@@ -139,6 +140,7 @@
 		545593BB25FC05E4009F8AEF /* ResponseStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseStruct.swift; sourceTree = "<group>"; };
 		545593C025FC101C009F8AEF /* ObservationNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservationNetworkManager.swift; sourceTree = "<group>"; };
 		545593C525FC1484009F8AEF /* ServiceArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceArea.swift; sourceTree = "<group>"; };
+		545593CA25FC15E4009F8AEF /* PositiveObservationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositiveObservationViewModel.swift; sourceTree = "<group>"; };
 		545F676625DC51BD00C37B64 /* GetPublicInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPublicInfoManager.swift; sourceTree = "<group>"; };
 		546AB90225C461A500835A8E /* ReviewObservationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewObservationButton.swift; sourceTree = "<group>"; };
 		546AB90725C464E400835A8E /* ObservationConsultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservationConsultView.swift; sourceTree = "<group>"; };
@@ -249,7 +251,6 @@
 		54B50C04255C581F008DD49C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				5441D4A625BB416E004CA4DB /* PositiveObservationRootView1.swift */,
 				54C605C0255C407B00003D70 /* LoginView.swift */,
 				544C0F5B255FE2E1001D0CA3 /* OnboardStep.swift */,
 				544C0F60255FE86F001D0CA3 /* OnboardView.swift */,
@@ -286,6 +287,7 @@
 				5446046725EDE89900E37CE0 /* Role.swift */,
 				5446046C25EDE93F00E37CE0 /* Stay.swift */,
 				545593C525FC1484009F8AEF /* ServiceArea.swift */,
+				540278AD260119EB00983DA7 /* PositiveObservation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -296,6 +298,7 @@
 				54B50C0F255C5964008DD49C /* LoginViewModel.swift */,
 				54D1C62425816AEE00E7F9C1 /* RegisterViewModel.swift */,
 				54445BCD25BB257E00E90F48 /* CheckInfoViewModel.swift */,
+				545593CA25FC15E4009F8AEF /* PositiveObservationViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -526,7 +529,6 @@
 				547E8A7325BA313E005C7FE0 /* ValidatorField.swift in Sources */,
 				5446047225EDFA8B00E37CE0 /* UserManagementPetitionManager.swift in Sources */,
 				544C0F5C255FE2E1001D0CA3 /* OnboardStep.swift in Sources */,
-				5441D4A725BB416E004CA4DB /* PositiveObservationRootView1.swift in Sources */,
 				54E8654925D721A700779DA9 /* Specialty.swift in Sources */,
 				547E8A6E25BA30BC005C7FE0 /* CustomRadioButtonField.swift in Sources */,
 				545593C125FC101D009F8AEF /* ObservationNetworkManager.swift in Sources */,
@@ -541,6 +543,7 @@
 				54B50C10255C5964008DD49C /* LoginViewModel.swift in Sources */,
 				54E8653F25D720F400779DA9 /* Country.swift in Sources */,
 				54445BC425BB245600E90F48 /* University.swift in Sources */,
+				540278AE260119EB00983DA7 /* PositiveObservation.swift in Sources */,
 				545593BC25FC05E4009F8AEF /* ResponseStruct.swift in Sources */,
 				5409C9CC25BA9013007CF221 /* HomeRootView.swift in Sources */,
 				542F814925BAA2AA00EC9B05 /* LoadingScreenCompleteView.swift in Sources */,
@@ -554,6 +557,7 @@
 				542F814425BAA18C00EC9B05 /* LoadingScreenObservation.swift in Sources */,
 				544313D225BAAE5800103E0A /* CheckInfoView.swift in Sources */,
 				54887EAE25CCDA2900C79056 /* TransgressionObservationView.swift in Sources */,
+				545593CB25FC15E4009F8AEF /* PositiveObservationViewModel.swift in Sources */,
 				547E8A6925BA3092005C7FE0 /* CustomDatePicker.swift in Sources */,
 				54C605BF255C407B00003D70 /* VemeObemeApp.swift in Sources */,
 				54E8654425D7214F00779DA9 /* StayType.swift in Sources */,

@@ -45,8 +45,4 @@ struct ReviewObservationButton: View {
     }
 }
 
-struct ReviewObservationButton_Previews: PreviewProvider {
-    static var previews: some View {
-        ReviewObservationButton(title: "OBSERVACIÓN 01", incidentDate: "12/05/19", observationDate: "12/05/19", destinationView: AnyView(PositiveObservationView()))
-    }
-}
+

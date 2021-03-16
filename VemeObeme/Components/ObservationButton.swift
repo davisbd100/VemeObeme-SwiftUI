@@ -38,8 +38,3 @@ struct ObservationButton: View {
     }
 }
 
-struct ObservationButton_Previews: PreviewProvider {
-    static var previews: some View {
-        ObservationButton(logo: "ic_reporte_trasgresion", barColor: .green, message: "Observacion Positiva", destinationView: AnyView(PositiveObservationView()))
-    }
-}

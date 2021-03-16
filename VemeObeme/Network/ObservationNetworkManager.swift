@@ -9,9 +9,9 @@ import Foundation
 class ObservationNetworkManager {
     private var hostname: String = URL.myUrlBase
     
-    func tryRegister(user: User, completion: @escaping(Response?, Error?) -> ()){
+    func addPositiveObservition(positiveObservation: PositiveObservation, completion: @escaping(Response?, Error?) -> ()){
         
-        guard let url = URL(string: hostname + "user/") else {
+        guard let url = URL(string: hostname + "observaciones/positivo/") else {
             fatalError("URL Unreacheble")
         }
         var request = URLRequest(url: url)
@@ -19,9 +19,8 @@ class ObservationNetworkManager {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
         do {
-            let jsonData = try JSONEncoder().encode(user)
+            let jsonData = try JSONEncoder().encode(positiveObservation)
             request.httpBody = jsonData
-
         } catch let error {
             debugPrint("Error: \(error.localizedDescription)")
         }

@@ -11,12 +11,13 @@ struct SupervisionObservationRootView: View {
     @State var currentTab = 1
     @State var isSwipeDisabled = true
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
+    @State var sss = ""
     var body: some View {
         TabView(selection:$currentTab){
             SupervisionObservationView()
                 .tag(1)
                 .gesture(isSwipeDisabled ? DragGesture() : nil)
-            GenericMakeObservation()
+            GenericMakeObservation(comments: $sss)
                 .tag(2)
                 .gesture(isSwipeDisabled ? DragGesture() : nil)
             LoadingScreenObservation()
