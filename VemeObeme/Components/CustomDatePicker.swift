@@ -22,7 +22,7 @@ struct CustomDatePicker: View {
         }(
     )
     var body: some View{
-            DatePicker(title, selection:$value, in: minDate...maxDate, displayedComponents: .date)
+        DatePicker(title, selection:$value, in: minDate...maxDate, displayedComponents: .date)
                 .background(Color.white)
                 .accentColor(.black)
                 .font(.custom("Avenir Book", size: 14)).padding()

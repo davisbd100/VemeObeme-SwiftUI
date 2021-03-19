@@ -9,8 +9,8 @@ import Foundation
 
 class SupervisionObservationViewModel: ObservableObject {
     @Published var newSupervisionObservation = SupervisionObservation()
-    
-    func registerPositiveObservation(completion: @escaping(Bool) -> ()) {
+    @Published var isError = false
+    func registerSupervisionObservation(completion: @escaping(Bool) -> ()) {
         let dispatch = DispatchGroup()
         
         dispatch.enter()
@@ -28,6 +28,24 @@ class SupervisionObservationViewModel: ObservableObject {
         }
         dispatch.notify(queue: .main){
             print("Finished register process")
+        }
+    }
+    func getServiceArea(completion: @escaping([ServiceArea]) -> ()){
+        let dispatch = DispatchGroup()
+        
+        
+        dispatch.enter()
+        GetPublicInfoManager().getServiceAreas(countryId: (UserDefaults.standard.getcodableObject(dataType: User.self, key: "currentUser")?.estudiante?.estancias?.last?.institucionSalud?.pais?.idPais)!){
+            if $0.isEmpty {
+                self.isError = true
+                completion($0)
+            }else{
+                completion($0)
+            }
+            dispatch.leave()
+        }
+        dispatch.notify(queue: .main){
+            print("Finished Searching for service areas")
         }
     }
 }
