@@ -27,7 +27,6 @@ struct PositiveObservationView: View {
                 }
                 Text("Observación hecha el: " + convertOnlyDateToString(date: Date()))
                     .font(.custom("Avenir Book", size: 14))
-                    .padding()
                     .multilineTextAlignment(.center)
                 Divider()
                 HStack{
