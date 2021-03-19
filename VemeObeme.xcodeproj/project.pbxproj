@@ -74,6 +74,8 @@
 		54D1C61D2581583500E7F9C1 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D1C61C2581583500E7F9C1 /* RegisterView.swift */; };
 		54D1C62525816AEE00E7F9C1 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D1C62425816AEE00E7F9C1 /* RegisterViewModel.swift */; };
 		54D3C4BF255D90960087B2BF /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D3C4BE255D90960087B2BF /* Utils.swift */; };
+		54D3F8182604FDFA0070F48A /* SupervisionObservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D3F8172604FDFA0070F48A /* SupervisionObservation.swift */; };
+		54D3F81D26053D2A0070F48A /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D3F81C26053D2A0070F48A /* CustomError.swift */; };
 		54E8653F25D720F400779DA9 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E8653E25D720F400779DA9 /* Country.swift */; };
 		54E8654425D7214F00779DA9 /* StayType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E8654325D7214F00779DA9 /* StayType.swift */; };
 		54E8654925D721A700779DA9 /* Specialty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E8654825D721A700779DA9 /* Specialty.swift */; };
@@ -170,6 +172,8 @@
 		54D1C61C2581583500E7F9C1 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		54D1C62425816AEE00E7F9C1 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		54D3C4BE255D90960087B2BF /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		54D3F8172604FDFA0070F48A /* SupervisionObservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupervisionObservation.swift; sourceTree = "<group>"; };
+		54D3F81C26053D2A0070F48A /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		54E8653E25D720F400779DA9 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		54E8654325D7214F00779DA9 /* StayType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayType.swift; sourceTree = "<group>"; };
 		54E8654825D721A700779DA9 /* Specialty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Specialty.swift; sourceTree = "<group>"; };
@@ -208,6 +212,7 @@
 				54D3C4BE255D90960087B2BF /* Utils.swift */,
 				54F1B54C25CCC150003130EA /* AddBorder.swift */,
 				545593B325FC0029009F8AEF /* EndpointExtension.swift */,
+				54D3F81C26053D2A0070F48A /* CustomError.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -288,6 +293,7 @@
 				5446046C25EDE93F00E37CE0 /* Stay.swift */,
 				545593C525FC1484009F8AEF /* ServiceArea.swift */,
 				540278AD260119EB00983DA7 /* PositiveObservation.swift */,
+				54D3F8172604FDFA0070F48A /* SupervisionObservation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -529,6 +535,7 @@
 				547E8A7325BA313E005C7FE0 /* ValidatorField.swift in Sources */,
 				5446047225EDFA8B00E37CE0 /* UserManagementPetitionManager.swift in Sources */,
 				544C0F5C255FE2E1001D0CA3 /* OnboardStep.swift in Sources */,
+				54D3F8182604FDFA0070F48A /* SupervisionObservation.swift in Sources */,
 				54E8654925D721A700779DA9 /* Specialty.swift in Sources */,
 				547E8A6E25BA30BC005C7FE0 /* CustomRadioButtonField.swift in Sources */,
 				545593C125FC101D009F8AEF /* ObservationNetworkManager.swift in Sources */,
@@ -545,6 +552,7 @@
 				54445BC425BB245600E90F48 /* University.swift in Sources */,
 				540278AE260119EB00983DA7 /* PositiveObservation.swift in Sources */,
 				545593BC25FC05E4009F8AEF /* ResponseStruct.swift in Sources */,
+				54D3F81D26053D2A0070F48A /* CustomError.swift in Sources */,
 				5409C9CC25BA9013007CF221 /* HomeRootView.swift in Sources */,
 				542F814925BAA2AA00EC9B05 /* LoadingScreenCompleteView.swift in Sources */,
 				5409C9D925BA97C4007CF221 /* SimpleCheckbox.swift in Sources */,

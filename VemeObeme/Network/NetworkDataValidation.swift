@@ -8,6 +8,7 @@
 import Foundation
 class NetworkDataValidations {
     private var hostname: String = URL.myUrlBase
+    
     func CheckIfEmailExists(email: String, completion: @escaping(Bool) -> ()){
         
         guard let url = URL(string: hostname + "user/checkIfExists/" + email) else {

@@ -28,6 +28,7 @@ struct PositiveObservationView: View {
                 Text("Observación hecha el: " + convertOnlyDateToString(date: Date()))
                     .font(.custom("Avenir Book", size: 14))
                     .padding()
+                    .multilineTextAlignment(.center)
                 Divider()
                 HStack{
                     Image(systemName: "info.circle")
@@ -38,7 +39,7 @@ struct PositiveObservationView: View {
                 }
                     .padding()
                 Group{
-                    SimpleCheckbox(isChecked: $viewmodel.newPositiveObservation.enseñanza, title: "Enseñanza")
+                    SimpleCheckbox(isChecked: $viewmodel.newPositiveObservation.ensenianza, title: "Enseñanza")
                     SimpleCheckbox(isChecked: $viewmodel.newPositiveObservation.evaluacionesAprendizaje, title: "Evaluaciones del aprendizaje")
                     SimpleCheckbox(isChecked: $viewmodel.newPositiveObservation.retroalimentacion, title: "Retroalimentación recibida")
                     SimpleCheckbox(isChecked: $viewmodel.newPositiveObservation.cumplimientoPrograma, title: "Cumplimiento del programa académico")

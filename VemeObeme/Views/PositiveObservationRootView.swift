@@ -25,40 +25,51 @@ struct PositiveObservationRootView: View {
             LoadingScreenObservation()
                 .tag(3)
                 .gesture(isSwipeDisabled ? DragGesture() : nil)
-                .onAppear(perform: {
-                    if (viewmodel.newPositiveObservation.comentario.isEmpty){
-                        currentTab -= 1
-                    }
-                    let dispatch = DispatchGroup()
-                    
-                    dispatch.enter()
-                    viewmodel.registerPositiveObservation(){value in
-                        if (value){
-                            currentTab += 1
-                        }else{
-                            codeMessages = "Error al registrar la observacion"
-                            isErrorPresented.toggle()
-                        }
-                        dispatch.leave()
-                    }
-                })
+
             LoadingScreenCompleteView()
                 .tag(4)
                 .gesture(isSwipeDisabled ? DragGesture() : nil)
         }
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
         Button(action: {
-            if (currentTab < 3){
+            switch (currentTab){
+            case 2:
                 currentTab += 1
-            }else if (currentTab == 4){
+                if (viewmodel.newPositiveObservation.comentario.isEmpty){
+                    self.codeMessages = "Ingresa un comentario"
+                    self.isErrorPresented = true
+                    currentTab = 2
+                }else{
+                    let dispatch = DispatchGroup()
+                    
+                    dispatch.enter()
+                    viewmodel.registerPositiveObservation(){value in
+                        if (value){
+                            currentTab = 4
+                        }else{
+                            codeMessages = "Error al registrar la observacion"
+                            isErrorPresented.toggle()
+                            currentTab = 2
+                        }
+                        dispatch.leave()
+                    }
+                }
+                break;
+            case 4:
                 self.mode.wrappedValue.dismiss()
+                break;
+            default:
+                currentTab += 1
+                break;
             }
         }, label: {
-            Text("Siguiente")
+            Text(currentTab == 4 ? "Finalizar" : "Siguiente")
                 .foregroundColor(.white)
                 .font(.custom("Avenir Heavy", size: 15))
                 .frame(minWidth: 0, idealWidth: 344, maxWidth: 370, minHeight: 0, idealHeight: 53, maxHeight: 60, alignment: .center)
-        })        .alert(isPresented: $isErrorPresented, content: {
+        })
+        .disabled(currentTab == 3)
+        .alert(isPresented: $isErrorPresented, content: {
             Alert(title: Text("Error"), message: Text(codeMessages), dismissButton: .default(Text("Cerrar"), action: {
                 isErrorPresented = false
             }))

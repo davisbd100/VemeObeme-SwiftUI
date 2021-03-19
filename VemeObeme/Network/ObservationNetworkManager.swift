@@ -33,13 +33,12 @@ class ObservationNetworkManager {
                 completion(nil, error!);
                 return
             }
-            debugPrint(self.currentUser)
-            let json = try? JSONSerialization.jsonObject(with: sentData, options: [])
-            debugPrint(json)
             if (responseData.statusCode == 200){
                 completion(Response(data: sentData), nil)
             }else{
-                completion(nil, error)
+                let json = try? JSONSerialization.jsonObject(with: sentData, options: [])
+                debugPrint(json)
+                completion(nil, PetitionError.NotAuthorizedError)
             }
         }
         task.resume()
