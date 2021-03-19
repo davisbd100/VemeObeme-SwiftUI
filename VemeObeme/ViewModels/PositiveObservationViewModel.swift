@@ -7,13 +7,9 @@
 
 import Foundation
 
-
 class PositiveObservationViewModel: ObservableObject {
     
     @Published var newPositiveObservation = PositiveObservation()
-    
-    @Published var isError = false
-    
     
     func registerPositiveObservation(completion: @escaping(Bool) -> ()) {
         let dispatch = DispatchGroup()
@@ -34,8 +30,5 @@ class PositiveObservationViewModel: ObservableObject {
         dispatch.notify(queue: .main){
             print("Finished register process")
         }
-    }
-    func tryRegister(completion: @escaping(Bool) -> ()){
-
     }
 }
