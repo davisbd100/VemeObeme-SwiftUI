@@ -74,8 +74,12 @@
 		54D1C61D2581583500E7F9C1 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D1C61C2581583500E7F9C1 /* RegisterView.swift */; };
 		54D1C62525816AEE00E7F9C1 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D1C62425816AEE00E7F9C1 /* RegisterViewModel.swift */; };
 		54D3C4BF255D90960087B2BF /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D3C4BE255D90960087B2BF /* Utils.swift */; };
-		54D3F8182604FDFA0070F48A /* SupervisionObservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D3F8172604FDFA0070F48A /* SupervisionObservation.swift */; };
 		54D3F81D26053D2A0070F48A /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D3F81C26053D2A0070F48A /* CustomError.swift */; };
+		54D3F822260547210070F48A /* SupervisionObservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D3F821260547210070F48A /* SupervisionObservation.swift */; };
+		54D3F82A260547BE0070F48A /* SupervisionObservationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D3F829260547BE0070F48A /* SupervisionObservationViewModel.swift */; };
+		54D3F82F260548C50070F48A /* FaultObservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D3F82E260548C50070F48A /* FaultObservation.swift */; };
+		54D3F834260549460070F48A /* PersonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D3F833260549460070F48A /* PersonType.swift */; };
+		54D3F83C260549B40070F48A /* FaultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D3F83B260549B40070F48A /* FaultType.swift */; };
 		54E8653F25D720F400779DA9 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E8653E25D720F400779DA9 /* Country.swift */; };
 		54E8654425D7214F00779DA9 /* StayType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E8654325D7214F00779DA9 /* StayType.swift */; };
 		54E8654925D721A700779DA9 /* Specialty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E8654825D721A700779DA9 /* Specialty.swift */; };
@@ -172,8 +176,12 @@
 		54D1C61C2581583500E7F9C1 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		54D1C62425816AEE00E7F9C1 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		54D3C4BE255D90960087B2BF /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		54D3F8172604FDFA0070F48A /* SupervisionObservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupervisionObservation.swift; sourceTree = "<group>"; };
 		54D3F81C26053D2A0070F48A /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
+		54D3F821260547210070F48A /* SupervisionObservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupervisionObservation.swift; sourceTree = "<group>"; };
+		54D3F829260547BE0070F48A /* SupervisionObservationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupervisionObservationViewModel.swift; sourceTree = "<group>"; };
+		54D3F82E260548C50070F48A /* FaultObservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaultObservation.swift; sourceTree = "<group>"; };
+		54D3F833260549460070F48A /* PersonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonType.swift; sourceTree = "<group>"; };
+		54D3F83B260549B40070F48A /* FaultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaultType.swift; sourceTree = "<group>"; };
 		54E8653E25D720F400779DA9 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		54E8654325D7214F00779DA9 /* StayType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayType.swift; sourceTree = "<group>"; };
 		54E8654825D721A700779DA9 /* Specialty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Specialty.swift; sourceTree = "<group>"; };
@@ -256,6 +264,8 @@
 		54B50C04255C581F008DD49C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				54445BD525BB36AE00E90F48 /* PositiveObservationRootView.swift */,
+				54445BDA25BB36C200E90F48 /* SupervisionObservationRootView.swift */,
 				54C605C0255C407B00003D70 /* LoginView.swift */,
 				544C0F5B255FE2E1001D0CA3 /* OnboardStep.swift */,
 				544C0F60255FE86F001D0CA3 /* OnboardView.swift */,
@@ -263,15 +273,13 @@
 				5446C7FC256CD5DE003B93CA /* RootView.swift */,
 				54D1C61C2581583500E7F9C1 /* RegisterView.swift */,
 				547E8A7F25BA3385005C7FE0 /* WelcomeView.swift */,
-				5409C9CB25BA9013007CF221 /* HomeRootView.swift */,
 				5409C9D325BA9449007CF221 /* PositiveObservationView.swift */,
+				5409C9CB25BA9013007CF221 /* HomeRootView.swift */,
 				542F813E25BA9E9F00EC9B05 /* GenericMakeObservation.swift */,
 				542F814325BAA18C00EC9B05 /* LoadingScreenObservation.swift */,
 				542F814825BAA2AA00EC9B05 /* LoadingScreenCompleteView.swift */,
 				542F814E25BAA65B00EC9B05 /* SupervisionObservationView.swift */,
 				544313D125BAAE5800103E0A /* CheckInfoView.swift */,
-				54445BD525BB36AE00E90F48 /* PositiveObservationRootView.swift */,
-				54445BDA25BB36C200E90F48 /* SupervisionObservationRootView.swift */,
 				546AB90725C464E400835A8E /* ObservationConsultView.swift */,
 				546AB90C25C465A300835A8E /* ObservationConsultInfoView.swift */,
 				54887EAD25CCDA2900C79056 /* TransgressionObservationView.swift */,
@@ -293,7 +301,10 @@
 				5446046C25EDE93F00E37CE0 /* Stay.swift */,
 				545593C525FC1484009F8AEF /* ServiceArea.swift */,
 				540278AD260119EB00983DA7 /* PositiveObservation.swift */,
-				54D3F8172604FDFA0070F48A /* SupervisionObservation.swift */,
+				54D3F821260547210070F48A /* SupervisionObservation.swift */,
+				54D3F82E260548C50070F48A /* FaultObservation.swift */,
+				54D3F833260549460070F48A /* PersonType.swift */,
+				54D3F83B260549B40070F48A /* FaultType.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -305,6 +316,7 @@
 				54D1C62425816AEE00E7F9C1 /* RegisterViewModel.swift */,
 				54445BCD25BB257E00E90F48 /* CheckInfoViewModel.swift */,
 				545593CA25FC15E4009F8AEF /* PositiveObservationViewModel.swift */,
+				54D3F829260547BE0070F48A /* SupervisionObservationViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -535,15 +547,17 @@
 				547E8A7325BA313E005C7FE0 /* ValidatorField.swift in Sources */,
 				5446047225EDFA8B00E37CE0 /* UserManagementPetitionManager.swift in Sources */,
 				544C0F5C255FE2E1001D0CA3 /* OnboardStep.swift in Sources */,
-				54D3F8182604FDFA0070F48A /* SupervisionObservation.swift in Sources */,
 				54E8654925D721A700779DA9 /* Specialty.swift in Sources */,
 				547E8A6E25BA30BC005C7FE0 /* CustomRadioButtonField.swift in Sources */,
 				545593C125FC101D009F8AEF /* ObservationNetworkManager.swift in Sources */,
 				546AB90D25C465A300835A8E /* ObservationConsultInfoView.swift in Sources */,
 				54450A6A25E82A2D0016FFA1 /* CustomLoadingView.swift in Sources */,
+				54D3F82F260548C50070F48A /* FaultObservation.swift in Sources */,
 				54D1C61D2581583500E7F9C1 /* RegisterView.swift in Sources */,
 				54445BBF25BB1D4600E90F48 /* CustomUserDefaultSave.swift in Sources */,
+				54D3F82A260547BE0070F48A /* SupervisionObservationViewModel.swift in Sources */,
 				54F1B54D25CCC150003130EA /* AddBorder.swift in Sources */,
+				54D3F834260549460070F48A /* PersonType.swift in Sources */,
 				546AB90825C464E400835A8E /* ObservationConsultView.swift in Sources */,
 				546AB90325C461A500835A8E /* ReviewObservationButton.swift in Sources */,
 				544C0F66255FEAB0001D0CA3 /* AboutObeme.swift in Sources */,
@@ -563,6 +577,7 @@
 				544BF7442583C4750071B2DE /* CustomProgressBarView.swift in Sources */,
 				54450A7725E84EA10016FFA1 /* NetworkDataValidation.swift in Sources */,
 				542F814425BAA18C00EC9B05 /* LoadingScreenObservation.swift in Sources */,
+				54D3F83C260549B40070F48A /* FaultType.swift in Sources */,
 				544313D225BAAE5800103E0A /* CheckInfoView.swift in Sources */,
 				54887EAE25CCDA2900C79056 /* TransgressionObservationView.swift in Sources */,
 				545593CB25FC15E4009F8AEF /* PositiveObservationViewModel.swift in Sources */,
@@ -576,6 +591,7 @@
 				5409C9D425BA9449007CF221 /* PositiveObservationView.swift in Sources */,
 				545F676725DC51BD00C37B64 /* GetPublicInfoManager.swift in Sources */,
 				54445BD625BB36AE00E90F48 /* PositiveObservationRootView.swift in Sources */,
+				54D3F822260547210070F48A /* SupervisionObservation.swift in Sources */,
 				542F814F25BAA65B00EC9B05 /* SupervisionObservationView.swift in Sources */,
 				54445BCE25BB257E00E90F48 /* CheckInfoViewModel.swift in Sources */,
 				5446046325EDE7D700E37CE0 /* User.swift in Sources */,
