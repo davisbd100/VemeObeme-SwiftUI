@@ -18,7 +18,7 @@ class ObservationNetworkManager {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue(currentUser?.jwt, forHTTPHeaderField: "Authorization")
+        request.setValue("Bearer " + (currentUser?.jwt)!, forHTTPHeaderField: "Authorization")
         do {
             let jsonData = try JSONEncoder().encode(positiveObservation)
             request.httpBody = jsonData
@@ -36,8 +36,6 @@ class ObservationNetworkManager {
             if (responseData.statusCode == 200){
                 completion(Response(data: sentData), nil)
             }else{
-                let json = try? JSONSerialization.jsonObject(with: sentData, options: [])
-                debugPrint(json)
                 completion(nil, PetitionError.NotAuthorizedError)
             }
         }
