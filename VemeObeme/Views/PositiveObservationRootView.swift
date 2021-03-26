@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PositiveObservationRootView: View {
     @StateObject var viewmodel: PositiveObservationViewModel = PositiveObservationViewModel()
-    @State var currentTab = 1
+    @State var currentTab = 4
     @State var isSwipeDisabled = true
     @State var isErrorPresented = false
     @State var codeMessages = "UnkownError"

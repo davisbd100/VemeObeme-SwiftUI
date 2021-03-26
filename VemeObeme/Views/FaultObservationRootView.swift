@@ -1,15 +1,16 @@
 //
-//  SupervisionObservationRootView.swift
+//  FaultObservationRootView.swift
 //  VemeObeme
 //
-//  Created by David Bárcenas Duran on 22/01/21.
+//  Created by David Bárcenas Duran
 //
 
 import SwiftUI
 
-struct SupervisionObservationRootView: View {
-    @StateObject var viewmodel = SupervisionObservationViewModel()
+struct FaultObservationRootView: View {
+    @StateObject var viewmodel: FaultObservationViewModel
     @State var currentTab = 1
+    @State var color: Color
     
     @State var isLoading = false
     @State var loadingTitle = "Cargando por favor espere"
@@ -19,13 +20,13 @@ struct SupervisionObservationRootView: View {
     @State var isFatalErrorPresented = false
     @State var codeMessages = "UnkownError"
     @State var isSwipeDisabled = true
-
+    
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     var body: some View {
         ZStack{
             VStack{
                 TabView(selection:$currentTab){
-                    SupervisionObservationView(viewModel: viewmodel, isLoading: $isLoading, isFatalError: $isErrorPresented, loadingTitle: $loadingTitle)
+                    FaultObservationView(viewModel: viewmodel, color: color, isLoading: $isLoading, isFatalError: $isErrorPresented, loadingTitle: $loadingTitle)
                         .tag(1)
                         .gesture(isSwipeDisabled ? DragGesture() : nil)
                     GenericMakeObservation(comments: $viewmodel.comments)
@@ -43,7 +44,7 @@ struct SupervisionObservationRootView: View {
                     switch (currentTab){
                     case 2:
                         currentTab += 1
-                        if (!viewmodel.isCommentsValid || !viewmodel.isServiceAreaValid || !viewmodel.isRegisterDateValid){
+                        if (!viewmodel.isCommentsValid || !viewmodel.isPersonTypeValid || !viewmodel.isRegisterDateValid){
                             self.codeMessages = "Revisa los datos e intenta de nuevo"
                             self.isErrorPresented = true
                             debugPrint(self.isErrorPresented)
@@ -93,8 +94,8 @@ struct SupervisionObservationRootView: View {
     }
 }
 
-struct SupervisionObservationRootView_Previews: PreviewProvider {
+struct FaultObservationRootView_Previews: PreviewProvider {
     static var previews: some View {
-        SupervisionObservationRootView()
+        FaultObservationRootView(viewmodel: FaultObservationViewModel(faultType: FaultType(idTipoFalta: 2, tipo: "Acoso Sexual")), color: Color.pink)
     }
 }

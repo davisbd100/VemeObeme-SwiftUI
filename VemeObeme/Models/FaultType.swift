@@ -8,6 +8,6 @@
 import Foundation
 
 struct FaultType: Codable, Hashable {
-    public var tipoFalta: String?
+    public var idTipoFalta: Int?
     public var tipo: String?
 }

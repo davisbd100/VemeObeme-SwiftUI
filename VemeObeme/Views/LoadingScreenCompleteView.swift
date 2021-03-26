@@ -19,7 +19,7 @@ struct LoadingScreenCompleteView: View {
                 .padding()
             Text("Agradecemos mucho tu observación. Nos ayudará a conocer mejor las fortalezas y debilidades del proceso educativo de internos, pasantes y residentes en las unidades médicas.")
                 .font(.custom("Avenir Book", size: 18))
-                .padding()
+                .multilineTextAlignment(.center)
             Spacer()
         }
         .padding()

@@ -25,6 +25,9 @@
 		54445BDB25BB36C200E90F48 /* SupervisionObservationRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54445BDA25BB36C200E90F48 /* SupervisionObservationRootView.swift */; };
 		54450A6A25E82A2D0016FFA1 /* CustomLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54450A6925E82A2D0016FFA1 /* CustomLoadingView.swift */; };
 		54450A7725E84EA10016FFA1 /* NetworkDataValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54450A7625E84EA10016FFA1 /* NetworkDataValidation.swift */; };
+		5445CF2E260DA94D004D6D9D /* FaultObservationInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5445CF2D260DA94D004D6D9D /* FaultObservationInfoView.swift */; };
+		5445CF33260DAA29004D6D9D /* FaultObservationRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5445CF32260DAA29004D6D9D /* FaultObservationRootView.swift */; };
+		5445CF38260DB03A004D6D9D /* FaultObservationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5445CF37260DB03A004D6D9D /* FaultObservationViewModel.swift */; };
 		5446046325EDE7D700E37CE0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5446046225EDE7D700E37CE0 /* User.swift */; };
 		5446046825EDE89900E37CE0 /* Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5446046725EDE89900E37CE0 /* Role.swift */; };
 		5446046D25EDE93F00E37CE0 /* Stay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5446046C25EDE93F00E37CE0 /* Stay.swift */; };
@@ -65,6 +68,7 @@
 		54887EAE25CCDA2900C79056 /* TransgressionObservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54887EAD25CCDA2900C79056 /* TransgressionObservationView.swift */; };
 		54B50C08255C5870008DD49C /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B50C07255C5870008DD49C /* Student.swift */; };
 		54B50C10255C5964008DD49C /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B50C0F255C5964008DD49C /* LoginViewModel.swift */; };
+		54BAC5D8260DBACF00010FF3 /* FaultObservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BAC5D7260DBACF00010FF3 /* FaultObservationView.swift */; };
 		54C605BF255C407B00003D70 /* VemeObemeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C605BE255C407B00003D70 /* VemeObemeApp.swift */; };
 		54C605C1255C407B00003D70 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C605C0255C407B00003D70 /* LoginView.swift */; };
 		54C605C3255C407D00003D70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54C605C2255C407D00003D70 /* Assets.xcassets */; };
@@ -122,6 +126,9 @@
 		54445BDA25BB36C200E90F48 /* SupervisionObservationRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupervisionObservationRootView.swift; sourceTree = "<group>"; };
 		54450A6925E82A2D0016FFA1 /* CustomLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoadingView.swift; sourceTree = "<group>"; };
 		54450A7625E84EA10016FFA1 /* NetworkDataValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataValidation.swift; sourceTree = "<group>"; };
+		5445CF2D260DA94D004D6D9D /* FaultObservationInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaultObservationInfoView.swift; sourceTree = "<group>"; };
+		5445CF32260DAA29004D6D9D /* FaultObservationRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaultObservationRootView.swift; sourceTree = "<group>"; };
+		5445CF37260DB03A004D6D9D /* FaultObservationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaultObservationViewModel.swift; sourceTree = "<group>"; };
 		5446046225EDE7D700E37CE0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5446046725EDE89900E37CE0 /* Role.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Role.swift; sourceTree = "<group>"; };
 		5446046C25EDE93F00E37CE0 /* Stay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stay.swift; sourceTree = "<group>"; };
@@ -161,6 +168,7 @@
 		54887EAD25CCDA2900C79056 /* TransgressionObservationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransgressionObservationView.swift; sourceTree = "<group>"; };
 		54B50C07255C5870008DD49C /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		54B50C0F255C5964008DD49C /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		54BAC5D7260DBACF00010FF3 /* FaultObservationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaultObservationView.swift; sourceTree = "<group>"; };
 		54C605BB255C407B00003D70 /* VemeObeme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VemeObeme.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54C605BE255C407B00003D70 /* VemeObemeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VemeObemeApp.swift; sourceTree = "<group>"; };
 		54C605C0255C407B00003D70 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -283,6 +291,9 @@
 				546AB90725C464E400835A8E /* ObservationConsultView.swift */,
 				546AB90C25C465A300835A8E /* ObservationConsultInfoView.swift */,
 				54887EAD25CCDA2900C79056 /* TransgressionObservationView.swift */,
+				5445CF2D260DA94D004D6D9D /* FaultObservationInfoView.swift */,
+				5445CF32260DAA29004D6D9D /* FaultObservationRootView.swift */,
+				54BAC5D7260DBACF00010FF3 /* FaultObservationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -317,6 +328,7 @@
 				54445BCD25BB257E00E90F48 /* CheckInfoViewModel.swift */,
 				545593CA25FC15E4009F8AEF /* PositiveObservationViewModel.swift */,
 				54D3F829260547BE0070F48A /* SupervisionObservationViewModel.swift */,
+				5445CF37260DB03A004D6D9D /* FaultObservationViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -543,6 +555,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5445CF33260DAA29004D6D9D /* FaultObservationRootView.swift in Sources */,
 				545593B425FC0029009F8AEF /* EndpointExtension.swift in Sources */,
 				547E8A7325BA313E005C7FE0 /* ValidatorField.swift in Sources */,
 				5446047225EDFA8B00E37CE0 /* UserManagementPetitionManager.swift in Sources */,
@@ -552,6 +565,7 @@
 				545593C125FC101D009F8AEF /* ObservationNetworkManager.swift in Sources */,
 				546AB90D25C465A300835A8E /* ObservationConsultInfoView.swift in Sources */,
 				54450A6A25E82A2D0016FFA1 /* CustomLoadingView.swift in Sources */,
+				5445CF2E260DA94D004D6D9D /* FaultObservationInfoView.swift in Sources */,
 				54D3F82F260548C50070F48A /* FaultObservation.swift in Sources */,
 				54D1C61D2581583500E7F9C1 /* RegisterView.swift in Sources */,
 				54445BBF25BB1D4600E90F48 /* CustomUserDefaultSave.swift in Sources */,
@@ -573,6 +587,7 @@
 				54C605C1255C407B00003D70 /* LoginView.swift in Sources */,
 				54445BC925BB249700E90F48 /* HealthInstitution.swift in Sources */,
 				544C0F61255FE86F001D0CA3 /* OnboardView.swift in Sources */,
+				54BAC5D8260DBACF00010FF3 /* FaultObservationView.swift in Sources */,
 				547E8A6125BA3031005C7FE0 /* CustomDropDown.swift in Sources */,
 				544BF7442583C4750071B2DE /* CustomProgressBarView.swift in Sources */,
 				54450A7725E84EA10016FFA1 /* NetworkDataValidation.swift in Sources */,
@@ -596,6 +611,7 @@
 				54445BCE25BB257E00E90F48 /* CheckInfoViewModel.swift in Sources */,
 				5446046325EDE7D700E37CE0 /* User.swift in Sources */,
 				547E8A7825BA31DE005C7FE0 /* ValidatorSecureField.swift in Sources */,
+				5445CF38260DB03A004D6D9D /* FaultObservationViewModel.swift in Sources */,
 				547E8A5C25BA2FC2005C7FE0 /* CustomParagraph.swift in Sources */,
 				54B50C08255C5870008DD49C /* Student.swift in Sources */,
 				5446C7F2256CC63D003B93CA /* LottieView.swift in Sources */,
