@@ -4,7 +4,6 @@
 //
 //  Created by David Bárcenas Duran on 12/11/20.
 //
-
 import Foundation
 
 func isValidEmail(email: String) -> Bool {
@@ -29,24 +28,37 @@ func isValidPasword(pass: String) -> Bool {
 func formatDate(date: Date) -> Date{
     let formatter = DateFormatter()
     formatter.dateFormat = "E, dd MMM yyyy"
+    formatter.locale = Locale(identifier: "es_MX_POSIX")
     let formatedDate = formatter.date(from: "\(date)")!
     return formatedDate
 }
 func convertDateToString(date: Date) -> String{
     let formatter = DateFormatter()
+    formatter.locale = Locale(identifier: "es_MX_POSIX")
     formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
     let formatedDate = formatter.string(from: date)
     return formatedDate
 }
 func convertOnlyDateToString(date: Date) -> String{
     let formatter = DateFormatter()
+    formatter.locale = Locale(identifier: "es_MX_POSIX")
     formatter.dateFormat = "dd 'de' MMMM, 'del' yyyy"
     let formatedDate = formatter.string(from: date)
     return formatedDate
 }
 func convertOnlyHourToString(date: Date) -> String{
     let formatter = DateFormatter()
+    formatter.locale = Locale(identifier: "es_MX_POSIX")
     formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
     let formatedDate = formatter.string(from: date)
     return formatedDate
+}
+func formatStringDateForShowing(date: String) -> String{
+    let formatter = DateFormatter()
+    formatter.locale = Locale(identifier: "es_MX_POSIX")
+    formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.sssZ"
+    let formatedDate = formatter.date(from: date)!
+    formatter.dateFormat = "dd 'de' MMMM, 'del' yyyy"
+    let formatedDateString = formatter.string(from: formatedDate)
+    return formatedDateString
 }

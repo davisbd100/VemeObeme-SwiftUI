@@ -69,6 +69,8 @@ class UserManagementPetitionManager {
                 return
             }
             if (responseData.statusCode == 200){
+                let json = try? JSONSerialization.jsonObject(with: sentData, options: [])
+                debugPrint(json)
                 completion(Response(data: sentData), nil)
             }else{
                 completion(nil, NSError(domain: "failed login", code: responseData.statusCode, userInfo: [NSLocalizedDescriptionKey: "Tried login but ok not received"]))
