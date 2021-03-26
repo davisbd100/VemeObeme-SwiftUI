@@ -8,15 +8,17 @@
 import SwiftUI
 
 struct SupervisionObservationView: View {
-    @StateObject var viewModel = SupervisionObservationViewModel()
-    @State var date:Date = Date()
+    @StateObject var viewModel: SupervisionObservationViewModel
+    @State var date: Date = Date()
     @State var selectedValue:String = ""
     @State var isServiceSelected = false
     @State var serviceAreas: [ServiceArea] = []
+    @State var dataIsLoaded = false
     
-    @State var isLoading: Bool = false
-    @State var isFatalError: Bool = false
-    @State var loadingTitle: String = "NotTitle"
+    @Binding var isLoading: Bool
+    @Binding var isFatalError: Bool
+    @Binding var loadingTitle: String
+
     var body: some View {
         Form{
             VStack(alignment: .leading){
@@ -75,29 +77,26 @@ struct SupervisionObservationView: View {
                 .background(Color.white)
                 .addBorder(Color.black, width: 2, cornerRadius: 20)
                 .onAppear(perform: {
-                    isLoading.toggle()
-                    loadingTitle = "Cargando areas de servicio"
-                    let dispatch = DispatchGroup()
-                    
-                    dispatch.enter()
-                    viewModel.getServiceArea{ serviceArea in
-                        self.serviceAreas = serviceArea
+                    if (!isLoading && !dataIsLoaded){
                         isLoading.toggle()
-                        loadingTitle = "Cargando"
-                        dispatch.leave()
-                    }
+                        loadingTitle = "Cargando areas de servicio"
+                        let dispatch = DispatchGroup()
+                        
+                        dispatch.enter()
+                        viewModel.getServiceArea{ serviceArea in
+                            self.dataIsLoaded = true
+                            self.serviceAreas = serviceArea
+                            isLoading.toggle()
+                            loadingTitle = "Cargando"
+                            dispatch.leave()
+                        }
 
-                    dispatch.notify(queue: .main){
-                        isFatalError = viewModel.isError
+                        dispatch.notify(queue: .main){
+                            isFatalError = viewModel.isError
+                        }
                     }
                 })
             }
         }
-    }
-}
-
-struct SupervisionObservationView_Previews: PreviewProvider {
-    static var previews: some View {
-        SupervisionObservationView()
     }
 }

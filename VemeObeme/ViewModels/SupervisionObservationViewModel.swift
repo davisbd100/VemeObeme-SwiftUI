@@ -6,10 +6,50 @@
 //
 
 import Foundation
+import Combine
 
 class SupervisionObservationViewModel: ObservableObject {
     @Published var newSupervisionObservation = SupervisionObservation()
+    
+    @Published var comments: String = ""
+    @Published var observationDate: Date = Date()
+    @Published var registerDate: Date = Date()
+    @Published var observationHour: Date = Date()
+    @Published var serviceArea: ServiceArea = ServiceArea()
+    
+    
+    @Published var isCommentsValid = false
+    @Published var isRegisterDateValid = false
+    @Published var isServiceAreaValid = false
+    
     @Published var isError = false
+    
+    
+    private var cancellableSet: Set<AnyCancellable> = []
+    
+    init() {
+        $comments
+            .receive(on: RunLoop.main)
+            .map{
+                comments in
+                return (!comments.isEmpty)
+            }.assign(to: \.isCommentsValid, on: self)
+            .store(in: &cancellableSet)
+        $registerDate
+            .receive(on: RunLoop.main)
+            .map{
+                registerDate in
+                return (registerDate > self.observationDate)
+            }.assign(to: \.isRegisterDateValid, on: self)
+            .store(in: &cancellableSet)
+        $serviceArea
+            .receive(on: RunLoop.main)
+            .map{
+                serviceArea in
+                return (!(serviceArea.nombre?.isEmpty ?? true))
+            }.assign(to: \.isServiceAreaValid, on: self)
+            .store(in: &cancellableSet)
+    }
     func registerSupervisionObservation(completion: @escaping(Bool) -> ()) {
         let dispatch = DispatchGroup()
         
