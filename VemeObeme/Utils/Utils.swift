@@ -62,3 +62,12 @@ func formatStringDateForShowing(date: String) -> String{
     let formatedDateString = formatter.string(from: formatedDate)
     return formatedDateString
 }
+func getMonthStringDateForShowing(date: String) -> String{
+    let formatter = DateFormatter()
+    formatter.locale = Locale(identifier: "es_MX_POSIX")
+    formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.sssZ"
+    let formatedDate = formatter.date(from: date)!
+    formatter.dateFormat = "MMMM YYYY"
+    let formatedDateString = formatter.string(from: formatedDate)
+    return formatedDateString
+}

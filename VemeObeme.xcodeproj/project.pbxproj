@@ -23,6 +23,7 @@
 		54445BCE25BB257E00E90F48 /* CheckInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54445BCD25BB257E00E90F48 /* CheckInfoViewModel.swift */; };
 		54445BD625BB36AE00E90F48 /* PositiveObservationRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54445BD525BB36AE00E90F48 /* PositiveObservationRootView.swift */; };
 		54445BDB25BB36C200E90F48 /* SupervisionObservationRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54445BDA25BB36C200E90F48 /* SupervisionObservationRootView.swift */; };
+		5444AF9D260DD92D00B86044 /* PeriodHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5444AF9C260DD92D00B86044 /* PeriodHelper.swift */; };
 		54450A6A25E82A2D0016FFA1 /* CustomLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54450A6925E82A2D0016FFA1 /* CustomLoadingView.swift */; };
 		54450A7725E84EA10016FFA1 /* NetworkDataValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54450A7625E84EA10016FFA1 /* NetworkDataValidation.swift */; };
 		5445CF2E260DA94D004D6D9D /* FaultObservationInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5445CF2D260DA94D004D6D9D /* FaultObservationInfoView.swift */; };
@@ -124,6 +125,7 @@
 		54445BCD25BB257E00E90F48 /* CheckInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInfoViewModel.swift; sourceTree = "<group>"; };
 		54445BD525BB36AE00E90F48 /* PositiveObservationRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositiveObservationRootView.swift; sourceTree = "<group>"; };
 		54445BDA25BB36C200E90F48 /* SupervisionObservationRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupervisionObservationRootView.swift; sourceTree = "<group>"; };
+		5444AF9C260DD92D00B86044 /* PeriodHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodHelper.swift; sourceTree = "<group>"; };
 		54450A6925E82A2D0016FFA1 /* CustomLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoadingView.swift; sourceTree = "<group>"; };
 		54450A7625E84EA10016FFA1 /* NetworkDataValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataValidation.swift; sourceTree = "<group>"; };
 		5445CF2D260DA94D004D6D9D /* FaultObservationInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaultObservationInfoView.swift; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 				54445BBE25BB1D4600E90F48 /* CustomUserDefaultSave.swift */,
 				546AB90225C461A500835A8E /* ReviewObservationButton.swift */,
 				54450A6925E82A2D0016FFA1 /* CustomLoadingView.swift */,
+				5444AF9C260DD92D00B86044 /* PeriodHelper.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -561,6 +564,7 @@
 				5446047225EDFA8B00E37CE0 /* UserManagementPetitionManager.swift in Sources */,
 				544C0F5C255FE2E1001D0CA3 /* OnboardStep.swift in Sources */,
 				54E8654925D721A700779DA9 /* Specialty.swift in Sources */,
+				5444AF9D260DD92D00B86044 /* PeriodHelper.swift in Sources */,
 				547E8A6E25BA30BC005C7FE0 /* CustomRadioButtonField.swift in Sources */,
 				545593C125FC101D009F8AEF /* ObservationNetworkManager.swift in Sources */,
 				546AB90D25C465A300835A8E /* ObservationConsultInfoView.swift in Sources */,
