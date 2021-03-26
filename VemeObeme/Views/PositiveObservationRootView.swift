@@ -25,7 +25,6 @@ struct PositiveObservationRootView: View {
             LoadingScreenObservation()
                 .tag(3)
                 .gesture(isSwipeDisabled ? DragGesture() : nil)
-
             LoadingScreenCompleteView()
                 .tag(4)
                 .gesture(isSwipeDisabled ? DragGesture() : nil)
