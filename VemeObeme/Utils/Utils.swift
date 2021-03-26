@@ -32,7 +32,6 @@ func formatDate(date: Date) -> Date{
     let formatedDate = formatter.date(from: "\(date)")!
     return formatedDate
 }
-
 func convertDateToString(date: Date) -> String{
     let formatter = DateFormatter()
     formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
@@ -42,6 +41,12 @@ func convertDateToString(date: Date) -> String{
 func convertOnlyDateToString(date: Date) -> String{
     let formatter = DateFormatter()
     formatter.dateFormat = "dd 'de' MMMM, 'del' yyyy"
+    let formatedDate = formatter.string(from: date)
+    return formatedDate
+}
+func convertOnlyHourToString(date: Date) -> String{
+    let formatter = DateFormatter()
+    formatter.dateFormat = "HH:mm:ss"
     let formatedDate = formatter.string(from: date)
     return formatedDate
 }

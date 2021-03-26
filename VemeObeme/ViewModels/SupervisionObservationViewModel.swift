@@ -9,7 +9,6 @@ import Foundation
 import Combine
 
 class SupervisionObservationViewModel: ObservableObject {
-    @Published var newSupervisionObservation = SupervisionObservation()
     
     @Published var comments: String = ""
     @Published var observationDate: Date = Date()
@@ -55,7 +54,7 @@ class SupervisionObservationViewModel: ObservableObject {
         
         dispatch.enter()
         
-        ObservationNetworkManager().addSupervisionObservation(supervisionObservation: newSupervisionObservation) {
+        ObservationNetworkManager().addSupervisionObservation(supervisionObservation: SupervisionObservation(comentario: comments, fechaObservacion: convertDateToString(date: observationDate), fechaRegistro: convertDateToString(date: registerDate), horaObservacion: convertOnlyHourToString(date: observationHour), areaServicio: serviceArea)) {
             
             debugPrint($0 as Any)
             debugPrint($1 as Any)
