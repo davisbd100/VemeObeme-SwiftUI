@@ -9,9 +9,6 @@ import SwiftUI
 
 struct SupervisionObservationView: View {
     @StateObject var viewModel: SupervisionObservationViewModel
-    @State var date: Date = Date()
-    @State var selectedValue:String = ""
-    @State var isServiceSelected = false
     @State var serviceAreas: [ServiceArea] = []
     @State var dataIsLoaded = false
     
@@ -45,14 +42,14 @@ struct SupervisionObservationView: View {
                         .foregroundColor(.green)
                         .padding()
                 }
-                CustomDatePicker(value: $date, title: "Fecha del incidente", maxDate: date, minDate: date)
+                CustomDatePicker(value: $viewModel.observationDate, title: "Fecha del incidente", maxDate: Date(), minDate: Calendar.current.date(byAdding: .month, value: -12, to: Date())!)
                 HStack{
                     Image(systemName: "info.circle")
                     Text("Hora aproximada del incidente")
                         .font(.custom("Avenir Book", size: 16))
                         .foregroundColor(.green)
                         .padding()
-                    DatePicker("Hora del incidente", selection:$date, displayedComponents: .hourAndMinute)
+                    DatePicker("Hora del incidente", selection:$viewModel.observationHour, displayedComponents: .hourAndMinute)
                             .background(Color.white)
                             .accentColor(.black)
                             .font(.custom("Avenir Book", size: 14)).padding()
@@ -66,7 +63,7 @@ struct SupervisionObservationView: View {
                         .foregroundColor(.green)
                         .padding()
                 }
-                Picker(selection: $viewModel.newSupervisionObservation.areaServicio, label: Text("Area de servicio"), content: {
+                Picker(selection: $viewModel.serviceArea , label: Text("Area de servicio"), content: {
                     ForEach(serviceAreas, id: \.self) { value in
                         Text("\(value.nombre!)")
                             .font(.custom("Avenir Book", size: 15))

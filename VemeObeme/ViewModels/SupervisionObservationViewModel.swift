@@ -12,7 +12,6 @@ class SupervisionObservationViewModel: ObservableObject {
     
     @Published var comments: String = ""
     @Published var observationDate: Date = Date()
-    @Published var registerDate: Date = Date()
     @Published var observationHour: Date = Date()
     @Published var serviceArea: ServiceArea = ServiceArea()
     
@@ -34,11 +33,11 @@ class SupervisionObservationViewModel: ObservableObject {
                 return (!comments.isEmpty)
             }.assign(to: \.isCommentsValid, on: self)
             .store(in: &cancellableSet)
-        $registerDate
+        $observationDate
             .receive(on: RunLoop.main)
             .map{
-                registerDate in
-                return (registerDate > self.observationDate)
+                observationDate in
+                return (observationDate < Date())
             }.assign(to: \.isRegisterDateValid, on: self)
             .store(in: &cancellableSet)
         $serviceArea
@@ -54,7 +53,7 @@ class SupervisionObservationViewModel: ObservableObject {
         
         dispatch.enter()
         
-        ObservationNetworkManager().addSupervisionObservation(supervisionObservation: SupervisionObservation(comentario: comments, fechaObservacion: convertDateToString(date: observationDate), fechaRegistro: convertDateToString(date: registerDate), horaObservacion: convertOnlyHourToString(date: observationHour), areaServicio: serviceArea)) {
+        ObservationNetworkManager().addSupervisionObservation(supervisionObservation: SupervisionObservation(comentario: comments, fechaObservacion: convertDateToString(date: observationDate), horaObservacion: convertOnlyHourToString(date: observationHour), areaServicio: serviceArea)) {
             
             debugPrint($0 as Any)
             debugPrint($1 as Any)

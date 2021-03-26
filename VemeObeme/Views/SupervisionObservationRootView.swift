@@ -28,7 +28,7 @@ struct SupervisionObservationRootView: View {
                     SupervisionObservationView(viewModel: viewmodel, isLoading: $isLoading, isFatalError: $isErrorPresented, loadingTitle: $loadingTitle)
                         .tag(1)
                         .gesture(isSwipeDisabled ? DragGesture() : nil)
-                    GenericMakeObservation(comments: $viewmodel.newSupervisionObservation.comentario)
+                    GenericMakeObservation(comments: $viewmodel.comments)
                         .tag(2)
                         .gesture(isSwipeDisabled ? DragGesture() : nil)
                     LoadingScreenObservation()
@@ -43,10 +43,11 @@ struct SupervisionObservationRootView: View {
                     switch (currentTab){
                     case 2:
                         currentTab += 1
-                        if (viewmodel.newSupervisionObservation.comentario.isEmpty){
-                            self.codeMessages = "Ingresa un comentario"
+                        if (!viewmodel.isCommentsValid || !viewmodel.isServiceAreaValid || !viewmodel.isRegisterDateValid){
+                            self.codeMessages = "Revisa los datos e intenta de nuevo"
                             self.isErrorPresented = true
-                            currentTab = 2
+                            debugPrint(self.isErrorPresented)
+                            currentTab = 1
                         }else{
                             let dispatch = DispatchGroup()
                             
@@ -84,16 +85,6 @@ struct SupervisionObservationRootView: View {
                 })
                 .background(Color.blue)
                 .cornerRadius(10.0)
-                .alert(isPresented: $isError, content: {
-                    Alert(title: Text("Error"), message: Text(errorMessage), dismissButton: .default(Text("Cerrar"), action: {
-                        isError = false
-                    }))
-                })
-                .alert(isPresented: $isFatalErrorPresented, content: {
-                    Alert(title: Text("Error!"), message: Text("Error al conectar con el servidor, favor de reintentar mas tarde"), dismissButton: .default(Text("Cerrar registro"), action: {
-                            self.mode.wrappedValue.dismiss()
-                    }) )
-                })
             }
             if isLoading{
                 CustomLoadingView(title: loadingTitle)
