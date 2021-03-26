@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SupervisionObservationRootView: View {
     @StateObject var viewmodel = SupervisionObservationViewModel()
-    @State var currentTab = 1
+    @State var currentTab = 3
     
     @State var isLoading = false
     @State var loadingTitle = "Cargando por favor espere"

@@ -67,6 +67,7 @@ class ObservationNetworkManager {
             if (responseData.statusCode == 200){
                 completion(Response(data: sentData), nil)
             }else{
+                debugPrint(supervisionObservation)
                 completion(nil, PetitionError.NotAuthorizedError)
             }
         }

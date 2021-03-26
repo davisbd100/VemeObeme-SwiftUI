@@ -8,6 +8,6 @@
 import Foundation
 
 struct ServiceArea: Codable, Hashable {
-    public var idEspecialidad: Int?
+    public var idAreaServicio: Int?
     public var nombre: String?
 }
