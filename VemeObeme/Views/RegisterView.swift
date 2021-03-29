@@ -68,7 +68,8 @@ struct RegisterView: View {
                                 currentTab += 1
                             }else{
                                 errorMessage = "Datos invalidos, revisa los datos ingresados"
-                                isError.toggle()
+                                isError = true
+                                debugPrint(isError)
                             }
                             break;
                         case 2:
@@ -127,17 +128,17 @@ struct RegisterView: View {
                 }
                 
             })
-            .navigationBarHidden(true)
+            .alert(isPresented: $isFatalErrorPresented, content: {
+                Alert(title: Text("Error!"), message: Text("Error al conectar con el servidor, favor de reintentar mas tarde"), dismissButton: .default(Text("Cerrar registro"), action: {
+                    self.mode.wrappedValue.dismiss()
+                }))
+            })
             .alert(isPresented: $isError, content: {
                 Alert(title: Text("Error"), message: Text(errorMessage), dismissButton: .default(Text("Cerrar"), action: {
                     isError = false
                 }))
             })
-            .alert(isPresented: $isFatalErrorPresented, content: {
-                Alert(title: Text("Error!"), message: Text("Error al conectar con el servidor, favor de reintentar mas tarde"), dismissButton: .default(Text("Cerrar registro"), action: {
-                        self.mode.wrappedValue.dismiss()
-                }) )
-            })
+            .navigationBarHidden(true)
             if isLoading{
                 CustomLoadingView(title: loadingTitle)
             }
