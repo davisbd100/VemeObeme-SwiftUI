@@ -84,7 +84,7 @@ struct FaultObservationRootView: View {
                         isErrorPresented = false
                     }))
                 })
-                .background(Color.blue)
+                .background(Color("ButtonGreen"))
                 .cornerRadius(10.0)
             }
             if isLoading{

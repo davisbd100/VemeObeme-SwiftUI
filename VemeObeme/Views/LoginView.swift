@@ -56,7 +56,7 @@ struct LoginView: View {
                         .font(.custom("Avenir Heavy", size: 15))
                         .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: 344, maxWidth: 370, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: 53, maxHeight: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 })
-                .background((!viewModel.isMailValid || !viewModel.isPasswordValid) ? Color.gray: Color.blue)
+                .background((!viewModel.isMailValid || !viewModel.isPasswordValid) ? Color.gray: Color("ButtonBlue"))
                 .cornerRadius(10.0)
                 .alert(isPresented: $isErrorPresented, content: {
                     Alert(title: Text("Error"), message: Text(codeMessages), dismissButton: .default(Text("Cerrar"), action: {
@@ -73,7 +73,7 @@ struct LoginView: View {
                             .font(.custom("Avenir Heavy", size: 15))
                             .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: 344, maxWidth: 370, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: 53, maxHeight: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     })
-                    .background(Color.green)
+                    .background(Color("ButtonGreen"))
                     .cornerRadius(10.0)
                 Spacer()
                 NavigationLink(
@@ -85,7 +85,7 @@ struct LoginView: View {
                             .font(.custom("Avenir Heavy", size: 15))
                             .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: 344, maxWidth: 370, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: 53, maxHeight: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     })
-                    .background(Color.yellow)
+                    .background(Color("ButtonYellow"))
                     .cornerRadius(10.0)
                 
             })

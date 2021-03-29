@@ -25,7 +25,7 @@ struct FaultObservationInfoView: View {
                         .font(.custom("Avenir Heavy", size: 15))
                         .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: 344, maxWidth: 370, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: 53, maxHeight: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 })
-                .background(Color.green)
+                .background(Color("ButtonGreen"))
                 .cornerRadius(10.0)
         }
         .padding()

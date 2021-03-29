@@ -55,7 +55,7 @@ struct FirstAboutObemeView: View {
                     .font(.custom("Avenir Heavy", size: 15))
                     .frame(minWidth: 0, idealWidth: 344, maxWidth: 370, minHeight: 0, idealHeight: 53, maxHeight: 60, alignment: .center)
             })
-            .background(Color.blue)
+            .background(Color("ButtonBlue"))
             .cornerRadius(10.0)
         }
     }

@@ -40,7 +40,7 @@ struct RegisterView: View {
                         .font(.custom("Avenir Heavy", size: 24))
                         .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
                         .foregroundColor(.white)
-                }.background(Color.blue)
+                }.background(Color("ButtonBlue"))
                 CustomProgressBarView(value: currentTab, maximum: 5)
                 if (currentTab == 5){
                     FifthRegisterView(viewModel: viewModel, isLoading: $isLoading, loadingTitle: $loadingTitle, isLoggedIn: $isLoggedIn)
