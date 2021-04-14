@@ -75,15 +75,15 @@ struct FaultObservationView: View {
                 .background(Color.white)
                 .addBorder(Color.black, width: 2, cornerRadius: 20)
                 .onAppear(perform: {
-                    /*if (!isLoading && !dataIsLoaded){
+                    if (!isLoading && !dataIsLoaded){
                         isLoading.toggle()
-                        loadingTitle = "Cargando areas de servicio"
+                        loadingTitle = "Cargando persona involucrada"
                         let dispatch = DispatchGroup()
                         
                         dispatch.enter()
-                        viewModel.getServiceArea{ serviceArea in
+                        viewModel.getPersonasInvolucradas{ typeList in
                             self.dataIsLoaded = true
-                            self.serviceAreas = serviceArea
+                            self.personTypes = typeList
                             isLoading.toggle()
                             loadingTitle = "Cargando"
                             dispatch.leave()
@@ -92,7 +92,7 @@ struct FaultObservationView: View {
                         dispatch.notify(queue: .main){
                             isFatalError = viewModel.isError
                         }
-                    }*/
+                    }
                 })
             }
         }

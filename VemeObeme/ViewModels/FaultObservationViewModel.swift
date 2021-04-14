@@ -69,12 +69,11 @@ class FaultObservationViewModel: ObservableObject {
             print("Finished register process")
         }
     }
-    func getServiceArea(completion: @escaping([ServiceArea]) -> ()){
+    func getPersonasInvolucradas(completion: @escaping([PersonType]) -> ()){
         let dispatch = DispatchGroup()
-        
-        
+
         dispatch.enter()
-        GetPublicInfoManager().getServiceAreas(countryId: (UserDefaults.standard.getcodableObject(dataType: User.self, key: "currentUser")?.estudiante?.estancias?.last?.institucionSalud?.pais?.idPais)!){
+        GetPublicInfoManager().getPersonTypes(){
             if $0.isEmpty {
                 self.isError = true
                 completion($0)
@@ -84,7 +83,7 @@ class FaultObservationViewModel: ObservableObject {
             dispatch.leave()
         }
         dispatch.notify(queue: .main){
-            print("Finished Searching for service areas")
+            print("Finished Searching for Person Types")
         }
     }
 }

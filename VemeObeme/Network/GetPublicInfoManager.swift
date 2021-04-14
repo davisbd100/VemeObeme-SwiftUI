@@ -126,6 +126,35 @@ class GetPublicInfoManager {
                     completion(serviceArea)
                 } catch let error {
                     debugPrint("Error: \(error.localizedDescription)")
+                    completion([])
+                }
+            }
+        }
+        task.resume()
+    }
+    func getPersonTypes(completion: @escaping([PersonType]) -> ()){
+        
+        
+        guard let url = URL(string: hostname + "personasinvolucradas/") else {
+            fatalError("URL Unreacheble")
+        }
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        let currentUser = UserDefaults.standard.getcodableObject(dataType: User.self, key: "currentUser")
+        request.setValue("Bearer " + (currentUser?.jwt)!, forHTTPHeaderField: "Authorization")
+
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let sentData = data, error == nil, let responseData = response as? HTTPURLResponse else {
+                return
+            }
+            if (responseData.statusCode == 200){
+                do {
+                    let typeList = try JSONDecoder().decode([PersonType].self, from: sentData)
+                    completion(typeList)
+                } catch let error {
+                    debugPrint("Error: \(error.localizedDescription)")
+                    completion([])
                 }
             }
         }

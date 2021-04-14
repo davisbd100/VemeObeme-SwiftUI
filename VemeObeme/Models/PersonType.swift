@@ -8,6 +8,6 @@
 import Foundation
 
 struct PersonType: Codable, Hashable {
-    public var idPersonaInvolucrada: String?
+    public var idPersonaInvolucrada: Int?
     public var personaInvolucrada: String?
 }
