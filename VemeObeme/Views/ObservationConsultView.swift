@@ -8,15 +8,30 @@
 import SwiftUI
 
 struct ObservationConsultView: View {
+    @StateObject var viewModel: ObservationConsultViewModel = ObservationConsultViewModel()
+    @State var observationList: [GenericObservation] = []
     var body: some View {
         VStack(alignment: .leading){
             Text("Observaciones")
                 .font(.custom("Avenir Book", size: 14))
                 .foregroundColor(.gray)
             Divider()
-            ReviewObservationButton(title: "OBSERVACIÓN 01", incidentDate: "12/05/19", observationDate: "12/05/19", destinationView: AnyView(ObservationConsultInfoView(title: "REP-01")))
+            ForEach(observationList, id: \.self){ value in
+                ReviewObservationButton(title: value.codigo ?? "Observación", incidentDate: formatStringDateForShowingShort(date: value.fechaObservacion ?? "2020-05-03T09:19:15.000+0000"), observationDate: formatStringDateForShowingShort(date: value.fechaRegistro ?? "2020-05-03T09:19:15.000+0000"), destinationView: AnyView(ObservationConsultInfoView(observation: value)))
+            }
             Spacer()
         }
+        .onAppear(perform: {
+            let dispatch = DispatchGroup()
+            
+            dispatch.enter()
+            viewModel.GetObservationList(){result in
+               observationList = result
+            }
+            dispatch.notify(queue: .main){
+                
+            }
+        })
     }
 }
 

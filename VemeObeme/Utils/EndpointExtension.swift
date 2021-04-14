@@ -9,6 +9,6 @@ import Foundation
 
 extension URL {
     static var myUrlBase: String {
-        String("https://veme-test.uc.r.appspot.com/obemeapi/v1/")
+        String("https://civil-glyph-310601.uc.r.appspot.com/obemeapi/v1/")
     }
 }

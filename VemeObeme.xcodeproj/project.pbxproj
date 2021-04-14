@@ -56,6 +56,8 @@
 		545593C625FC1484009F8AEF /* ServiceArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545593C525FC1484009F8AEF /* ServiceArea.swift */; };
 		545593CB25FC15E4009F8AEF /* PositiveObservationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545593CA25FC15E4009F8AEF /* PositiveObservationViewModel.swift */; };
 		545F676725DC51BD00C37B64 /* GetPublicInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545F676625DC51BD00C37B64 /* GetPublicInfoManager.swift */; };
+		5460087E2626B91800A5CEB3 /* GenericObservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5460087D2626B91800A5CEB3 /* GenericObservation.swift */; };
+		546008832626BCB500A5CEB3 /* ObservationConsultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546008822626BCB500A5CEB3 /* ObservationConsultViewModel.swift */; };
 		546AB90325C461A500835A8E /* ReviewObservationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546AB90225C461A500835A8E /* ReviewObservationButton.swift */; };
 		546AB90825C464E400835A8E /* ObservationConsultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546AB90725C464E400835A8E /* ObservationConsultView.swift */; };
 		546AB90D25C465A300835A8E /* ObservationConsultInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546AB90C25C465A300835A8E /* ObservationConsultInfoView.swift */; };
@@ -157,6 +159,8 @@
 		545593C525FC1484009F8AEF /* ServiceArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceArea.swift; sourceTree = "<group>"; };
 		545593CA25FC15E4009F8AEF /* PositiveObservationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositiveObservationViewModel.swift; sourceTree = "<group>"; };
 		545F676625DC51BD00C37B64 /* GetPublicInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPublicInfoManager.swift; sourceTree = "<group>"; };
+		5460087D2626B91800A5CEB3 /* GenericObservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericObservation.swift; sourceTree = "<group>"; };
+		546008822626BCB500A5CEB3 /* ObservationConsultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservationConsultViewModel.swift; sourceTree = "<group>"; };
 		546AB90225C461A500835A8E /* ReviewObservationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewObservationButton.swift; sourceTree = "<group>"; };
 		546AB90725C464E400835A8E /* ObservationConsultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservationConsultView.swift; sourceTree = "<group>"; };
 		546AB90C25C465A300835A8E /* ObservationConsultInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservationConsultInfoView.swift; sourceTree = "<group>"; };
@@ -319,6 +323,7 @@
 				54D3F82E260548C50070F48A /* FaultObservation.swift */,
 				54D3F833260549460070F48A /* PersonType.swift */,
 				54D3F83B260549B40070F48A /* FaultType.swift */,
+				5460087D2626B91800A5CEB3 /* GenericObservation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -332,6 +337,7 @@
 				545593CA25FC15E4009F8AEF /* PositiveObservationViewModel.swift */,
 				54D3F829260547BE0070F48A /* SupervisionObservationViewModel.swift */,
 				5445CF37260DB03A004D6D9D /* FaultObservationViewModel.swift */,
+				546008822626BCB500A5CEB3 /* ObservationConsultViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -564,6 +570,7 @@
 				5446047225EDFA8B00E37CE0 /* UserManagementPetitionManager.swift in Sources */,
 				544C0F5C255FE2E1001D0CA3 /* OnboardStep.swift in Sources */,
 				54E8654925D721A700779DA9 /* Specialty.swift in Sources */,
+				546008832626BCB500A5CEB3 /* ObservationConsultViewModel.swift in Sources */,
 				5444AF9D260DD92D00B86044 /* PeriodHelper.swift in Sources */,
 				547E8A6E25BA30BC005C7FE0 /* CustomRadioButtonField.swift in Sources */,
 				545593C125FC101D009F8AEF /* ObservationNetworkManager.swift in Sources */,
@@ -574,6 +581,7 @@
 				54D1C61D2581583500E7F9C1 /* RegisterView.swift in Sources */,
 				54445BBF25BB1D4600E90F48 /* CustomUserDefaultSave.swift in Sources */,
 				54D3F82A260547BE0070F48A /* SupervisionObservationViewModel.swift in Sources */,
+				5460087E2626B91800A5CEB3 /* GenericObservation.swift in Sources */,
 				54F1B54D25CCC150003130EA /* AddBorder.swift in Sources */,
 				54D3F834260549460070F48A /* PersonType.swift in Sources */,
 				546AB90825C464E400835A8E /* ObservationConsultView.swift in Sources */,
