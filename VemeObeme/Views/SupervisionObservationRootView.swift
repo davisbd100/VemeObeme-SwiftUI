@@ -38,53 +38,55 @@ struct SupervisionObservationRootView: View {
                         .tag(4)
                         .gesture(isSwipeDisabled ? DragGesture() : nil)
                 }
+                .navigationTitle("Ausencia de supervisión")
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-                Button(action: {
-                    switch (currentTab){
-                    case 2:
-                        currentTab += 1
-                        if (!viewmodel.isCommentsValid || !viewmodel.isServiceAreaValid || !viewmodel.isRegisterDateValid){
-                            self.codeMessages = "Revisa los datos e intenta de nuevo"
-                            self.isErrorPresented = true
-                            debugPrint(self.isErrorPresented)
-                            currentTab = 1
-                        }else{
-                            let dispatch = DispatchGroup()
-                            
-                            dispatch.enter()
-                            viewmodel.registerSupervisionObservation(){value in
-                                if (value){
-                                    currentTab = 4
-                                }else{
-                                    codeMessages = "Error al registrar la observacion"
-                                    isErrorPresented.toggle()
-                                    currentTab = 2
+                if (currentTab != 3){
+                    Button(action: {
+                        switch (currentTab){
+                        case 2:
+                            currentTab += 1
+                            if (!viewmodel.isCommentsValid || !viewmodel.isServiceAreaValid || !viewmodel.isRegisterDateValid){
+                                self.codeMessages = "Revisa los datos e intenta de nuevo"
+                                self.isErrorPresented = true
+                                debugPrint(self.isErrorPresented)
+                                currentTab = 1
+                            }else{
+                                let dispatch = DispatchGroup()
+                                
+                                dispatch.enter()
+                                viewmodel.registerSupervisionObservation(){value in
+                                    if (value){
+                                        currentTab = 4
+                                    }else{
+                                        codeMessages = "Error al registrar la observacion"
+                                        isErrorPresented.toggle()
+                                        currentTab = 2
+                                    }
+                                    dispatch.leave()
                                 }
-                                dispatch.leave()
                             }
+                            break;
+                        case 4:
+                            self.mode.wrappedValue.dismiss()
+                            break;
+                        default:
+                            currentTab += 1
+                            break;
                         }
-                        break;
-                    case 4:
-                        self.mode.wrappedValue.dismiss()
-                        break;
-                    default:
-                        currentTab += 1
-                        break;
-                    }
-                }, label: {
-                    Text(currentTab == 4 ? "Finalizar" : "Siguiente")
-                        .foregroundColor(.white)
-                        .font(.custom("Avenir Heavy", size: 15))
-                        .frame(minWidth: 0, idealWidth: 344, maxWidth: 370, minHeight: 0, idealHeight: 53, maxHeight: 60, alignment: .center)
-                })
-                .disabled(currentTab == 3)
-                .alert(isPresented: $isErrorPresented, content: {
-                    Alert(title: Text("Error"), message: Text(codeMessages), dismissButton: .default(Text("Cerrar"), action: {
-                        isErrorPresented = false
-                    }))
-                })
-                .background(Color("ButtonGreen"))
-                .cornerRadius(10.0)
+                    }, label: {
+                        Text(currentTab == 4 ? "Finalizar" : "Siguiente")
+                            .foregroundColor(.white)
+                            .font(.custom("Avenir Heavy", size: 15))
+                            .frame(minWidth: 0, idealWidth: 344, maxWidth: 370, minHeight: 0, idealHeight: 53, maxHeight: 60, alignment: .center)
+                    })
+                    .alert(isPresented: $isErrorPresented, content: {
+                        Alert(title: Text("Error"), message: Text(codeMessages), dismissButton: .default(Text("Cerrar"), action: {
+                            isErrorPresented = false
+                        }))
+                    })
+                    .background(Color("ButtonGreen"))
+                    .cornerRadius(10.0)
+                }
             }
             if isLoading{
                 CustomLoadingView(title: loadingTitle)

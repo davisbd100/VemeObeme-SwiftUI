@@ -26,11 +26,8 @@ struct CustomDatePicker: View {
             .background(Color.white)
             .accentColor(.black)
             .font(.custom("Avenir Book", size: 14)).padding()
-            .datePickerStyle(WheelDatePickerStyle())
-            .frame(minWidth: 200, idealWidth: 230, maxWidth: 280, idealHeight: 53, maxHeight: 60, alignment: .center)
+            .frame(idealWidth: 344, maxWidth: 370, idealHeight: 53, maxHeight: 60)
             .addBorder(Color.black, width: 2, cornerRadius: 20)
-            .padding(.leading, 10)
-            .padding(.trailing, 10)
         }
     }
 
