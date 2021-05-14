@@ -48,7 +48,7 @@ struct ObservationConsultInfoView: View {
                 Group{
                     Text("Comentarios:")
                         .font(.custom("Avenir Heavy", size: 12))
-                    Text(observation.comentarios ?? "comentarios")
+                    Text(observation.comentarios ?? "Comentarios")
                         .font(.custom("Avenir Book", size: 12))
                 }
             }
