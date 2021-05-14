@@ -36,14 +36,16 @@ struct FaultObservationView: View {
                     .padding()
             }
             Group{
-                HStack{
-                    Image(systemName: "info.circle")
-                    Text("Fecha del incidente")
-                        .font(.custom("Avenir Book", size: 16))
-                        .foregroundColor(.green)
-                        .padding()
+                VStack(alignment: .leading){
+                    HStack{
+                        Image(systemName: "info.circle")
+                        Text("Fecha del incidente")
+                            .font(.custom("Avenir Book", size: 16))
+                            .foregroundColor(.green)
+                            .padding()
+                    }
+                    CustomDatePicker(value: $viewModel.observationDate, title: "Fecha de la observación", maxDate: Date(), minDate: Calendar.current.date(byAdding: .month, value: -12, to: Date())!)
                 }
-                CustomDatePicker(value: $viewModel.observationDate, title: "Fecha de la observación", maxDate: Date(), minDate: Calendar.current.date(byAdding: .month, value: -12, to: Date())!)
                 HStack{
                     Image(systemName: "info.circle")
                     Text("Hora aproximada del incidente")

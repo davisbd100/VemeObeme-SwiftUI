@@ -13,11 +13,11 @@ struct CheckInfoView: View {
     @State var stays: [Stay] = []
     var body: some View {
         VStack{
+            Text("Datos personales")
+                .font(.custom("Avenir Medium", size: 16))
+                .padding()
             ScrollView{
                 VStack(alignment: .leading){
-                    Text("Datos personales")
-                        .font(.custom("Avenir Medium", size: 16))
-                        .padding()
                     Group{
                         Text("Correo electrónico: " + viewModel.currentUser.correo!)
                             .font(.custom("Avenir Book", size: 14))

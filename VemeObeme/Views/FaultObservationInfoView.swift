@@ -14,11 +14,13 @@ struct FaultObservationInfoView: View {
     @StateObject var viewmodel: FaultObservationViewModel
     var body: some View {
         VStack{
-            Text(message)
-                .font(.custom("Avenir Book", size: 16))
+            VStack(alignment: .leading){
+                Text(message)
+                    .font(.custom("Avenir Book", size: 16))
+            }
             Spacer()
             NavigationLink(
-                destination: FaultObservationRootView(viewmodel: viewmodel, color: color),
+                destination: FaultObservationRootView(viewmodel: viewmodel, color: color, title: navigationTitle),
                 label: {
                     Text("Siguiente")
                         .foregroundColor(.white)
