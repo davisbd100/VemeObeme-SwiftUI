@@ -29,52 +29,55 @@ struct PositiveObservationRootView: View {
                 .tag(4)
                 .gesture(isSwipeDisabled ? DragGesture() : nil)
         }
+        .navigationBarTitle("Observación positiva")
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-        Button(action: {
-            switch (currentTab){
-            case 2:
-                currentTab += 1
-                if (viewmodel.newPositiveObservation.comentario.isEmpty){
-                    self.codeMessages = "Ingresa un comentario"
-                    self.isErrorPresented = true
-                    currentTab = 2
-                }else{
-                    let dispatch = DispatchGroup()
-                    
-                    dispatch.enter()
-                    viewmodel.registerPositiveObservation(){value in
-                        if (value){
-                            currentTab = 4
-                        }else{
-                            codeMessages = "Error al registrar la observacion"
-                            isErrorPresented.toggle()
-                            currentTab = 2
+        if (currentTab != 3){
+            Button(action: {
+                switch (currentTab){
+                case 2:
+                    currentTab += 1
+                    if (viewmodel.newPositiveObservation.comentario.isEmpty){
+                        self.codeMessages = "Ingresa un comentario"
+                        self.isErrorPresented = true
+                        currentTab = 2
+                    }else{
+                        let dispatch = DispatchGroup()
+                        
+                        dispatch.enter()
+                        viewmodel.registerPositiveObservation(){value in
+                            if (value){
+                                currentTab = 4
+                            }else{
+                                codeMessages = "Error al registrar la observacion"
+                                isErrorPresented.toggle()
+                                currentTab = 2
+                            }
+                            dispatch.leave()
                         }
-                        dispatch.leave()
                     }
+                    break;
+                case 4:
+                    self.mode.wrappedValue.dismiss()
+                    break;
+                default:
+                    currentTab += 1
+                    break;
                 }
-                break;
-            case 4:
-                self.mode.wrappedValue.dismiss()
-                break;
-            default:
-                currentTab += 1
-                break;
-            }
-        }, label: {
-            Text(currentTab == 4 ? "Finalizar" : "Siguiente")
-                .foregroundColor(.white)
-                .font(.custom("Avenir Heavy", size: 15))
-                .frame(minWidth: 0, idealWidth: 344, maxWidth: 370, minHeight: 0, idealHeight: 53, maxHeight: 60, alignment: .center)
-        })
-        .disabled(currentTab == 3)
-        .alert(isPresented: $isErrorPresented, content: {
-            Alert(title: Text("Error"), message: Text(codeMessages), dismissButton: .default(Text("Cerrar"), action: {
-                isErrorPresented = false
-            }))
-        })
-        .background(Color("ButtonGreen"))
-        .cornerRadius(10.0)
+            }, label: {
+                Text(currentTab == 4 ? "Finalizar" : "Siguiente")
+                    .foregroundColor(.white)
+                    .font(.custom("Avenir Heavy", size: 15))
+                    .frame(minWidth: 0, idealWidth: 344, maxWidth: 370, minHeight: 0, idealHeight: 53, maxHeight: 60, alignment: .center)
+            })
+            .disabled(currentTab == 3)
+            .alert(isPresented: $isErrorPresented, content: {
+                Alert(title: Text("Error"), message: Text(codeMessages), dismissButton: .default(Text("Cerrar"), action: {
+                    isErrorPresented = false
+                }))
+            })
+            .background(Color("ButtonGreen"))
+            .cornerRadius(10.0)
+        }
     }
 }
 
