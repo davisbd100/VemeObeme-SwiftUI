@@ -13,7 +13,6 @@ class PositiveObservationViewModel: ObservableObject {
     
     func registerPositiveObservation(completion: @escaping(Bool) -> ()) {
         let dispatch = DispatchGroup()
-        debugPrint(newPositiveObservation)
         dispatch.enter()
         
         ObservationNetworkManager().addPositiveObservition(positiveObservation: newPositiveObservation) {

@@ -8,9 +8,9 @@
 import Foundation
 struct FaultObservation: Codable, Hashable {
     public var comentario: String = ""
-    public var fechaObservacion: String?
+    public var fechaObservacion: String = convertDateToString(date: Date())
     public var fechaRegistro: String = convertDateToString(date: Date())
-    public var horaObservacion: String?
+    public var horaObservacion: String = convertOnlyHourToString(date: Date())
     public var tipoFalta: FaultType?
     public var personaInvolucrada: PersonType?
 }
