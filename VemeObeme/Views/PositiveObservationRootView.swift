@@ -15,6 +15,7 @@ struct PositiveObservationRootView: View {
     @State var codeMessages = "UnkownError"
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     var body: some View {
+        CustomProgressBarView(value: currentTab, maximum: 4)
         TabView(selection:$currentTab){
             PositiveObservationView(viewmodel: viewmodel)
                 .tag(1)

@@ -26,6 +26,7 @@ struct FaultObservationRootView: View {
     var body: some View {
         ZStack{
             VStack{
+                CustomProgressBarView(value: currentTab, maximum: 4)
                 TabView(selection:$currentTab){
                     FaultObservationView(viewModel: viewmodel, color: color, isLoading: $isLoading, isFatalError: $isErrorPresented, loadingTitle: $loadingTitle)
                         .tag(1)

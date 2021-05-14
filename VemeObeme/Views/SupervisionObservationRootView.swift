@@ -22,8 +22,11 @@ struct SupervisionObservationRootView: View {
 
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     var body: some View {
+        
+            
         ZStack{
             VStack{
+                CustomProgressBarView(value: currentTab, maximum: 4)
                 TabView(selection:$currentTab){
                     SupervisionObservationView(viewModel: viewmodel, isLoading: $isLoading, isFatalError: $isErrorPresented, loadingTitle: $loadingTitle)
                         .tag(1)
